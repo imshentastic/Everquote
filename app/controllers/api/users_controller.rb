@@ -4,7 +4,7 @@ class Api::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            login!(@user)
+            login(@user)
             render :show
         else
             render json: @user.errors.full_messages, status: 401
@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
     end
 
     def show
-        @user = User.fid(params[:id])
+        @user = User.find(params[:id])
     end
 
     private

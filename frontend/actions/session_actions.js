@@ -4,19 +4,25 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
 import * as APIUtil from '../util/session_api_util';
 
-const receiveCurrentUser = user => ({
-    type: RECEIVE_CURRENT_USER,
-    user
-});
+const receiveCurrentUser = user => {
+    return {
+        type: RECEIVE_CURRENT_USER,
+        user
+    };
+};
 
-const logoutCurrentUser = () => ({
-    type: LOGOUT_CURRENT_USER
-});
+const logoutCurrentUser = () => {
+    return {
+        type: LOGOUT_CURRENT_USER
+    };
+};
 
-const receiveErrors = errors => ({
-    type: RECEIVE_SESSION_ERRORS,
-    errors
-});
+const receiveErrors = (errors) => {
+    return {
+        type: RECEIVE_SESSION_ERRORS,
+        errors
+    };
+};
 
 export const signup = formUser => dispatch => APIUtil.signup(formUser)
     .then(
