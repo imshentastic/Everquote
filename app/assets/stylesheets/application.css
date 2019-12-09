@@ -17,5 +17,14 @@
 
  .logged-out-nav {
     display: flex;
-    background-color: blueviolet;
+    background-color: #00A82D;
+    color: green;
+ }
+ 
+ .sign-up {
+    align-content: center;
+ }
+
+ .sign-out {
+
  }

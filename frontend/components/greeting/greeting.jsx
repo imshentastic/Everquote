@@ -8,10 +8,10 @@ export default ({currentUser, logout}) => {
             <button onClick={logout}>Log Out</button>
         </div>
     ) : (
-        <div class="logged-out-nav">
-            <Link to='/signup' class="sign-up">Sign Up</Link>
+        <div className="logged-out-nav">
+            <Link to='/signup' className="sign-up">Sign Up</Link>
             or
-            <Link to='/login' class="sign-out">Login</Link>
+            <Link to='/login' className="sign-out">Login</Link>
         </div>
     );
 
