@@ -24,7 +24,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode=development --watch"
+    "start": "webpack --mode=development --watch",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,10 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/imshentastic/EverQuote/issues"
+  },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
   },
   "homepage": "https://github.com/imshentastic/EverQuote#readme"
 }
