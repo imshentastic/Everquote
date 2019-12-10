@@ -1,0 +1,92 @@
+.sessionform-background {
+    background-color: #F7FCF9;
+    min-height: 100%;
+    width: auto;
+    position: relative;
+    // display: flex;
+}
+
+.sessionform {
+    display: flex;
+    max-width: 512px;
+    width: 314px;
+    margin: 0px auto 28px auto;
+    padding: 62px 99px 48px;
+    max-height: 526px;
+    margin: auto;
+    justify-content: center;
+    background: white;
+    box-shadow: 0px 4px 24px rgba(0,0,0,0.1);
+    border-radius: 2px;
+    flex-direction: column;
+    align-content: space-betwen;
+    align-self: inherit;
+    -webkit-font-smoothing: antialiased;
+}
+
+.sessionform-icon {
+    height: 65px;
+    width: 65px;
+    // grid-column-start: 1;
+    // grid-column-end: 2;
+    // grid-row-start: ro1-start;
+    // grid-row-end: 2;
+    
+    align-self: center;
+    
+}
+
+.sessionform > h1 {
+    align-self: center;
+}
+.sessionform > h2 {
+    align-self: center;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.line::before, .line::after{
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+}
+
+.line::before {
+    margin-right: 0.25em;
+}
+
+.line::after {
+    margin-right: 0.25em;
+}
+
+.line > div {
+    padding: 3px;
+}
+
+.sessionform-form {
+    // display: inline-block;
+    // align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+input {
+    // flex-direction: column;
+    // align-self: center;
+    // width: 50px;
+    // display: inline-block;
+    width: 100%;
+    border: 1px solid grey;
+    max-width: 255px;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
