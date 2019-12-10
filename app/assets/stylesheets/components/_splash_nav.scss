@@ -1,66 +1,98 @@
-
+ .splash-nav-background {
+    background-color: white;
+ }
 
   .splash-nav {
     display: grid;
     // align-content: space-between;
-    padding: 12px;
-    grid-template-columns: 55px 200px auto 80px 30px 70px;
-    grid-template-rows: 4% auto;
+    padding: 12px 50px;
+    grid-template-columns: 55px 200px 1fr 80px 30px 140px;
+    grid-template-rows: auto;
+    font-family: Helvetica, Arial, serif;
+    max-width: 1300px;
+    margin: auto;
+    -webkit-font-smoothing: antialiased;
+    
   }
  
  .splash-icon {
-    height: 45px;
-    width: 45px;
+    height: 50px;
+    width: 50px;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: ro1-start;
     grid-row-end: 2;
-    padding: 5px;
-    margin-left: 10px;
+   //  padding: 5px;
+   //  margin-left: 10px;
+    justify-self: center;
+    align-self: center;
  
  }
  
  .splash-nav-title {
     // display: flex;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 30px;
+    font-family: serif;
+    font-size: 35px;
+    font-weight: bold;
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: ro1-start;
     grid-row-end: 2;
-    padding: 10px;
+    padding: 5px;
+    justify-self: left;
+    align-self: center;
  }
  
  .splash-nav-signup {
     // display: flex;
-    color: green;
-    font-family: "Soleil", Helvetica, Arial, serif;
-    vertical-align: middle;
+    color: #00A82D;
+    align-self: center;
     height: 100%;
     grid-column-start: 4;
     grid-column-end: 5;
     grid-row-start: ro1-start;
     grid-row-end: 2;
+    letter-spacing: 0.08em;
+    align-self: center;
+    
   }
  
  .splash-nav > h5 {
-    font-family: "Soleil", Helvetica, Arial, serif;
     line-height: 54px;
     grid-column-start: 5;
     grid-column-end: 6;
     grid-row-start: ro1-start;
     grid-row-end: 2;
+    font-size: 14px;
+    align-self: center;
+    
  }
  
  .splash-nav-login {
-    // display: flex;
-    color: green;
-    font-family: "Soleil", Helvetica, Arial, serif;
+    font-size: 14px;
     grid-column-start: 6;
     grid-column-end: 7;
     grid-row-start: ro1-start;
     grid-row-end: 2;
- 
+    color: #008A2D;
+    border: 2px solid #008A2D;
+    text-align: center;
+    // min-width: 120px;
+    padding: 40px, 120px;
+    margin: 10px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    
+  }
+
+  .splash-nav-signup:hover {
+      color: rgb(17, 196, 64);
+  }
+
+  .splash-nav-login:hover {
+    border: 2px solid rgb(17, 196, 64);
   }
  
  
