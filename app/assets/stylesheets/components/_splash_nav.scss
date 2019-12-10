@@ -1,0 +1,66 @@
+
+
+  .splash-nav {
+    display: grid;
+    // align-content: space-between;
+    padding: 12px;
+    grid-template-columns: 55px 200px auto 80px 30px 70px;
+    grid-template-rows: 4% auto;
+  }
+ 
+ .splash-icon {
+    height: 45px;
+    width: 45px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: ro1-start;
+    grid-row-end: 2;
+    padding: 5px;
+    margin-left: 10px;
+ 
+ }
+ 
+ .splash-nav-title {
+    // display: flex;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: ro1-start;
+    grid-row-end: 2;
+    padding: 10px;
+ }
+ 
+ .splash-nav-signup {
+    // display: flex;
+    color: green;
+    font-family: "Soleil", Helvetica, Arial, serif;
+    vertical-align: middle;
+    height: 100%;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: ro1-start;
+    grid-row-end: 2;
+  }
+ 
+ .splash-nav > h5 {
+    font-family: "Soleil", Helvetica, Arial, serif;
+    line-height: 54px;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: ro1-start;
+    grid-row-end: 2;
+ }
+ 
+ .splash-nav-login {
+    // display: flex;
+    color: green;
+    font-family: "Soleil", Helvetica, Arial, serif;
+    grid-column-start: 6;
+    grid-column-end: 7;
+    grid-row-start: ro1-start;
+    grid-row-end: 2;
+ 
+  }
+ 
+ 

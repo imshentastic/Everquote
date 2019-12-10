@@ -14,17 +14,11 @@
  *= require_self
  */
 
+ // CSS Reset
+ @import "base/reset.scss";
 
- .logged-out-nav {
-    display: flex;
-    background-color: #00A82D;
-    color: green;
- }
- 
- .sign-up {
-    align-content: center;
- }
+ //Core
+ @import "base/fonts.scss";
 
- .sign-out {
-
- }
+ // Components
+ @import "components/*";
