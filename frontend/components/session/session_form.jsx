@@ -61,7 +61,7 @@ class SessionForm extends React.Component {
             </div>
             <div className="sessionform-wrapper">
                 <div className="sessionform">
-                    <img className="sessionform-icon" src="assets/penguin-icon.png" alt="Penguin by sandra from the Noun Project"></img>
+                    <img className="sessionform-icon" src={window.penguinImg} alt="Penguin by sandra from the Noun Project" />
                     <h1>Everquote</h1>
                     <h2>Remember everything important.</h2>
 

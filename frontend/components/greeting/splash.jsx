@@ -16,7 +16,7 @@ export default ({currentUser, logout}) => {
                     <button className="splash-main-signup">
                         <Link to='/signup' >SIGN UP FOR FREE</Link>
                     </button>
-                    <img className="splash-main-img"src="assets/splash-vector.svg" alt=""/>
+                    <img className="splash-main-img"src={window.splashImg} alt=""/>
                     
                 </div>
             </div>

@@ -6,7 +6,8 @@ import Home from '../home/home';
 export default ({currentUser, logout}) => {
     const greeting = currentUser ? (
         <div>
-            <img className="splash-icon" src="assets/penguin-icon.png" alt="Penguin by sandra from the Noun Project"></img>
+            {/* <img className="splash-icon" src="assets/penguin-icon.png" alt="Penguin by sandra from the Noun Project"></img> */}
+            <img className="splash-icon" src={window.penguinImg} alt="Penguin by sandra from the Noun Project" />
             <Home />
             <span>{currentUser.email}, you are logged in.</span>
             <button onClick={logout}>Log Out</button>
@@ -16,7 +17,7 @@ export default ({currentUser, logout}) => {
         <>
             <div className="splash-nav-background">
                 <div className="splash-nav">
-                    <img className="splash-icon" src="assets/penguin-icon.png" alt="Penguin by sandra from the Noun Project"></img>
+                    <img className="splash-icon" src={window.penguinImg} alt="Penguin by sandra from the Noun Project" />
                     <h1 className="splash-nav-title">Everquote</h1>
                     <button className="splash-nav-signup">
                         <Link to='/signup'>Sign up</Link>
