@@ -8,7 +8,8 @@ const msp = (state, ownProps) => ({
 });
 
 const mdp = (dispatch, ownProps) => ({
-    formAction: formUser => dispatch(login(formUser))
+    formAction: formUser => dispatch(login(formUser)),
+    login: formUser => dispatch(login(formUser))
 });
 
 export default connect(msp, mdp)(SessionForm);

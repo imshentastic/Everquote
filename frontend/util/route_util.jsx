@@ -26,6 +26,7 @@ const msp = state => {
     return {loggedIn: Boolean(state.session.id)}
 }
 
+
 export const AuthRoute = withRouter(
     connect(
         msp,

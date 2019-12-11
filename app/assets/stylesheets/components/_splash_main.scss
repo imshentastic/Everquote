@@ -6,37 +6,39 @@
     
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 270px 300px 9px 58px 90px;
-    grid-gap: 0px 40px;
+    grid-template-rows: 270px auto 10px 58px 50px;
+    grid-gap: 0px 20px;
     color: white;
     font-family: Helvetica, Arial, serif;
     -webkit-font-smoothing: antialiased;
     max-width: 1300px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 30px 30px 30px 30px;
     margin: auto;
+   //  min-height: 875px;
  }
  
  .splash-main-head {
     margin-block-start: 0.57em;
     margin-block-end: 0.67em;
-    margin-top: 70px;
-    font-size: 56px;
+    margin-top: 20px;
+    font-size: 50px;
     grid-column-start: 1;
     grid-row-start: 1;
     line-height: 70px;
     letter-spacing: 0.06em;
     font-weight: 600;
+    // margin-bottom: 30px;
     
  }
  
  .splash-main-body {
     // display: block;
-    font-size: 22px;
+    font-size: 23px;
     // width: 300px;
     margin-block-start: 1.33em;
     margin-block-end: 1.33em;
-    margin-bottom: 35px;
+    // margin-bottom: 35px;
+    margin-top: 0px;
     font-weight: lighter;
     grid-column-start: 1;
     grid-row-start: 2;
@@ -75,19 +77,39 @@
     justify-self: center;
     align-self: center;
     margin-top: 100px;
-    width: 110%;
-    height: 110%;
-    min-width: 260px;
+    padding-right: 20px;
+    width: 100%;
+    height: 100%;
+    min-width: 240px;
     
 }
 
-// @media all and (max-width: 1000px) {
-//    .splash-main-text {
-//    //   flex-wrap: wrap;
-//       grid-template-columns: 1fr;
-//    }
+@media all and (max-width: 600px) {
+   .splash-main-text {
+   //   flex-wrap: wrap;
+      // grid-template-columns: 1fr;
+      // grid-template-rows: auto auto auto auto auto 500px;
+      // grid-auto-flow: column;
+      display: block;
+   }
  
-//    [class*='col-'] {
-//    //   width: 100%;
-//    // }
-//  }
+   [class*='splash-main-'] {
+  //  //   width: 100%;
+    // grid-column-start: 1;
+  //   grid-row-start: 2;
+      margin: 30px;
+   }
+   .splash-main-img {
+    // grid-column-start: 2;
+    // grid-row: 7;
+    // justify-self: center;
+    // align-self: center;
+    // margin-top: 100px;
+    // width: 110%;
+    // height: 110%;
+    width: 400px;
+    margin: auto;
+    }
+
+
+}

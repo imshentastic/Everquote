@@ -6,7 +6,7 @@
     display: grid;
     // align-content: space-between;
     padding: 12px 50px;
-    grid-template-columns: 55px 200px 1fr 80px 30px 140px;
+    grid-template-columns: 55px 200px 1fr 70px 18px 140px;
     grid-template-rows: auto;
     font-family: Helvetica, Arial, serif;
     max-width: 1300px;
@@ -43,6 +43,7 @@
  
  .splash-nav-signup {
     // display: flex;
+    font-size: 14px;
     color: #00A82D;
     align-self: center;
     height: 100%;
@@ -50,7 +51,7 @@
     grid-column-end: 5;
     grid-row-start: ro1-start;
     grid-row-end: 2;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.5px;
     align-self: center;
     
   }
@@ -72,16 +73,17 @@
     grid-column-end: 7;
     grid-row-start: ro1-start;
     grid-row-end: 2;
-    color: #008A2D;
-    border: 2px solid #008A2D;
+    color: #00A82D;
+    border: 2px solid #00A82D;
     text-align: center;
-    // min-width: 120px;
+    min-width: 120px;
     padding: 40px, 120px;
     margin: 10px;
     border-radius: 3px;
     letter-spacing: 0.5px;
-    letter-spacing: 0.08em;
+   //  letter-spacing: 0.08em;
     font-weight: 600;
+    height: 40px;
     
   }
 
