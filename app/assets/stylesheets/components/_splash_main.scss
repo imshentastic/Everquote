@@ -1,0 +1,115 @@
+.splash-background {
+    background-color: #00A82D;
+}
+
+.splash-main-text {
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 270px auto 10px 58px 50px;
+    grid-gap: 0px 20px;
+    color: white;
+    font-family: Helvetica, Arial, serif;
+    -webkit-font-smoothing: antialiased;
+    max-width: 1300px;
+    padding: 30px 30px 30px 30px;
+    margin: auto;
+   //  min-height: 875px;
+ }
+ 
+ .splash-main-head {
+    margin-block-start: 0.57em;
+    margin-block-end: 0.67em;
+    margin-top: 20px;
+    font-size: 50px;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    line-height: 70px;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    // margin-bottom: 30px;
+    
+ }
+ 
+ .splash-main-body {
+    // display: block;
+    font-size: 23px;
+    // width: 300px;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    // margin-bottom: 35px;
+    margin-top: 0px;
+    font-weight: lighter;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    line-height: 40px;
+    letter-spacing: 0.08em;
+    max-width: 568px;
+   //  margin-right: 20px;
+    
+ 
+ }
+ 
+ .splash-main-signup {
+    // display: inline-block;
+    background: white;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #00A82D;
+    text-align: center;
+    border-radius: 3px;
+    // padding: 18px 32px 17px;
+    font-size: 15px;
+    grid-column-start: 1;
+    grid-row-start: 4;
+    width: 240px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+
+.splash-main-signup:hover {
+    background: rgba(255, 255, 255, 0.931);
+}
+ 
+.splash-main-img {
+    grid-column-start: 2;
+    grid-row: 1/ span 4;
+    justify-self: center;
+    align-self: center;
+    margin-top: 100px;
+    padding-right: 20px;
+    width: 100%;
+    height: 100%;
+    min-width: 240px;
+    
+}
+
+@media all and (max-width: 600px) {
+   .splash-main-text {
+   //   flex-wrap: wrap;
+      // grid-template-columns: 1fr;
+      // grid-template-rows: auto auto auto auto auto 500px;
+      // grid-auto-flow: column;
+      display: block;
+   }
+ 
+   [class*='splash-main-'] {
+  //  //   width: 100%;
+    // grid-column-start: 1;
+  //   grid-row-start: 2;
+      margin: 30px;
+   }
+   .splash-main-img {
+    // grid-column-start: 2;
+    // grid-row: 7;
+    // justify-self: center;
+    // align-self: center;
+    // margin-top: 100px;
+    // width: 110%;
+    // height: 110%;
+    width: 400px;
+    margin: auto;
+    }
+
+
+}

@@ -1,22 +1,40 @@
 import {Link} from 'react-router-dom';
 import React from 'react';
+import Splash from './splash';
+import Home from '../home/home';
 
 export default ({currentUser, logout}) => {
     const greeting = currentUser ? (
         <div>
+            <img className="splash-icon" src="assets/penguin-icon.png" alt="Penguin by sandra from the Noun Project"></img>
+            <Home />
             <span>{currentUser.email}, you are logged in.</span>
             <button onClick={logout}>Log Out</button>
+            
         </div>
     ) : (
-        <div>
-            <Link to='/signup'>Sign Up</Link>
-            <Link to='/login'>Login</Link>
-        </div>
+        <>
+            <div className="splash-nav-background">
+                <div className="splash-nav">
+                    <img className="splash-icon" src="assets/penguin-icon.png" alt="Penguin by sandra from the Noun Project"></img>
+                    <h1 className="splash-nav-title">Everquote</h1>
+                    <button className="splash-nav-signup">
+                        <Link to='/signup'>Sign up</Link>
+                    </button>
+                    <h5> or </h5>
+                    <button className="splash-nav-login">
+                        <Link to='/login'>Log in</Link>
+                    </button>
+                </div>
+            </div>
+            <Splash />
+        </>
+
     );
 
 
     return (
-        <>
+        <> 
             {greeting}
         </>
     )
