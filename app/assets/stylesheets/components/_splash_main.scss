@@ -1,9 +1,9 @@
 .splash-background {
-    background-color: #00A82D;
-    // background-image: url({window.splashBackground});
+    // background-color: #00A82D;
+    background-image: asset-data-url("green-splash.jpg");
     //Photo by FOX from Pexels
     //Photo by Stanislav Kondratiev on Unsplash
-    // background-size: cover;
+    background-size: cover;
 }
 
 .splash-main-text {
