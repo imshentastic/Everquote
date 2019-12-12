@@ -3,16 +3,16 @@ import React from 'react';
 import Splash from './splash';
 import Home from '../home/home';
 import Dropdown from './dropdown';
+import NotebookIndexContainer from '../home/notebook_index_container';
 
-export default ({currentUser, logout}) => {
+export default ({currentUser, notebooks, logout}) => {
     const greeting = currentUser ? (
         <div>
-            {/* <img className="splash-icon" src="assets/penguin-icon.png" alt="Penguin by sandra from the Noun Project"></img> */}
             <img className="splash-icon" src={window.penguinImg} alt="Penguin by sandra from the Noun Project" />
             <Home />
             <span>{currentUser.email}, you are logged in.</span>
             <button onClick={logout}>Log Out</button>
-            
+            <NotebookIndexContainer notebooks={notebooks}/>
         </div>
     ) : (
         <>
@@ -22,6 +22,7 @@ export default ({currentUser, logout}) => {
                     <img className="splash-icon" src={window.penguinImg} alt="Penguin by sandra from the Noun Project" />
                     <h1 className="splash-nav-title">Everquote</h1>
                     <Dropdown />
+                    <div className="arrow-down"></div>
                     <button className="splash-nav-signup">
                         <Link to='/signup'>Sign up</Link>
                     </button>
@@ -36,6 +37,7 @@ export default ({currentUser, logout}) => {
             </div>
             
             <Splash />
+            
         </>
 
     );

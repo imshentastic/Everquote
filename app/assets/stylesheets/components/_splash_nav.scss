@@ -54,22 +54,22 @@
    align-self: flex-start;
    justify-self: auto;
    margin-top: 23px;
-   margin-left: 55px;
+   margin-left: 70px;
 
  }
  .splash-nav-dropdown:hover {
    color: rgb(17, 196, 64);
  }
  .splash-nav-dropdown:hover .splash-nav-dropdown-sub {
-   height: 100px;
-   width: 50px;
+  //  height: 100px;
    grid-area: 1 / 3;
+   margin-left: -15px;
    position: absolute;
    align-self: baseline;
    color: black;
    font-weight: bold;
    line-height: 50px;
-   // margin-top: 20px;
+   margin-top: 10px;
    background: white;
    opacity: 1;
    box-shadow: 0 10px 8px 0 rgba(0,0,0,0.2);
@@ -78,6 +78,21 @@
    height: auto;
 
  }
+
+ .arrow-down {
+   width: 0;
+   height: 0;
+   border-left: 3px solid transparent;
+   border-right: 3px solid transparent;
+   border-top: 4px solid rgb(0, 0, 0);
+   margin-top: 30px;
+   margin-left: 160px;
+ }
+
+ .arrow-down:hover {
+  border-top: 4px solid rgb(17, 196, 64);
+  
+}
  
  .splash-nav-signup {
     // display: flex;

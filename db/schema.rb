@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_200903) do
+ActiveRecord::Schema.define(version: 2019_12_12_202706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,26 @@ ActiveRecord::Schema.define(version: 2019_12_11_200903) do
     t.index ["notebook_id"], name: "index_notes_on_notebook_id"
     t.index ["starred"], name: "index_notes_on_starred"
     t.index ["trashed"], name: "index_notes_on_trashed"
+  end
+
+  create_table "notes_tags", id: false, force: :cascade do |t|
+    t.integer "note_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["note_id"], name: "index_notes_tags_on_note_id"
+    t.index ["tag_id"], name: "index_notes_tags_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "hashtag", null: false
+    t.boolean "starred"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hashtag"], name: "index_tags_on_hashtag"
+    t.index ["starred"], name: "index_tags_on_starred"
+    t.index ["user_id"], name: "index_tags_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -21,6 +21,17 @@ class User < ApplicationRecord
 
     before_validation :ensure_session_token
 
+    has_many :notebooks,
+        foreign_key: :user_id
+
+    has_many :notebooked_notes,
+        through: :notebooks,
+        source: :notes
+
+    has_many :tags,
+        foreign_key: :user_id
+
+
     attr_reader :password
 
     

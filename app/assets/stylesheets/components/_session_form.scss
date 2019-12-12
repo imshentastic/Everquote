@@ -77,7 +77,6 @@
     font-size: 15px;
     color: #6a6a6a;
     text-align: center;
-    margin-bottom: 16px;
     cursor: button;
 }
 
@@ -91,18 +90,16 @@
     text-align: center;
     color: #ababab;
     font-size: 14px;
-    overflow: hidden;
+    // overflow: hidden;
     width: 100%;
+    margin-bottom: 7px;
 }
 
 .line::before, .line::after{
     content: '';
     flex: 1;
     border-bottom: 1px solid #d4d3d3;
-    // font-size: 14px;
-    overflow: hidden;
-    // width: 100%;
-    
+    // overflow: hidden;
 }
 
 .line::before {
@@ -157,7 +154,7 @@ form > input {
     padding: 16px 16px;
     border-radius: 7px;
     text-align: center;
-    margin: 7px 0px 14px;
+    margin: 7px 0px 13px;
 
 }
 

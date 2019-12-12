@@ -4,6 +4,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 import {signup, login, logout} from './actions/session_actions';
+import {fetchNotebooks} from './actions/notebook_actions';
+
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;
@@ -31,4 +33,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.signup = signup;
     window.login = login;
     window.logout = logout;
+    window.fetchNotebooks = fetchNotebooks;
 });

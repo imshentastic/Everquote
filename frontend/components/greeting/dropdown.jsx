@@ -28,11 +28,17 @@ class Dropdown extends React.Component {
         >
             Portfolio
             {this.state.open && (
-            <div className="splash-nav-dropdown-sub">
-                <div>LinkedIn</div>
-                <div>GitHub</div>
-                <div>CV/Resume</div>
-            </div>
+                <div className="splash-nav-dropdown-sub">
+                    <div>
+                        <a href="https://www.linkedin.com/in/mike-shen" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+                    </div>
+                    <div>
+                        <a href="https://github.com/imshentastic" rel="noopener noreferrer" target="_blank">Github</a>
+                    </div>
+                    <div>
+                        <a href="#" rel="noopener noreferrer" target="_blank">CV/Resume</a>
+                    </div>
+                </div>
             )}
         </div>
         );
