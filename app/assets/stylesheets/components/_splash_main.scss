@@ -1,5 +1,9 @@
 .splash-background {
-    background-color: #00A82D;
+    // background-color: #00A82D;
+    background-image: url("green-splash.jpg");
+    //Photo by FOX from Pexels
+    //Photo by Stanislav Kondratiev on Unsplash
+    background-size: cover;
 }
 
 .splash-main-text {
@@ -12,8 +16,9 @@
     font-family: Helvetica, Arial, serif;
     -webkit-font-smoothing: antialiased;
     max-width: 1300px;
-    padding: 30px 30px 30px 30px;
+    padding: 30px 40px 30px 40px;
     margin: auto;
+    // margin: auto;
    //  min-height: 875px;
  }
  
@@ -28,6 +33,7 @@
     letter-spacing: 0.06em;
     font-weight: 600;
     // margin-bottom: 30px;
+    max-width: 400px;
     
  }
  
@@ -37,7 +43,7 @@
     // width: 300px;
     margin-block-start: 1.33em;
     margin-block-end: 1.33em;
-    // margin-bottom: 35px;
+    margin-bottom: 0px;
     margin-top: 0px;
     font-weight: lighter;
     grid-column-start: 1;
@@ -46,6 +52,7 @@
     letter-spacing: 0.08em;
     max-width: 568px;
    //  margin-right: 20px;
+   align-self: center;
     
  
  }
@@ -84,20 +91,43 @@
     
 }
 
+@media all and (max-width: 750px) {
+  .splash-main-text {
+    grid-template-rows: 330px auto 40px 58px 50px;
+  }
+}
+
 @media all and (max-width: 600px) {
    .splash-main-text {
    //   flex-wrap: wrap;
       // grid-template-columns: 1fr;
       // grid-template-rows: auto auto auto auto auto 500px;
       // grid-auto-flow: column;
-      display: block;
+      // display: inline-flex;
+      // flex-direction: column;
+      max-width: 510px;
+      padding: 30px 30px 120px 30px;
+      margin: 0px;
+      justify-items: center;
+
    }
  
    [class*='splash-main-'] {
   //  //   width: 100%;
     // grid-column-start: 1;
   //   grid-row-start: 2;
-      margin: 30px;
+      // margin: 30px;
+      font-size: 37px;
+      width: auto;
+      display: inline-block;
+      flex-direction: column;
+      line-height: 45px;
+      letter-spacing: 0px;
+      flex-wrap: wrap;
+      // padding: 26px;
+      // font-weight: none;
+
+
    }
    .splash-main-img {
     // grid-column-start: 2;
@@ -107,9 +137,26 @@
     // margin-top: 100px;
     // width: 110%;
     // height: 110%;
-    width: 400px;
-    margin: auto;
+      width: 400px;
+      margin: 0px;
+      // justify-content: center;
+      
     }
 
+    .splash-main-body {
+      font-size: 20px;
+      line-height: 35px;
+      // width: 100%;
+    }
+
+    .splash-main-signup{
+      // min-width: 100%;
+      width: 100%;
+      height: 58px;
+      font-size: 20px;
+      text-align: center;
+      margin-top: 30px;
+
+    }
 
 }

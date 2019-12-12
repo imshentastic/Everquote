@@ -11,6 +11,7 @@ import {Route, Link, Switch} from 'react-router-dom';
 
 const App = () => (
     <div>
+        {/* <Modal /> */}
         <header>
             {/* <Link to="/">
                 <h1>EverQuote</h1>

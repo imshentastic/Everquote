@@ -12,6 +12,10 @@ class SessionForm extends React.Component {
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
+
     update(field) {
         return (e) => {
             this.setState({[field]: e.target.value});
@@ -19,14 +23,13 @@ class SessionForm extends React.Component {
     }
 
     handleSubmit(e) {
-        // e.preventDefault();
+        e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.formAction(user);
     }
 
     handleDemoSubmit(e) {
-        // e.preventDefault();
-        // formAction = 'login';
+        e.preventDefault();
         const user = {email:"hermionegranger@gmail.com",password:"hogwarts"}
         this.props.login(user);
     }
@@ -53,6 +56,26 @@ class SessionForm extends React.Component {
                 
             </div>
         );
+        let error1;
+        let error2;
+        let error3;
+        let error4;
+        this.props.errors.forEach((error)=>{
+            
+            if (error === "Email is invalid") {
+                error1 = error;
+            }
+            if (error === "Email can't be blank") {
+                error2 = error;
+            }
+            if (error === "The email or password you entered is invalid") {
+                error3 = error;
+            }
+            if (error === "Password is too short (minimum is 6 characters)") {
+                error4 = error;
+            }
+
+        })
 
         
         return (
@@ -80,27 +103,35 @@ class SessionForm extends React.Component {
                             value={this.state.email}
                             onChange={this.update("email")}
                             placeholder="Email address"
-                            required
+
 
                         />
-                    
-                    
+                       <div className="errors">
+                            {error1}
+                        </div>
+                       <div className="errors">
+                            {error2}
+                        </div>
                         <input
                             type="password"
                             name="textfield"
                             value={this.state.password}
                             onChange={this.update("password")}
                             placeholder="Password"
-                            required
+
 
                         />
+                        <div className="errors">
+                            {error3}
+                            {error4}
+                        </div>
                         
                         {/* <button onClick={this.handleSubmit}>{this.props.formType}</button> */}
                         <button className="sessionform-button" onClick={this.handleSubmit}>Continue</button>
                     </form>
 
                     {altForm}
-                    {this.props.errors.join(" | ")}
+                    
                 </div>
                 </div>
         </> 

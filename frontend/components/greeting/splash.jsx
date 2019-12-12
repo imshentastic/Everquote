@@ -8,9 +8,10 @@ export default ({currentUser, logout}) => {
             <div className="splash-background">
                 <div className="splash-main-text">
                     <div className="splash-main-head">
-                        <h2>Your notes.</h2>
-                        <h2>Organized.</h2>
-                        <h2>Effortless</h2>
+                        <h2>Your notes.
+                            Organized.
+                            Effortless.
+                        </h2>
                     </div>
                     <h4 className="splash-main-body">Take notes anywhere. Find information faster. Share ideas with anyone. Meeting notes, web pages, projects, to-do lists—with Evernote as your note taking app, nothing falls through the cracks.</h4>
                     <button className="splash-main-signup">

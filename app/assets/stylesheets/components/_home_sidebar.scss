@@ -1,5 +1,8 @@
 .sidebar {
     display: grid;
+    grid-template-columns: 1fr 1fr minmax(40px, auto);
+    grid-template-rows: repeat(10, 1fr);
+    
 }
 
 .sidebar > button {
