@@ -32,8 +32,10 @@ class Api::NotebooksController < ApplicationController
         @notebook = current_user.notebooks.find(params[:id])
 
         if @notebook.update(notebook_params)
+
             render :show
         else
+
             render json: @notebook.errors.full_messages, status: 422
         end
     end

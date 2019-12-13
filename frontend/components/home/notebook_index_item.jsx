@@ -3,9 +3,14 @@ import { Link } from 'react-router-dom';
 
 const NotebookIndexItem = props => (
   <li>
-    <Link to={`/api/notebooks/${props.notebook.id}`}>{props.notebook.title}</Link>
-    {/* <Link to={`/notebooks/${props.notebook.id}/edit`}>Edit</Link> */}
-    {/* <button onClick={() => props.deleteNotebook(props.notebook.id)}>D</button> */}
+    <div>
+      <Link to={`/api/notebooks/${props.notebook.id}`}>{props.notebook.title}</Link>
+    </div>
+    <div>
+      <Link to={`/api/notebooks/${props.notebook.id}`}>Edit</Link>
+    </div>
+    
+    <button onClick={() => props.deleteNotebook(props.notebook.id)}>Delete Notebook</button>
   </li>
 );
 
