@@ -22,9 +22,9 @@ class NotebookIndex extends React.Component {
     render() {
         const {notebooks, deleteNotebook, updateNotebook} = this.props;
         return(
-            <div>
+            <div className="temporaryindex">
                 <h1>Here are your notebooks:</h1>
-                <ul>
+                <ul >
                     {
                         notebooks.map((notebook) => (
                             <NotebookIndexItem

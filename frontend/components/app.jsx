@@ -17,9 +17,6 @@ const App = () => (
     <div>
         <Modal />
         <header>
-            {/* <Link to="/">
-                <h1>EverQuote</h1>
-            </Link> */}
             
             {/* <GreetingContainer /> */}
             {/* <Splash /> */}
@@ -30,8 +27,8 @@ const App = () => (
             {/* <ProtectedRoute path='/' component={SignupContainer} /> */}
             {/* <GreetingContainer /> */}
             <Route exact path='/' component={GreetingContainer} />
-            {/* <ProtectedRoute exact path='/' component={Home} /> */}
-            <ProtectedRoute exact path='/api/notebooks' component={NotebookIndexContainer}/>
+                {/* <Route exact path='/' component={Home} /> */}
+                {/* <ProtectedRoute exact path='/api/notebooks' component={NotebookIndexContainer}/> */}
             {/* <ProtectedRoute exact path="/api/notebooks/:notebookId" component={NotebookShowContainer} /> */}
             <ProtectedRoute exact path="/api/notebooks/:notebookId" component={EditNotebookFormContainer} />
         </Switch>

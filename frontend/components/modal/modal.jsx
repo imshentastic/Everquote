@@ -3,6 +3,8 @@ import {closeModal} from '../../actions/modal_actions';
 import {connect} from 'react-redux';
 // import NoteContainer from '../home/note';
 import GreetingContainer from '../greeting/greeting_container';
+// import HomeLogout from '../home/home_logout';
+import HomeLogoutContainer from '../home/home_logout_container';
 
 function Modal({modal, closeModal}) {
     if (!modal) {
@@ -11,7 +13,8 @@ function Modal({modal, closeModal}) {
     let component;
     switch (modal) {
         case 'logout':
-            component = <GreetingContainer />;
+            // component = <GreetingContainer />;
+            component = <HomeLogoutContainer />;
             break;
         default:
             return null;

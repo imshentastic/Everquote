@@ -8,11 +8,11 @@ import NotebookIndexContainer from '../home/notebook_index_container';
 export default ({currentUser, notebooks, logout, openModal, closeModal}) => {
     const greeting = currentUser ? (
         <div>
-            <img className="splash-icon" src={window.penguinImg} alt="Penguin by sandra from the Noun Project" />
+            
+            {/* <HomeLogout currentUser={currentUser} logout={logout}/> */}
             <Home />
             <NotebookIndexContainer notebooks={notebooks}/>
-            {/* <span>{currentUser.email}, you are logged in.</span>
-            <button onClick={logout}>Log Out</button> */}
+            
             {/* &nbsp;
             &nbsp; */}
             <button onClick={() => openModal('logout')}>Logout</button>
