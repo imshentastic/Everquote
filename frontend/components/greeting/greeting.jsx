@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom';
 import React from 'react';
 import Splash from './splash';
-import Home from '../home/home';
+import HomeContainer from '../home/home_container';
 import Dropdown from './dropdown';
 import NotebookIndexContainer from '../home/notebook_index_container';
 
@@ -10,8 +10,8 @@ export default ({currentUser, notebooks, logout, openModal, closeModal}) => {
         <div>
             
             {/* <HomeLogout currentUser={currentUser} logout={logout}/> */}
-            <Home />
-            <NotebookIndexContainer notebooks={notebooks}/>
+            <HomeContainer />
+            {/* <NotebookIndexContainer notebooks={notebooks}/> */}
             
             {/* &nbsp;
             &nbsp; */}
@@ -27,13 +27,15 @@ export default ({currentUser, notebooks, logout, openModal, closeModal}) => {
                     <h1 className="splash-nav-title">Everquote</h1>
                     <Dropdown />
                     <div className="arrow-down"></div>
-                    <button className="splash-nav-signup">
-                        <Link to='/signup'>Sign up</Link>
-                    </button>
+                    <Link to='/signup'>
+                        <button className="splash-nav-signup">Sign up
+                        </button>
+                    </Link>
                     <h5> or </h5>
-                    <button className="splash-nav-login">
-                        <Link to='/login'>Log in</Link>
-                    </button>
+                    <Link to='/login'>
+                        <button className="splash-nav-login">Log in
+                        </button>
+                    </Link>
 
  
                     

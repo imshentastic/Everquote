@@ -22,8 +22,9 @@ class NotebookIndex extends React.Component {
     render() {
         const {notebooks, deleteNotebook, updateNotebook} = this.props;
         return(
-            <div className="temporaryindex">
-                <h1>Here are your notebooks:</h1>
+            <div className="modal-notebook-content">
+                <h1>NOTEBOOKS</h1>
+                <h2>Find a notebook</h2>
                 <ul >
                     {
                         notebooks.map((notebook) => (

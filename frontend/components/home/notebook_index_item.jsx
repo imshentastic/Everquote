@@ -2,15 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NotebookIndexItem = props => (
-  <li>
-    <div>
-      <Link to={`/api/notebooks/${props.notebook.id}`}>{props.notebook.title}</Link>
-    </div>
-    <div>
-      <Link to={`/api/notebooks/${props.notebook.id}`}>Edit</Link>
-    </div>
+  <li class="modal-notebook-content-list">
+
+      <Link to={`/api/notebooks/${props.notebook.id}`}>
+        {props.notebook.title}
+        <h4>notes</h4>
+        <button class="modal-notebook-content-list-delete" onClick={() => props.deleteNotebook(props.notebook.id)}>D</button>
+        <hr/>
+      </Link>
+      
     
-    <button onClick={() => props.deleteNotebook(props.notebook.id)}>Delete Notebook</button>
+      
   </li>
 );
 

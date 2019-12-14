@@ -14,9 +14,10 @@ export default ({currentUser, logout}) => {
                         </h2>
                     </div>
                     <h4 className="splash-main-body">Take notes anywhere. Find information faster. Share ideas with anyone. Meeting notes, web pages, projects, to-do lists—with Evernote as your note taking app, nothing falls through the cracks.</h4>
-                    <button className="splash-main-signup">
-                        <Link to='/signup' >SIGN UP FOR FREE</Link>
-                    </button>
+                    <Link to='/signup' >
+                        <button className="splash-main-signup">SIGN UP FOR FREE
+                        </button>
+                    </Link>
                     <img className="splash-main-img"src={window.splashImg} alt=""/>
                     
                 </div>

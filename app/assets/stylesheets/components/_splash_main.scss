@@ -10,7 +10,7 @@
     
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 270px auto 10px 58px 50px;
+    grid-template-rows: 270px auto 10px 58px 92px;
     grid-gap: 0px 20px;
     color: white;
     font-family: Helvetica, Arial, serif;
@@ -25,7 +25,7 @@
  .splash-main-head {
     margin-block-start: 0.57em;
     margin-block-end: 0.67em;
-    margin-top: 20px;
+    margin-top: 32px;
     font-size: 50px;
     grid-column-start: 1;
     grid-row-start: 1;
@@ -68,10 +68,12 @@
     font-size: 15px;
     grid-column-start: 1;
     grid-row-start: 4;
+    height: 58px;
     width: 240px;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.06em;
+    margin-top: 30px;
   }
 
 .splash-main-signup:hover {

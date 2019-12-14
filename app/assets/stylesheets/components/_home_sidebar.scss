@@ -7,126 +7,235 @@
     // grid-auto-flow: column;
     // grid-row-gap: 10px;
     // margin: auto;
-    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    // justify-content: flex-end;
+    width: 800px;
+    // background-color: blue;
+    // width: 500px;
 }
+
 
 .sidebar {
-    height: 100vh;
-    width: 80px;
     background-color: #F8F8F8;
-    position: absolute;
     z-index: 10;
     border: 1px solid #ECECEC;
-}
-
-.indexbar {
-    height: 100vh;
-    width: 80px;
-    background-color: #F8F8F8;
-    position: absolute;
-    left: 80px;
-    z-index: 4;
-    border: 1px solid #ECECEC;
-}
-
-.taskbar {
-    height: 100vh;
-    width: 80px;
-    background-color: #F8F8F8;
-    left: 430px;
-    position: absolute;
-    z-index: 4;
-    border: 1px solid #ECECEC;
-}
-.grid {
-    
-    // height: 100%;
-    
-    // margin: 12px;
     // z-index: 200;
     // box-sizing: border-box;
     // position: absolute;
     // justify-self: center;
     // align-self: center;
     display: grid;
-    grid-template-columns: 80px 350px auto;
-
-    grid-template-rows: 70px repeat(3, 60px) 70px repeat(3, 60px) auto;
-    grid-auto-flow: column;
-    grid-row-gap: 10px;
+    grid-template-columns: 73px;
+    grid-template-rows: 83px repeat(3, 48px) 95px repeat(3, 48px) auto;
+    height: 100vh;
+    width: 73px;
+    // grid-auto-flow: column;
+    // grid-row-gap: 10px;
     justify-items: center;
-    align-items: center;
+    align-items: baseline;
     
     
 }
 
-.grid-icon {
-    grid-column-start: 1;
+.sidebar-icon {
+    // grid-column-start: 1;
     grid-row-start: 1;
-    height: 36px;
-    width: 36px;
-    align-self: baseline;
+    height: 30px;
+    width: 30px;
+    // align-self: baseline;
     // margin-top: 36px; 
-    padding: 12px 12px 24px 17px;
+    // padding: 12px 12px 24px 17px;
     z-index: 100;
-    
+    margin-top: 12px;
 }
 
-.grid > button {
+.sidebar > button {
     grid-column: 1;
 
-    margin: 12px 12px 24px 17px;
+    // margin: 12px 12px 24px 17px;
     // margin-top: 30px;
     // margin-top: 40px;
    
     // justify-self: center;
     // align-self: center;
     border-radius: 50%;
-    border: 1px solid #ECECEC;
-    height: 40px;
-    width: 40px;
+    
+    height: 36px;
+    width: 36px;
     // opacity: 0;
     transition: opacity 0.25s ease-in-out;
     cursor: pointer;
-    background-color: #EEF9F2;
-    color: #2DBE60;
-    font-size: 10px;
+    
+    font-size: 18px;
     text-align: center;
     z-index: 100;
-
+}
+.b1 {
+    border: 1px solid #ECECEC;
+    background-color: #FFFFFF;
+    color: #2DBE60;
+}
+.b2 {
+    color: #2DBE60;
+    background-color: #F8F8F8;
+    border: none;
 }
 
-.grid > button:hover {
+.sidebar > button:hover {
     background-color: #2DBE60;
-    color: white;
+    color: #FFFFFF;
 }
 
-// .button-1 {
-//     grid-row-start: 2;
-// }
-// .button-2 {
-//     grid-row-start: 3;
-// }
-// .button-3 {
-//     grid-row-start: 4;
-// }
-// .button-4 {
-//     grid-row-start: 5;
-// }
-// .button-5 {
-//     grid-row-start: 6;
-// }
-// .button-6 {
-//     grid-row-start: 7;
-// }
-// .button-7 {
-//     grid-row-start: 8;
-// }
-// .button-8 {
-//     grid-row-start: 9;
-// }
+.indexbar {
+    height: 100vh;
+    width: 350px;
+    background-color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 350px;
+    grid-template-rows: 74px 61px;
+    // z-index: 100;
+    z-index: 4;
+    border: 1px solid #ECECEC;
+    justify-content: center;
+}
 
-.notesbar {
-    grid-column: 2;
+.modal-notebook-content {
+    display: grid;
+    grid-template-columns: 456px;
+    grid-template-rows: 70px 50px;
+    height: 100vh;
+    border: 1px solid #ECECEC;
+    background-color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    font-family: Arial, Helvetica, sans-serif;
+    
+
+}
+.modal-notebook-content > h1 {
+    font-size: 21px;
     grid-row-start: 1;
+    padding: 15px;
+    color: #878787;
+    text-transform: uppercase;
+    
+    letter-spacing: 0.3px;
+    height: 10;
+    font-weight: lighter;
+}
+.modal-notebook-content > h2 {
+    font-size: 13px;
+    grid-row-start: 2;
+    background-color: transparent;
+    border: 1px solid #E1E1E1;
+    border-radius: 2px;
+    outline: none;
+    box-sizing: border-box;
+    color: #E1E1E1;
+    // font-family: "Helvetica Neue", sans-serif;
+    font-weight: 100px;
+    text-align: center;
+    padding: 10px 40px 9px 8px;
+    margin-bottom: 12px;
+    height: 37px;
+    width: 358px;
+    justify-self: center;
+
+    
+    // height: 16px;
+    // justify-items: center;
+    // letter-spacing: 0.5px;
+}
+
+.modal-notebook-content-list {
+    display: flex;
+    // grid-template-rows: repeat(10, 70px);
+    // grid-auto-flow: row;
+    // border-top: 1px solid #ECECEC;
+    // border-width: 90%;
+    height: 126px;
+    // width: 100%;
+    
+    
+    
+}
+
+.modal-notebook-content-list > * {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    color: #4A4A4A;
+    // padding: 15px;
+    padding: 20px;
+    height: 90px;
+    width: 100%;
+    line-height: 18px;
+    flex-direction: column;
+    
+    
+}
+.modal-notebook-content-list > *:hover {
+    background-color: #40BC6C;
+}
+.modal-notebook-content-list > * > h4 {
+    font-size: 12px;
+    color: #878787;
+}
+.modal-notebook-content-list-hr {
+    border: 0.5px solid #ECECEC;
+    width: 96%;
+    margin-top: 55px;
+}
+
+
+// .modal-notebook-content-list-delete {
+
+.modal-notebook-content-list > * > button {
+    // display: flex;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    // opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    z-index: 100;
+    visibility: hidden;
+    background-color: grey;
+    color: white;
+    // margin-left: 400px;
+    // align-self: center;
+    align-self: flex-end;
+    flex-direction: row;
+}
+
+.modal-notebook-content-list > *:hover .modal-notebook-content-list-delete {
+    visibility: visible;
+    
+}
+
+.modal-notebook-content-list-delete:hover {
+    background-color: white;
+    color: grey;
+}
+
+.modal-notebook-content-list > *:hover .modal-notebook-content-list-hr{
+    color: #40BC6C;
+}
+
+.taskbar {
+    height: 100vh;
+    width: auto;
+    background-color: #F8F8F8;
+    display: grid;
+    z-index: 4;
+    
+    // border: 1px solid #ECECEC;
+}
+
+.test1 {
+    height: auto;
+    width: auto;
 }
