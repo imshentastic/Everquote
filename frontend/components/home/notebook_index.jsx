@@ -24,7 +24,9 @@ class NotebookIndex extends React.Component {
         return(
             <div className="modal-notebook-content">
                 <h1>NOTEBOOKS</h1>
+                
                 <h2>Find a notebook</h2>
+                <div></div>
                 <ul >
                     {
                         notebooks.map((notebook) => (

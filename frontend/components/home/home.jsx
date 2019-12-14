@@ -17,9 +17,7 @@ export default ({currentUser, notebooks, logout, openModal, closeModal}) => {
                     <button className="b2">o</button>
                     <button className="b2" onClick={() => openModal('notebooks')}>o</button>
                     
-                    <button className="b2">o</button>
-                
-                    
+                    <button className="b2">o</button>  
                 </div>
 
                 <div className="indexbar">
@@ -39,7 +37,6 @@ export default ({currentUser, notebooks, logout, openModal, closeModal}) => {
     return (
         <>
             {home}
-            {/* <GreetingContainer /> */}
         </>
     )
 }

@@ -27,7 +27,6 @@ class NotebookForm extends React.Component {
   render() {
 
     return (
-        // <div className="sessionform-wrapper">
       <div className="sessionform">
         <h2>{this.props.formType} FORM</h2>
         <form className="sessionform-form">
@@ -47,7 +46,6 @@ class NotebookForm extends React.Component {
         
         </form>
       </div>
-    //   </div>
     );
   }
 }
