@@ -8,7 +8,7 @@ const NotebookIndexItem = props => (
         {props.notebook.title}
         <h4>notes</h4>
         <button class="modal-notebook-content-list-delete" onClick={() => props.deleteNotebook(props.notebook.id)}>D</button>
-        <hr/>
+        <hr class="modal-notebook-content-list-hr"/>
       </Link>
       
     
