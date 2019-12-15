@@ -34,3 +34,21 @@
     background: #FFFFFF;
     border: 2px solid #F2F2F2;
   }
+
+  .modal-background3 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 12;
+  }
+  
+  .modal-child3 {
+    // display: flex;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+  }

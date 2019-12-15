@@ -17,7 +17,7 @@ class NotebookForm extends React.Component {
     this.props.formAction(this.state);
     // let history = useHistory();
     // useHistory.push('/');
-    //close modal
+    //close modal and force url here
   }
 
   update(field) {
@@ -29,22 +29,22 @@ class NotebookForm extends React.Component {
     return (
       <div className="sessionform">
         <h2>{this.props.formType} FORM</h2>
-        <form className="sessionform-form">
+        <form className="sessionform-form" onSubmit={this.handleSubmit}>
             <label>
-
-                Title: 
                 <input
                     type='text'
                     value={this.state.title}
                     onChange={this.update('title')}
-                    placeholder="Enter your title here"
+                    placeholder="Title your notebook"
                 />
             </label>
 
-            <button className="sessionform-button" onClick={this.handleSubmit}>{this.props.formType}</button>
-          
-        
+            
+            <button className="sessionform-button" >{this.props.formType}</button>
         </form>
+        {/* <form>
+          <button className="sessionform-button-cancel" onClick={this.props.closeModal}>Cancel</button>
+        </form> */}
       </div>
     );
   }

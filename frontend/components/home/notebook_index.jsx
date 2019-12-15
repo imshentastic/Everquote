@@ -20,12 +20,18 @@ class NotebookIndex extends React.Component {
     //   }
 
     render() {
-        const {notebooks, deleteNotebook, updateNotebook} = this.props;
+        const {notebooks, deleteNotebook, updateNotebook, openModal} = this.props;
         return(
             <div className="modal-notebook-content">
                 <h1>NOTEBOOKS</h1>
-                
-                <h2>Find a notebook</h2>
+                <button className="create-notebook" onClick={() => openModal('createNotebook')}>C</button>
+                {/* <h2>Find a notebook</h2> */}
+                <input
+                    type='text'
+                    // value={this.state.title}
+                    // onChange={this.update('title')}
+                    placeholder="Find a notebook"
+                />
                 <div></div>
                 <ul >
                     {
@@ -40,7 +46,7 @@ class NotebookIndex extends React.Component {
                         ))
                     }
                 </ul>
-                <CreateNotebookFormContainer/>
+                {/* <CreateNotebookFormContainer/> */}
                 {/* <Modal /> */}
                 
             </div>
