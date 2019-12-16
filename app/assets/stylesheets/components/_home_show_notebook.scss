@@ -22,7 +22,7 @@
     left: 75px;
     margin: 0px 0px; /* 15% from the top and centered */
     // border: 1px solid #888;
-    width: 350px; /* Could be more or less, depending on screen size */
+    width: 353px; /* Could be more or less, depending on screen size */
     height: 152px;
     z-index: 25;
     font-family: Helvetica, sans-serif;
@@ -89,6 +89,11 @@
 
   .notebookform-edit-background {
     display: flex;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.95);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
   }
   .notebookform-edit {
     position: absolute; /* Stay in place */
@@ -99,8 +104,8 @@
     background:  #FFFFFF;
     // background-color: blue;
     // border: 2px solid #F2F2F2;
-    top: 33%;
-    left: 33%;
+    top: 18%;
+    left: 28%;
     width: auto; /* Full width */
     height: auto; /* Full height */
     // min-height: 600px;

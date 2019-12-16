@@ -3,23 +3,26 @@ import React from 'react';
 import GreetingContainer from '../greeting/greeting_container';
 import NoteIndexContainer from '../home/note/note_index_container';
 
-export default ({currentUser, notebooks, logout, openModal, closeModal}) => {
+export default ({currentUser, notebooks, logout, openModal, closeModal, toggleModal}) => {
     const home = (
         <>
             <div className="wrapper">
                 <Link to="/" className="sidebar">
                     <img className="sidebar-icon" src={window.penguinImg} alt="Penguin" />
-                    <button className="b1">x</button>
-                    <button className="b1">x</button>
-                    <button className="b1">x</button>
-                    <button className="b1">x</button>
-                    <button className="b2">o</button>
-                    <button className="b2">o</button>
-                    {/* <Link to={`/api/notebooks`}>o */}
-                    <button className="b2" onClick={() => openModal('notebooks')}>o</button>
-                    {/* </Link> */}
+                    <button className="b1" onClick={() => openModal('createNote')}></button>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <button className="b5" onClick={() => toggleModal('starred')}>o</button>
+            
                     
-                    <button className="b2">o</button>  
+                    <button className="b6" onClick={() => toggleModal('notes')}></button>  
+                    
+                            
+                    <button className="b7" onClick={() => toggleModal('notebooks')}></button>
+
+                    
+                    <button className="b8">o</button>  
                 </Link>
 
                 <Link to="/" className="indexbar">

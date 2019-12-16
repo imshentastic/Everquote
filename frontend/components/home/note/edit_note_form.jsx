@@ -13,7 +13,7 @@ class EditNoteForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-    //componentDidMount() {
+
   componentDidMount() {
     this.props.fetchNote(this.props.match.params.noteId);
   }
@@ -39,7 +39,7 @@ class EditNoteForm extends React.Component {
     const { formAction, formType, note } = this.props;
     if (!note) return null;
     return (
-      <div classNAme="noteform-edit-background">
+      <div className="noteform-edit-background">
         <div className="noteform-edit">
           <div>i</div>
           <h2>NOTE INFO</h2>

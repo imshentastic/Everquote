@@ -2,17 +2,25 @@ class Api::NotesController < ApplicationController
     before_action :require_logged_in!
 
     def index
-        # @notes = current_user.notebooks.notes.all
+
+        # @notebook = Notebook.find(params[:notebook_id])
+        # @notes = Note.find(params[:note_id])
         @notes = Note.all
+        # where(current_user.notebooks.id.include?())
+        # findby curent current_user
+        # User.includes notebooks
     end
 
     def show
-        @note = current_user.notebooks.notes.find(params[:id])
+        # @note = current_user.notebooks.notes.find(params[:id])
+        @note = Note.find(params[:id])
     end
 
     def create
-        @note = current_user.notes.new(note_params)
+        @notebook = Notebook.find(params[:notebook_id])
+        @note = Note.new(notebook_id: params[:notebook_id])
 
+        
         if @note.save
             render :show
         else
@@ -40,6 +48,6 @@ class Api::NotesController < ApplicationController
     private
 
     def note_params
-        params.require(:note).permit(:heading, :body, :notebook_id, :starred, :trashed)
+        params.require(:note).permit(:heading, :body, :notebook_id, :starred, :trashed, :updated_at)
     end
 end

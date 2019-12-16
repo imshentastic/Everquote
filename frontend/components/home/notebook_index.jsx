@@ -2,6 +2,7 @@ import React from 'react';
 import NotebookIndexItem from './notebook_index_item';
 // import GreetingContainer from '../greeting/greeting_container';
 import CreateNotebookFormContainer from './create_notebook_form_container';
+import {Link} from 'react-router-dom';
 
 
 class NotebookIndex extends React.Component {
@@ -22,7 +23,7 @@ class NotebookIndex extends React.Component {
     render() {
         const {notebooks, deleteNotebook, updateNotebook, openModal, closeModal} = this.props;
         return(
-            <div className="modal-notebook-content">
+            <Link to={`/api/notebooks`} className="modal-notebook-content">
                 <h1>NOTEBOOKS</h1>
                 <button className="create-notebook-button" onClick={() => openModal('createNotebook')}>C</button>
                 {/* <h2>Find a notebook</h2> */}
@@ -50,7 +51,7 @@ class NotebookIndex extends React.Component {
                 {/* <CreateNotebookFormContainer/> */}
                 {/* <Modal /> */}
                 
-            </div>
+            </Link>
         );
     }
   

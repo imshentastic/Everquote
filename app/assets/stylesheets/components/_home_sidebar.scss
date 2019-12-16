@@ -34,6 +34,7 @@
     // grid-row-gap: 10px;
     justify-items: center;
     align-items: baseline;
+    cursor: unset;
     
     
 }
@@ -71,16 +72,11 @@
     text-align: center;
     z-index: 100;
 }
-.b1 {
-    border: 1px solid #ECECEC;
-    background-color: #FFFFFF;
-    color: #2DBE60;
+
+.sidebar > button:focus {
+    border: 1px solid #2DBE60;
 }
-.b2 {
-    color: #2DBE60;
-    background-color: #F8F8F8;
-    border: none;
-}
+
 
 .sidebar > button:hover {
     background-color: #2DBE60;
@@ -103,7 +99,7 @@
 
 .modal-notebook-content {
     display: grid;
-    position: absolute;
+    position: fixed;
     grid-template-columns: 456px;
     grid-template-rows: 80px 50px 1px;
     height: 100vh;
@@ -111,7 +107,9 @@
     background-color: #FFFFFF;
     -webkit-font-smoothing: antialiased;
     font-family: Arial, Helvetica, sans-serif;
-    z-index: 11;
+    z-index: 1;
+    left: 73px;
+    cursor: unset;
 
 }
 
@@ -222,12 +220,11 @@
 
 // .modal-notebook-content-list-delete {
 
-.modal-notebook-content-list > * > button {
+.modal-notebook-content-list > * > a {
     // display: flex;
     border-radius: 50%;
     height: 30px;
     width: 30px;
-    // opacity: 0;
     transition: opacity 0.25s ease-in-out;
     cursor: pointer;
     font-size: 18px;
@@ -270,7 +267,56 @@
     // border: 1px solid #ECECEC;
 }
 
-// .test1 {
-//     height: auto;
-//     width: auto;
-// }
+.b1 {
+    background-image: asset-data-url("blackcross.png");
+    background-size: 55%;
+    // height: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    // border: 1px solid #ECECEC;
+    border: 1px solid #ECECEC;
+    background-color: #FFFFFF;
+    
+
+}
+.b1:hover {
+    background-image: asset-data-url("whitecross.png");
+}
+
+
+.b2 {
+    color: #2DBE60;
+    // background-color: #F8F8F8;
+    border: 1px solid #ECECEC;
+    background-color: #FFFFFF;
+    // border: none;
+}
+
+.b6 {
+    background-image: asset-data-url("greennote.png");
+    background-size: 55%;
+    height: 50px;
+    width: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    // border: 1px solid #ECECEC;
+ 
+}
+
+.b6:hover {
+    background-image: asset-data-url("whitenote.png");
+}
+
+.b7 {
+    background-image: asset-data-url("greennotebook.png");
+    background-size: 55%;
+    // height: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    // border: 1px solid #ECECEC;
+ 
+}
+
+.b7:hover {
+    background-image: asset-data-url("whitenotebook.png");
+}

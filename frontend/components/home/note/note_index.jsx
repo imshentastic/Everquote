@@ -2,12 +2,12 @@ import React from 'react';
 import NoteIndexItem from './note_index_item';
 
 import CreateNoteFormContainer from './create_note_form_container';
+import {Link} from 'react-router-dom'
 
 
 class NoteIndex extends React.Component {
 
     componentDidMount() {
-            // debugger
             this.props.fetchNotes();
     }
 
@@ -15,10 +15,9 @@ class NoteIndex extends React.Component {
     render() {
         const {notes, deleteNote, updateNote, openModal, closeModal} = this.props;
         return(
-            <div className="modal-note-content">
+            <Link to="/api/notes" className="modal-note-content">
                 <h1>NOTES</h1>
-                <button className="create-note-button" onClick={() => openModal('createNote')}>C</button>
-                {/* <h2>Find a note</h2> */}
+                {/* <button className="create-note-button" onClick={() => openModal('createNote')}>C</button> */}
                 
                 <div></div>
                 <ul >
@@ -30,14 +29,13 @@ class NoteIndex extends React.Component {
                                 updateNote={updateNote}
                                 closeModal = {closeModal}
                                 key={note.id*1}
-
                             />
                         ))
                     }
                 </ul>
 
                 
-            </div>
+            </Link>
         );
     }
   

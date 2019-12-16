@@ -27,19 +27,8 @@ function Modal({modal, closeModal}) {
         //     ModalTypeChild="modal-child";
         //     clickAction=closeModal;
         //     break;
-        case 'notes':
-            component = <NoteIndexContainer />;
-            ModalTypeBackground="modal-background2";
-            ModalTypeChild="modal-child2";
-            clickAction=closeModal;
-            break;
-        case 'createNote':
-            component = <CreateNoteFormContainer />;
-            component2 = <NoteIndexContainer />;
-            ModalTypeBackground="modal-background3";
-            ModalTypeChild="modal-child3";
-            clickAction=closeModal;
-            break;
+        
+        
             //need to close Modal and open index, or index perist
         // case 'editNote':
         //     component = <EditNoteFormContainer/>;

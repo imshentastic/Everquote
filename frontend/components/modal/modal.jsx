@@ -1,20 +1,22 @@
 import React from 'react';
 import {closeModal, closeCreateNotebooksModal} from '../../actions/modal_actions';
 import {connect} from 'react-redux';
-// import NoteContainer from '../home/note';
-import GreetingContainer from '../greeting/greeting_container';
-// import HomeLogout from '../home/home_logout';
+
 import HomeLogoutContainer from '../home/home_logout_container';
 import NotebookIndexContainer from '../home/notebook_index_container';
 import CreateNotebookFormContainer from '../home/create_notebook_form_container';
+import CreateNoteFormContainer from '../home/note/create_note_form_container';
+import NoteIndexContainer from '../home/note/note_index_container';
 // import EditNotebookFormContainer from '../home/edit_notebook_form_container';
+
+// import ShowStarredContainer from '../home/show_starred_container';
 
 function Modal({modal, closeModal}) {
     if (!modal) {
         return null;
     }
     let component;
-    let component2;
+    // let component2;
     let ModalTypeBackground;
     let ModalTypeChild;
     let clickAction;
@@ -35,13 +37,36 @@ function Modal({modal, closeModal}) {
             break;
         case 'createNotebook':
             component = <CreateNotebookFormContainer />;
-            component2 = <NotebookIndexContainer />;
+            // component2 = <NotebookIndexContainer />;
             ModalTypeBackground="modal-background3";
             ModalTypeChild="modal-child3";
             clickAction=closeModal;
             break;
+        case 'createNote':
+            component = <CreateNoteFormContainer />;
+            // component2 = <NoteIndexContainer />;
+            ModalTypeBackground="modal-background3";
+            ModalTypeChild="modal-child3";
+            clickAction=closeModal;
+            break;
+        
             //need to close Modal and open index, or index perist
-        // case 'editNotebook':
+
+        // case 'starred':
+        //     component = <ShowStarredContainer />;
+        //     ModalTypeBackground="modal-background3";
+        //     ModalTypeChild="modal-child3";
+        //     clickAction=closeModal;
+        //     break;
+
+        case 'notes':
+            component = <NoteIndexContainer />;
+            // ModalTypeBackground="modal-background2";
+            // ModalTypeChild="modal-child2";
+            clickAction=closeModal;
+            break;
+
+            // case 'editNotebook':
         //     component = <EditNotebookFormContainer/>;
         //     // component2 = null;
         //     ModalTypeBackground="modal-background5";
@@ -56,13 +81,10 @@ function Modal({modal, closeModal}) {
     return (
         <>
             {/* <div className="modal-background4" onClick = {clickAction}> */}
-            <div className="modal-child4" >
-                    
-                        {component2}
-                    
-                                
-            </div>
-                {/* </div> */}
+            {/* <div className="modal-child4" >
+                        {component2}         
+            </div> */}
+            {/* </div> */}
 
             <div className={`${ModalTypeBackground}`} onClick = {clickAction}>
                 

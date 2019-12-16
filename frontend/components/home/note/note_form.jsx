@@ -29,18 +29,32 @@ class NoteForm extends React.Component {
 
     return (
       <div className="noteform">
-        <img src={window.penguinImg} alt="Penguin" />
-        <h2>{this.props.formType}</h2>
+        
         <div> </div>
         <form className="noteform-form" onSubmit={this.handleSubmit}>
-            {/* <label> */}
+
+                <input
+                    type='number'
+                    value={this.state.notebookId}
+                    onChange={this.update('notebook_id')}
+                    placeholder="Type updated notebook_id"
+                />
+
                 <input
                     type='text'
-                    value={this.state.title}
-                    onChange={this.update('title')}
+                    value={this.state.heading}
+                    onChange={this.update('heading')}
                     placeholder="Title your note"
                 />
-            {/* </label> */}
+                <textarea
+                    value={this.state.body}
+                    onChange={this.update('body')}
+                    placeholder="Drag files here or just start typing..."
+                    cols="70"
+                    rows="5"
+                ></textarea>
+                
+      
 
             <div>
               <button className="noteform-button-cancel" onClick={this.props.closeModal}>Cancel</button>
