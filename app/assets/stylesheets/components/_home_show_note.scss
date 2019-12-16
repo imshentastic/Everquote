@@ -1,0 +1,130 @@
+.home-show-note {
+    // display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 20; /* Sit on top */
+    left: 600;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    // background-color: rgb(0,0,0); /* Fallback color */
+    background-color: transparent;
+    margin-left: 75px;
+    
+  }
+  
+  /* Modal Content/Box */
+  .home-show-note-content {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    left: 75px;
+    margin: 0px 0px; /* 15% from the top and centered */
+    // border: 1px solid #888;
+    width: 350px; /* Could be more or less, depending on screen size */
+    height: 152px;
+    z-index: 25;
+    font-family: Helvetica, sans-serif;
+    font-weight: lighter;
+    background-color: #393D41;
+    text-align: center;
+  }
+
+  .edit-note-button {
+    position: absolute;
+   
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    transition: opacity 0.25s ease-in-out;
+    cursor: pointer;
+    font-size: 18px;
+    // text-align: center;
+    z-index: 8;
+    color: grey;
+    border: 1px solid grey;
+    font-weight: bolder;
+    align-self: flex-end;
+}
+
+.home-show-note-content > h1 {
+  color: #fff;
+  text-overflow: ellipsis;
+  font-size: 18px;
+  align-self: center;
+  // text-align: center;
+  margin-top: 28px;
+  letter-spacing: 0.6px;
+}
+.home-show-note-content > h2 {
+  background-color:#212426;
+  color: #62eb92;
+  align-self: center;
+  margin-top: 24px;
+  font-size: 13px;
+  padding: 2px 15px 0;
+  box-sizing: border-box;
+  height: 23px;
+  border-radius: 5px;
+}
+
+  
+  // /* The Close Button */
+  // .close {
+  //   color: #aaa;
+  //   float: right;
+  //   font-size: 28px;
+  //   font-weight: bold;
+  // }
+  
+  // .close:hover,
+  // .close:focus {
+  //   color: black;
+  //   text-decoration: none;
+  //   cursor: pointer;
+  // }
+
+  .noteform-edit-background {
+    display: flex;
+  }
+  .noteform-edit {
+    position: absolute; /* Stay in place */
+    text-align: center;
+    // align-self: flex-end;
+    z-index: 25; /* Sit on top */
+    // background: #FFFFFF;
+    background:  #FFFFFF;
+    // background-color: blue;
+    // border: 2px solid #F2F2F2;
+    top: 33%;
+    left: 33%;
+    width: auto; /* Full width */
+    height: auto; /* Full height */
+    // min-height: 600px;
+    overflow: auto; /* Enable scroll if needed */
+    // background-color: rgb(0,0,0); /* Fallback color */
+    // margin-left: 75px;
+    line-height: 40px;
+    font-family: 13px;
+  }
+
+  .noteform-edit > div {
+    font-size: 20px;
+  }
+
+  .noteform-edit > h2 {
+    letter-spacing: 1px;
+  }
+
+  .noteform-edit > h3 {
+    text-align: start;
+    font-size: 13px;
+    color: #999999;
+    border-bottom: 1px solid #999999;
+  
+  }
+
+  

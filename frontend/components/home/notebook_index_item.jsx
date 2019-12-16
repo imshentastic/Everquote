@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const NotebookIndexItem = props => (
   <li className="modal-notebook-content-list">
       
-      <Link to={`/api/notebooks/${props.notebook.id}`} id="myBtn">
+      <Link to={`/api/notebooks/${props.notebook.id}`}>
     
       {/* <button className="modal-notebook-content-list-delete" onClick={() => {openModal('updateNotebook'), props.updateNotebook(props.notebook.id)}}>U</button> */}
         

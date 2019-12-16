@@ -1,0 +1,105 @@
+.noteform {
+    width: 650px;
+    height: 311px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 45px;
+    margin-bottom: 84px;
+}
+
+.noteform > img {
+        height: 40px;
+        width: 40px;
+}
+.noteform > h2 {
+    
+    font-size: 13px;
+    padding-top: 7px;
+    padding-bottom: 4px;
+    
+    color: #8B8B8B;
+    
+    text-transform: uppercase;
+    
+    font-family: "Helvetica Neue", sans-serif;
+    letter-spacing: 1px;
+}
+.noteform > div {
+    border-top: 1px solid #D9D9D9;
+    width: 120px;
+    margin-bottom: 38px;
+}
+
+
+.noteform-form {
+    display: flex;
+    flex-direction: column;
+}
+.noteform-form > input {
+    font-size: 30px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    margin-top: 14px;
+    margin-bottom: 80px;
+    justify-self: center;
+    color: #383838;
+    font-weight: lighter;
+    
+}
+
+.noteform-form > input::placeholder {
+    font-family: Helvetica, sans-serif;
+    color: rgb(204, 204, 204);
+    font-weight: lighter;
+    letter-spacing: 0.3px;
+}
+
+.noteform-form > div {
+    display: flex;
+    // flex-direction: row;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.noteform-button-cancel {
+    // margin-top: 10px;
+    // background: #008A2D;
+    background: #D9D9D9;
+    color: #818181;
+    max-width: 280px;
+    height: 33px;
+    width: 180px;
+    // padding: 16px 16px;
+    border-radius: 5px;
+    text-align: center;
+    // margin: 7px 0px 13px;
+    line-height: 10px;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 13px;
+    margin: 0px 4px;
+
+}
+.noteform-button-cancel:hover {
+    color: #606060;
+}
+.noteform-button {
+    // background: #008A2D;
+    background: #2DBE60;
+    color: white;
+    max-width: 280px;
+    height: 33px;
+    width: 180px;
+    border-radius: 5px;
+    text-align: center;
+    // margin: 7px 0px 13px;
+    line-height: 10px;
+    font-family: "Helvetica Neue", sans-serif;
+    margin: 0 4px;
+    font-size: 13px;
+
+}
+
+.noteform-button:hover {
+    background: #4FA956;
+}

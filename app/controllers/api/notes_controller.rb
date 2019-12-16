@@ -2,11 +2,12 @@ class Api::NotesController < ApplicationController
     before_action :require_logged_in!
 
     def index
-        @notes = current_user.notes.all
+        # @notes = current_user.notebooks.notes.all
+        @notes = Note.all
     end
 
     def show
-        @notebook = current_user.notes.find(params[:id])
+        @note = current_user.notebooks.notes.find(params[:id])
     end
 
     def create

@@ -4,7 +4,7 @@ import { fetchNotebook } from '../../actions/notebook_actions';
 import {openModal, closeModal} from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    const notebook = state.entities.notebooks[ownProps.match.params.notebookId]
+    const notebook = state.entities.notebooks[ownProps.match.params.notebookId];
     // const notebook = state.entities.notebooks[state.entities.notebooks.notebookId]
     return {
         notebook

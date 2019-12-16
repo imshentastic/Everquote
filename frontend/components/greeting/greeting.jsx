@@ -3,12 +3,13 @@ import React from 'react';
 import Splash from './splash';
 import HomeContainer from '../home/home_container';
 import Dropdown from './dropdown';
-import NotebookIndexContainer from '../home/notebook_index_container';
+import NoteIndexContainer from '../home/note/note_index_container';
 
 export default ({currentUser, notebooks, logout, openModal, closeModal}) => {
     const greeting = currentUser ? (
-        <div>
+        <div className="greetingwrapper">
             <HomeContainer />
+            <NoteIndexContainer />
             {/* <NotebookIndexContainer notebooks={notebooks}/> */}
             <button onClick={() => openModal('logout')}>Logout</button>
             {/* <div onClick={closeModal} className="close-x">X</div> */}

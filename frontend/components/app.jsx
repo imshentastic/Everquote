@@ -5,7 +5,10 @@ import SignupContainer from './session/signup_container';
 import EditNotebookFormContainer from './home/edit_notebook_form';
 import ShowNotebookContainer from './home/show_notebook_container';
 import Modal from './modal/modal';
-import NotebookIndexContainer from './home/notebook_index_container';
+import NoteIndexContainer from './home/note/note_index_container';
+
+import ShowNoteContainer from './home/note/show_note_container';
+import EditNoteFormContainer from './home/note/edit_note_form';
 
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 
@@ -15,6 +18,10 @@ const App = () => (
     <div>
                 <ProtectedRoute exact path="/api/notebooks/:notebookId" component={ShowNotebookContainer} />
                 <ProtectedRoute exact path="/api/notebooks/:notebookId/edit" component={EditNotebookFormContainer} />
+                <ProtectedRoute exact path="/api/notes/:noteId" component={ShowNoteContainer} />
+                <ProtectedRoute exact path="/api/notes/:noteId/edit" component={EditNoteFormContainer} />
+
+                {/* <ProtectedRoute exact path="/api/notes" component={NoteIndexContainer} /> */}
         <Modal />
         <Switch>
             <AuthRoute path='/login' component={LoginContainer}/>
@@ -23,7 +30,7 @@ const App = () => (
                 {/* <Route exact path='/' component={Home} /> */}
                     {/* <Modal/>
                         <HomeLogoutContainer />
-                        <NotebookIndexContainer/>
+                        <NoteBookIndexContainer/>
                             <CreateNotebookFormContainer/>
                             <ShowNotebookContainer/>
                             <EditNotebookFormContainer/> */}

@@ -10,8 +10,8 @@
     display: flex;
     flex-flow: row wrap;
     // justify-content: flex-end;
-    width: 800px;
-    // background-color: blue;
+    width: 100%;
+    // background-color: red;
     // width: 500px;
 }
 
@@ -98,6 +98,7 @@
     // z-index: 4;
     border: 1px solid #ECECEC;
     justify-content: center;
+
 }
 
 .modal-notebook-content {
@@ -110,7 +111,7 @@
     background-color: #FFFFFF;
     -webkit-font-smoothing: antialiased;
     font-family: Arial, Helvetica, sans-serif;
-    z-index: 8;
+    z-index: 11;
 
 }
 
@@ -257,10 +258,14 @@
 
 .taskbar {
     height: 100vh;
-    width: auto;
+    // width: 652px;
+    width: 45%;
     background-color: #F8F8F8;
     display: grid;
-    z-index: 4;
+    // z-index: 10;
+    // background: blue;
+    grid-template-columns: 350px;
+    grid-template-rows: 74px 61px;
     
     // border: 1px solid #ECECEC;
 }

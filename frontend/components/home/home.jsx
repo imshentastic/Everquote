@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom';
 import React from 'react';
 import GreetingContainer from '../greeting/greeting_container';
-// import NotebookIndexContainer from '../home/notebook_index_container';
+import NoteIndexContainer from '../home/note/note_index_container';
 
 export default ({currentUser, notebooks, logout, openModal, closeModal}) => {
     const home = (
@@ -22,16 +22,14 @@ export default ({currentUser, notebooks, logout, openModal, closeModal}) => {
                     <button className="b2">o</button>  
                 </Link>
 
-                <div className="indexbar">
-                    <div>*Notes*</div>
-                    <div>Column</div>
-                    <div>of</div>
-                    <div>Notes</div>
-                </div>
+                <Link to="/" className="indexbar">
+                    {/* <Link to="/api/notes"></Link> */}
+                    {/* <NoteIndexContainer /> */}
+                </Link>
 
-                <div className="taskbar">
+                <Link to="/" className="taskbar">
 
-                </div>
+                </Link>
             
             </div>
         </>
