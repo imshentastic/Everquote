@@ -7,6 +7,7 @@ import GreetingContainer from '../greeting/greeting_container';
 import HomeLogoutContainer from '../home/home_logout_container';
 import NotebookIndexContainer from '../home/notebook_index_container';
 import CreateNotebookFormContainer from '../home/create_notebook_form_container';
+// import EditNotebookFormContainer from '../home/edit_notebook_form_container';
 
 function Modal({modal, closeModal}) {
     if (!modal) {
@@ -39,21 +40,40 @@ function Modal({modal, closeModal}) {
             ModalTypeChild="modal-child3";
             clickAction=closeModal;
             break;
+            //need to close Modal and open index, or index perist
+        // case 'editNotebook':
+        //     component = <EditNotebookFormContainer/>;
+        //     // component2 = null;
+        //     ModalTypeBackground="modal-background5";
+        //     ModalTypeChild="modal-child5";
+        //     clickAction=closeModal;
+        //     break;
+            
         default:
             return null;
     }
 
     return (
         <>
-            <div className={`${ModalTypeBackground}`} onClick = {clickAction}>
-                <div className={`${ModalTypeChild}`} onClick={e => e.stopPropagation()}>
+            {/* <div className="modal-background4" onClick = {clickAction}> */}
+            <div className="modal-child4" >
                     
-    
-                    {/* {component2} */}
-                    {component}
-                </div>
+                        {component2}
+                    
+                                
             </div>
-            {/*  */}
+                {/* </div> */}
+
+            <div className={`${ModalTypeBackground}`} onClick = {clickAction}>
+                
+                <div className={`${ModalTypeChild}`} onClick={e => e.stopPropagation()}>
+                    {component}
+
+                </div>
+                
+            </div>
+            
+           
         </>
     );
 

@@ -67,6 +67,7 @@
     color: #333333;
 }
 
+
 .sessionform-button {
     width: 100%;
     border: 1px solid #e6e6e6;
@@ -124,7 +125,7 @@
     margin-top: 10px;
 }
 
-form > input {
+.sessionform-form > input {
     // flex-direction: column;
     // align-self: center;
     // width: 50px;
@@ -144,23 +145,6 @@ form > input {
     font-size: 12px;
 }
 
-.sessionform-form > button {
-    margin-top: 10px;
-    // background: #008A2D;
-    background: #00A82D;
-    color: white;
-    max-width: 280px;
-    width: 100%;
-    padding: 16px 16px;
-    border-radius: 7px;
-    text-align: center;
-    margin: 7px 0px 13px;
-
-}
-
-.sessionform-form > button:hover {
-    background: #008A2D;
-}
 
 .altform {
     color: #737373;

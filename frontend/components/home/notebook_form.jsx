@@ -15,6 +15,7 @@ class NotebookForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.formAction(this.state);
+    this.props.closeModal();
     // let history = useHistory();
     // useHistory.push('/');
     //close modal and force url here
@@ -27,24 +28,26 @@ class NotebookForm extends React.Component {
   render() {
 
     return (
-      <div className="sessionform">
-        <h2>{this.props.formType} FORM</h2>
-        <form className="sessionform-form" onSubmit={this.handleSubmit}>
-            <label>
+      <div className="notebookform">
+        <img src={window.penguinImg} alt="Penguin" />
+        <h2>{this.props.formType}</h2>
+        <div> </div>
+        <form className="notebookform-form" onSubmit={this.handleSubmit}>
+            {/* <label> */}
                 <input
                     type='text'
                     value={this.state.title}
                     onChange={this.update('title')}
                     placeholder="Title your notebook"
                 />
-            </label>
+            {/* </label> */}
 
+            <div>
+              <button className="notebookform-button-cancel" onClick={this.props.closeModal}>Cancel</button>
+              <button className="notebookform-button" >{this.props.formType}</button>
+            </div>
             
-            <button className="sessionform-button" >{this.props.formType}</button>
         </form>
-        {/* <form>
-          <button className="sessionform-button-cancel" onClick={this.props.closeModal}>Cancel</button>
-        </form> */}
       </div>
     );
   }

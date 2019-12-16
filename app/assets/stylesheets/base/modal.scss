@@ -22,7 +22,7 @@
     right: 0;
     left: 0;
     background: rgba(255, 255, 255, 0.4);
-    z-index: 10;
+    z-index: 8;
   }
   
   .modal-child2 {
@@ -33,6 +33,8 @@
     // transform: translate(-10%, 0%);
     background: #FFFFFF;
     border: 2px solid #F2F2F2;
+    z-index: 11;
+    // animation: scaleUp .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
   }
 
   .modal-background3 {
@@ -41,14 +43,62 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 12;
+    background: rgba(255, 255, 255, 0.96);
+    z-index: 10;
   }
   
   .modal-child3 {
-    // display: flex;
     position: absolute;
     top: 50%;
-    left: 80%;
+    left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 25;
+    
+  }
+
+  // .modal-background4 {
+  //   position: fixed;
+  //   top: 0;
+  //   bottom: 0;
+  //   right: 0;
+  //   left: 0;
+  //   background: rgba(255, 255, 255, 0.7);
+  //   z-index: 10;
+  // }
+
+
+  .modal-child4 {
+    // display: flex;
+    position: fixed;
+    // top: 50%;
+    width: 456px;
+    left: 73px;
+    // transform: translate(-10%, 0%);
+    background: #FFFFFF;
+    border: 2px solid #F2F2F2;
+    // z-index: 2;
+  }
+
+  .modal-background5 {
+    // display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 200;
+    background: rgba(0, 0, 0, 0.7);
+    background: purple;
+    z-index: 40;
+  }
+  
+  .modal-child5 {
+    // display: flex;
+    position: fixed;
+    // justify-content: flex-end;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+    background: pink;
+    margin: 100px;
   }

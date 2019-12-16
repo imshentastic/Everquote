@@ -20,11 +20,11 @@ class NotebookIndex extends React.Component {
     //   }
 
     render() {
-        const {notebooks, deleteNotebook, updateNotebook, openModal} = this.props;
+        const {notebooks, deleteNotebook, updateNotebook, openModal, closeModal} = this.props;
         return(
             <div className="modal-notebook-content">
                 <h1>NOTEBOOKS</h1>
-                <button className="create-notebook" onClick={() => openModal('createNotebook')}>C</button>
+                <button className="create-notebook-button" onClick={() => openModal('createNotebook')}>C</button>
                 {/* <h2>Find a notebook</h2> */}
                 <input
                     type='text'
@@ -40,6 +40,7 @@ class NotebookIndex extends React.Component {
                                 notebook={notebook}
                                 deleteNotebook={deleteNotebook}
                                 updateNotebook={updateNotebook}
+                                closeModal = {closeModal}
                                 key={notebook.id*1}
                                 //WHY??
                             />
