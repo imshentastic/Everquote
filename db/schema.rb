@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2019_12_17_151021) do
     t.index ["trashed"], name: "index_notes_on_trashed"
   end
 
-  create_table "taggings", id: false, force: :cascade do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer "note_id", null: false
     t.string "tag_name", null: false
     t.datetime "created_at", null: false

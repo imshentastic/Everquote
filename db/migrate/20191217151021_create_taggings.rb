@@ -1,6 +1,6 @@
 class CreateTaggings < ActiveRecord::Migration[5.2]
   def change
-    create_table :taggings, :id => false do |t|
+    create_table :taggings do |t|
       t.integer :note_id, null: false
       t.string :tag_name, null: false
 
