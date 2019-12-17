@@ -9,7 +9,7 @@ export default ({currentUser, notebooks, logout, openModal, closeModal, toggleMo
             <div className="wrapper">
                 <Link to="/" className="sidebar">
                     <img className="sidebar-icon" src={window.penguinImg} alt="Penguin" />
-                    <button className="b1" onClick={() => openModal('createNote')}></button>
+                    <button className="b1" onClick={() => toggleModal('createNote')}></button>
                     <div></div>
                     <div></div>
                     <div></div>

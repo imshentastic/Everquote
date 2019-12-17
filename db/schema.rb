@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_17_071334) do
+ActiveRecord::Schema.define(version: 2019_12_17_151021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_12_17_071334) do
     t.boolean "trashed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["body"], name: "index_notes_on_body"
     t.index ["heading"], name: "index_notes_on_heading"
     t.index ["notebook_id"], name: "index_notes_on_notebook_id"
@@ -46,21 +47,13 @@ ActiveRecord::Schema.define(version: 2019_12_17_071334) do
     t.index ["trashed"], name: "index_notes_on_trashed"
   end
 
-  create_table "notes_tags", id: false, force: :cascade do |t|
-    t.integer "note_id", null: false
-    t.integer "tag_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["note_id"], name: "index_notes_tags_on_note_id"
-    t.index ["tag_id"], name: "index_notes_tags_on_tag_id"
-  end
-
-  create_table "taggings", force: :cascade do |t|
+  create_table "taggings", id: false, force: :cascade do |t|
     t.integer "note_id", null: false
     t.string "tag_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["note_id", "tag_name"], name: "index_taggings_on_note_id_and_tag_name", unique: true
+    t.index ["note_id"], name: "index_taggings_on_note_id"
+    t.index ["tag_name"], name: "index_taggings_on_tag_name"
   end
 
   create_table "tags", force: :cascade do |t|

@@ -3,6 +3,7 @@ export const RECEIVE_NOTE = "RECEIVE_NOTE";
 export const REMOVE_NOTE = "REMOVE_NOTE";
 
 import * as NoteApiUtil from '../util/note_api_util';
+import { receiveErrors, clearErrors } from './error_actions';
 
 const receiveNotes = notes => {
     return {
@@ -51,3 +52,13 @@ export const deleteNote = noteId => dispatch => (
     NoteApiUtil.deleteNote(noteId)
         .then( () => dispatch(removeNote(noteId)))
 );
+
+export const addNote = note => dispatch => {
+    return NoteApiUtil.addNote(note)
+      .then(newNote => {
+        dispatch(receiveNote(newNote));
+        dispatch(fetchNotebooks());
+        // dispatch(fetchAllTags());
+        dispatch(clearErrors());
+      }, errors => dispatch(receiveErrors(errors.responseJSON)));
+  };

@@ -7,6 +7,7 @@ import NotebookIndexContainer from '../home/notebook_index_container';
 import CreateNotebookFormContainer from '../home/create_notebook_form_container';
 import CreateNoteFormContainer from '../home/note/create_note_form_container';
 import NoteIndexContainer from '../home/note/note_index_container';
+// import NewNoteContainer from '../home/note/new_note_container';
 // import EditNotebookFormContainer from '../home/edit_notebook_form_container';
 
 // import ShowStarredContainer from '../home/show_starred_container';
@@ -45,7 +46,7 @@ function Modal({modal, closeModal}) {
         case 'createNote':
             component = <CreateNoteFormContainer />;
             // component2 = <NoteIndexContainer />;
-            ModalTypeBackground="modal-background3";
+            // ModalTypeBackground="modal-background3";
             ModalTypeChild="modal-child3";
             clickAction=closeModal;
             break;

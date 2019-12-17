@@ -35,3 +35,11 @@ export const deleteNote = noteId => {
         method: `DELETE`
     });
 };
+
+export const addNote = note => {
+    return $.ajax({
+      method: 'POST',
+      url: '/api/notes',
+      data: { note }
+    });
+  };

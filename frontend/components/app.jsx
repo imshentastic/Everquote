@@ -17,6 +17,8 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util';
 
 import {Route, Switch} from 'react-router-dom';
 
+// import NewNoteContainer from './home/note/new_note_container';
+
 const App = () => (
     <div className="app-wrapper">
                 <ProtectedRoute exact path="/api/notebooks" component={NotebookIndexContainer} />
@@ -29,6 +31,7 @@ const App = () => (
                 <ProtectedRoute path="/" component={NoteIndexContainer} />
                 
                 <Modal />
+                {/* <ProtectedRoute path="/new_note" component={NewNoteContainer} /> */}
                 
         <Switch>
             <AuthRoute exact path='/login' component={LoginContainer}/>
