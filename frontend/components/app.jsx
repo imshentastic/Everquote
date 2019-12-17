@@ -11,6 +11,8 @@ import NotebookIndexContainer from './home/notebook_index_container';
 import ShowNoteContainer from './home/note/show_note_container';
 import EditNoteFormContainer from './home/note/edit_note_form';
 
+import Home from './home/home';
+
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 
 import {Route, Switch} from 'react-router-dom';
@@ -25,11 +27,14 @@ const App = () => (
                 <ProtectedRoute exact path="/api/notes/:noteId/edit" component={EditNoteFormContainer} />
 
                 <ProtectedRoute path="/" component={NoteIndexContainer} />
-        <Modal />
+                
+                <Modal />
+                
         <Switch>
-            <AuthRoute path='/login' component={LoginContainer}/>
-            <AuthRoute path='/signup' component={SignupContainer}/>
-            <Route path='/' component={GreetingContainer} />
+            <AuthRoute exact path='/login' component={LoginContainer}/>
+            <AuthRoute exact path='/signup' component={SignupContainer}/>
+            <Route exact path='/' component={GreetingContainer} />
+            <Home />
                 {/* <Route exact path='/' component={Home} /> */}
                     {/* <Modal/>
                         <HomeLogoutContainer />
