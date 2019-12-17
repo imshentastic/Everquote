@@ -44,7 +44,7 @@
     right: 0;
     left: 0;
     background: rgba(255, 255, 255, 0.96);
-    z-index: 10;
+    z-index: 11;
   }
   
   .modal-child3 {
@@ -53,6 +53,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 25;
+    width: 70%;
+    height: 70%;
     
   }
 

@@ -5,10 +5,11 @@ import {openModal, closeModal} from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
     const notebook = state.entities.notebooks[ownProps.match.params.notebookId];
-    // const notebook = state.entities.notebooks[state.entities.notebooks.notebookId]
+    const notebooks = state.entities.notebooks;
+    
     return {
-        notebook
-//   notebook: state.entities.notebooks[ownProps.match.params.notebookId]
+        notebook,
+        notebooks
     };
 };
 

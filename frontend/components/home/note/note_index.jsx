@@ -22,13 +22,14 @@ class NoteIndex extends React.Component {
                 <div></div>
                 <ul >
                     {
-                        notes.map((note) => (
+                        notes.map((note, idx) => (
+                            
                             <NoteIndexItem
                                 note={note}
                                 deleteNote={deleteNote}
                                 updateNote={updateNote}
                                 closeModal = {closeModal}
-                                key={note.id*1}
+                                key={idx}
                             />
                         ))
                     }

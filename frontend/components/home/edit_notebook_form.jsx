@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import NotebookForm from './notebook_form';
 import { fetchNotebook, updateNotebook } from '../../actions/notebook_actions';
-import {Link, withRouter, Redirect} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import {closeModal} from '../../actions/modal_actions';
 
 class EditNotebookForm extends React.Component {
@@ -12,7 +12,8 @@ class EditNotebookForm extends React.Component {
     this.state = this.props.notebook;
     
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
     //componentDidMount() {
   componentDidMount() {
@@ -20,22 +21,22 @@ class EditNotebookForm extends React.Component {
     <Link to={`/api/notebooks/${this.props.notebook.id}`}></Link>
   }
 
-//   componentDidUpdate(prevProps) {
-//     if (prevProps.match.params.notebookId !== this.props.match.params.notebookId) {
-//       this.props.fetchNotebook(this.props.match.params.notebookId);
-//     }
-//   }
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.formAction(this.state);
-    this.props.closeModal();
+
+  // handleSubmit(e) {
+    
     // let history = useHistory();
     // useHistory.push('/');
     //close modal and force url here
-  }
+  // }
 
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
+  }
+
+  handleClick(e) {
+    this.props.formAction(this.state);
+    // this.props.closeModal();
+    // this.props.history.push(`/notebooks/${notebook.id}`);
   }
 
   render() {
@@ -73,7 +74,7 @@ class EditNotebookForm extends React.Component {
           </form>
           <Link to={`/api/notebooks/${notebook.id}`}>
                 <button className="notebookform-button-cancel">Cancel</button>
-                <button className="notebookform-button" onClick={this.handleSubmit}>Save</button>
+                <button className="notebookform-button" onClick={this.handleClick}>Save</button>
           </Link>
           
         </div>
@@ -93,4 +94,4 @@ const mdp = dispatch => ({
   closeModal: () => dispatch(closeModal())
 });
 
-export default connect(msp, mdp)(EditNotebookForm);
+export default withRouter(connect(msp, mdp)(EditNotebookForm));

@@ -12,14 +12,18 @@ class NotebookShow extends React.Component {
     this.props.fetchNotebook(this.props.match.params.notebookId);
   }
 
-//   componentDidUpdate(prevProps) {
-//     if (prevProps.match.params.notebookId !== this.props.match.params.notebookId) {
-//       this.props.fetchNotebook(this.props.match.params.notebookId);
-//     }
-//   }
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.notebookId !== this.props.match.params.notebookId) {
+      this.props.fetchNotebook(this.props.match.params.notebookId);
+    }
+  }
 
   render() {
-    const { notebook, openModal } = this.props;
+    const { notebook, notebooks, openModal } = this.props;
+
+    let notebookSelectItems, currentNotebook, noteTagIndex;
+    currentNotebook = notebook;
+    notebookSelectItems = notebooks;
     
     if (!notebook) return null;
 
@@ -34,6 +38,7 @@ class NotebookShow extends React.Component {
                 {/* <button className="create-notebook-button" onClick={() => openModal('createNotebook')}>C</button> */}
                 <h1>{notebook.title}</h1>
                 <h2>Share</h2>
+            <h3>{notebook.notes.length}</h3>
                 
               
             </div>

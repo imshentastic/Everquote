@@ -1,21 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NotebookIndexItem = props => (
-  <li className="modal-notebook-content-list">
-      <Link to={`/api/notebooks/${props.notebook.id}`}>
-      {/* <button className="modal-notebook-content-list-delete" onClick={() => {openModal('updateNotebook'), props.updateNotebook(props.notebook.id)}}>U</button> */}
-        
-        {props.notebook.title}
-        <h4>notes</h4>
-        <Link to="/api/notebooks" className="modal-notebook-content-list-delete" onClick={() => props.deleteNotebook(props.notebook.id)}>D</Link>
-        <div className="modal-notebook-content-list-hr"></div>
-      </Link>
-      
-    
-      
-  </li>
-);
+class NotebookIndexItem extends React.Component {
+// const NotebookIndexItem = props => (
+  constructor(props) {
+    super(props);
+    // this.handleClick = this.handleClick.bind(this);
+    // this.handleDelete = this.handleDelete.bind(this);
+  }
+  
+  // handleClick(event) {
+  //   this.props.history.push(`/notebooks/${notebook.id}`);
+  // }
+  
+  // handleDelete(event) {
+  //   event.stopPropagation();
+  //   this.props.deleteNotebook(notebook)
+  //     .then(() => this.props.fetchNotebooks());
+  // }   
 
-export default NotebookIndexItem;
-//the myBtn is not working.. (modal.js, _home_show_notebook.scss)
+  render() {
+    const { notebook } = this.props;
+    return(
+      <li className="modal-notebook-content-list">
+        <Link to={`/api/notebooks/${notebook.id}`}>
+   
+        
+          <h4>{notebook.title}</h4>
+          <h5>{notebook.notes.length} notes</h5>
+          <Link to="/api/notebooks" className="modal-notebook-content-list-delete" onClick={() => this.props.deleteNotebook(this.props.notebook.id)}></Link>
+          
+          <div className="modal-notebook-content-list-hr"></div>
+        </Link>
+      </li>
+    );
+  }    
+}   
+  export default NotebookIndexItem;
+
+
+
+
+

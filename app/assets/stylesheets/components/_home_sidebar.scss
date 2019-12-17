@@ -115,18 +115,24 @@
 
 .create-notebook-button {
     position: absolute;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    transition: opacity 0.25s ease-in-out;
+    // border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin: 15px;
+    // transition: opacity 0.25s ease-in-out;
     cursor: pointer;
-    font-size: 18px;
+    // font-size: 18px;
     text-align: center;
     z-index: 8;
-    background-color: grey;
+    // background-color: grey;
     color: white;
     // align-self: flex-end;
     justify-self: flex-end;
+    
+    background-image: asset-data-url("createnotebook.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 
@@ -174,7 +180,7 @@
     // grid-auto-flow: row;
     // border-top: 1px solid #ECECEC;
     // border-width: 90%;
-    height: 60px;
+    height: 59px;
     // width: 100%;
     
     
@@ -184,27 +190,33 @@
 }
 
 .modal-notebook-content-list > * {
-    font-family: Arial, Helvetica, sans-serif;
+    
     display: flex;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     color: #4A4A4A;
     // padding: 15px;
-    padding: 15px 23px 19px;
-    height: 27px;
+    padding: 13px 23px 21px;
+    height: 28px;
     width: 100%;
     
     flex-direction: column;
-    
-    
 }
+
+
 .modal-notebook-content-list > *:hover {
     background-color: #40BC6C;
 }
 .modal-notebook-content-list > * > h4 {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    color: #4A4A4A;
+    line-height: 24px;
+}
+.modal-notebook-content-list > * > h5 {
     font-size: 12px;
     color: #878787;
-    line-height: 25px;
+    // line-height: 25px;
 }
 // .modal-notebook-content-list-hr {
 .modal-notebook-content-list > * > div{
@@ -218,7 +230,12 @@
 }
 
 
-// .modal-notebook-content-list-delete {
+.modal-notebook-content-list-delete {
+    background-image: asset-data-url("whitetrash.png");
+    background-size: 55%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 .modal-notebook-content-list > * > a {
     // display: flex;
@@ -231,7 +248,6 @@
     text-align: center;
     z-index: 50;
     visibility: hidden;
-    background-color: grey;
     color: white;
     align-self: flex-end;
     // flex-direction: row;
@@ -245,7 +261,7 @@
 
 .modal-notebook-content-list-delete:hover {
     background-color: white;
-    color: grey;
+    background-image: asset-data-url("greentrash.png");
 }
 
 .modal-notebook-content-list > *:hover .modal-notebook-content-list-hr {

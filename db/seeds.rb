@@ -30,11 +30,6 @@ tag1 = Tag.create(user_id: notebook1.user_id, name: "sensational", starred: true
 tag2 = Tag.create(user_id: notebook1.user_id, name: "memorable", starred: false)
 tag3 = Tag.create(user_id: notebook2.user_id, name: "false", starred: false)
 
-# note1.tags << tag1
-# note2.tags << tag1
-# note2.tags << tag2
-# note4.tags << tag3
-
 
 tagging1 = Tagging.create!(note_id: note1.id, tag_name: tag1.name)
 tagging2 = Tagging.create!(note_id: note2.id, tag_name: tag1.name)

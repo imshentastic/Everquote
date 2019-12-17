@@ -12,12 +12,6 @@ class NoteShow extends React.Component {
     this.props.fetchNote(this.props.match.params.noteId);
   }
 
-//   componentDidUpdate(prevProps) {
-//     if (prevProps.match.params.noteId !== this.props.match.params.noteId) {
-//       this.props.fetchNote(this.props.match.params.noteId);
-//     }
-//   }
-
   render() {
     const { note, openModal } = this.props;
     
@@ -25,15 +19,16 @@ class NoteShow extends React.Component {
 
     return (
         <div>
-            {/* <Link to="/" id="myModal" className="home-show-note">
-            </Link> */}
+            
+            
             
             {/* <Link to={`/api/notes/${note.id}`} className="home-show-note-content"> */}
             <div className="home-show-note-content">
-                <Link to={`/api/notes/${note.id}/edit`} className="edit-note-button" onClick={() => openModal('editNote')}>i</Link>
-                {/* <button className="create-note-button" onClick={() => openModal('createNote')}>C</button> */}
+              <h1>Edit your note here below</h1>
+                
                 <h1>{note.title}</h1>
-                <h2>Share</h2>
+                
+                <h2>{note.body}</h2>
                 
               
             </div>

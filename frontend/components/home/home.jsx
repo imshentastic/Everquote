@@ -16,7 +16,7 @@ export default ({currentUser, notebooks, logout, openModal, closeModal, toggleMo
                     <button className="b5" onClick={() => toggleModal('starred')}>o</button>
             
                     
-                    <button className="b6" onClick={() => closeModal()}></button>  
+                    <button className="b6" onClick={() => toggleModal('notes')}></button>  
                     
                             
                     <button className="b7" onClick={() => toggleModal('notebooks')}></button>

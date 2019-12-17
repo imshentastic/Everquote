@@ -1,4 +1,5 @@
 import React from 'react';
+
 import GreetingContainer from './greeting/greeting_container';
 import LoginContainer from './session/login_container';
 import SignupContainer from './session/signup_container';
@@ -17,7 +18,9 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util';
 
 import {Route, Switch} from 'react-router-dom';
 
-// import NewNoteContainer from './home/note/new_note_container';
+import CreateNotebookFormContainer from './home/create_notebook_form_container';
+
+import NewNoteContainer from './home/note/new_note_container';
 
 const App = () => (
     <div className="app-wrapper">
@@ -28,15 +31,16 @@ const App = () => (
                 <ProtectedRoute exact path="/api/notes/:noteId" component={ShowNoteContainer} />
                 <ProtectedRoute exact path="/api/notes/:noteId/edit" component={EditNoteFormContainer} />
 
+                <ProtectedRoute path="/" component={ShowNoteContainer} />
                 <ProtectedRoute path="/" component={NoteIndexContainer} />
                 
                 <Modal />
-                {/* <ProtectedRoute path="/new_note" component={NewNoteContainer} /> */}
+                <ProtectedRoute path="/new_note" component={NewNoteContainer} />
                 
         <Switch>
             <AuthRoute exact path='/login' component={LoginContainer}/>
             <AuthRoute exact path='/signup' component={SignupContainer}/>
-            <Route exact path='/' component={GreetingContainer} />
+            <Route path='/' component={GreetingContainer} />
             <Home />
                 {/* <Route exact path='/' component={Home} /> */}
                     {/* <Modal/>
@@ -48,6 +52,8 @@ const App = () => (
                 {/* <Splash /> */}
             {/* <ProtectedRoute exact path="/api/notebooks" component={NotebookIndexContainer} /> */}
             {/*<ProtectedRoute exact path="/api/notebooks/:notebookId/edit" component={EditNotebookFormContainer} /> */}
+
+            <ProtectedRoute path="/create-notebook" component={CreateNotebookFormContainer} />
         </Switch>
     </div>
 )
