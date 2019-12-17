@@ -3,8 +3,8 @@
 # Table name: notebooks
 #
 #  id         :bigint           not null, primary key
-#  title      :string
-#  user_id    :integer
+#  title      :string           not null
+#  user_id    :integer          not null
 #  starred    :boolean
 #  default    :boolean
 #  trashed    :boolean
@@ -21,6 +21,7 @@ class Notebook < ApplicationRecord
         class_name: :User
     
     has_many :notes,
-        foreign_key: :notebook_id
+        foreign_key: :notebook_id,
+        dependent: :destroy
     
 end

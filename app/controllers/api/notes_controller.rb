@@ -2,27 +2,46 @@ class Api::NotesController < ApplicationController
     before_action :require_logged_in!
 
     def index
-
-        # @notebook = Notebook.find(params[:notebook_id])
-        # @notes = Note.find(params[:note_id])
-        @notes = Note.all
-        # where(current_user.notebooks.id.include?())
-        # findby curent current_user
-        # User.includes notebooks
+        # debugger
+        render json: [] if current_user.notes.empty?
+        if params[:notebook_id]
+            @notes = current_user.notes.select do |note|
+                note.notebook_id == params[:notebook_id].to_i
+            end
+            @notes = @notes.sort_by { |note| note.updated_at }.reverse
+        elsif params[:tag_id]
+            tag = current_user.tags.find_by(name: params[:tag_id])
+            @notes = tag.notes.sort_by  { |note| note.updated_at }.reverse
+        else
+            @notes = current_user.notes.sort_by {|note|note.updated_at}.reverse
+        end
     end
 
     def show
-        # @note = current_user.notebooks.notes.find(params[:id])
-        @note = Note.find(params[:id])
+        @note = current_user.notes.find(params[:id])
     end
 
     def create
-        @notebook = Notebook.find(params[:notebook_id])
-        @note = Note.new(notebook_id: params[:notebook_id])
+        @note = Note.new(note_params)
+        if params[:note][:heading] == ""
+            @note.heading = "Untitled Note"
+        end
 
-        
+        @note.author = current_user
+
+        # @notebook = Notebook.find(params[:notebook_id])
         if @note.save
+            if params[:note][:tags]
+                params[:note][:tags].each do |tag|
+                    created_tag = Tag.find_by(name: tag)
+                    if !created_tag
+                        Tag.create(name: tag, user_id: current_user.id)
+                    end
+                    Tagging.create(tag_id: tag.id, note_id: @note.id)
+                end
+            end
             render :show
+        
         else
             render json: @note.errors.full_messages, status: 422
         end
@@ -38,7 +57,7 @@ class Api::NotesController < ApplicationController
     def update
         @note = current_user.notes.find(params[:id])
 
-        if @note.update(note_params)
+        if @note && @note.update(note_params)
             render :show
         else
             render json: @note.errors.full_messages, status: 422
@@ -48,6 +67,6 @@ class Api::NotesController < ApplicationController
     private
 
     def note_params
-        params.require(:note).permit(:heading, :body, :notebook_id, :starred, :trashed, :updated_at)
+        params.require(:note).permit(:heading, :body, :notebook_id, :starred, :trashed, :updated_at, :author_id)
     end
 end

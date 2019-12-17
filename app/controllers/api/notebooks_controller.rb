@@ -3,7 +3,7 @@ class Api::NotebooksController < ApplicationController
 
     def index
         # @notebooks = Notebook.all
-        @notebooks = current_user.notebooks.all
+        @notebooks = current_user.notebooks.sort_by { |notebook| notebook.title }
 
     end
 
@@ -12,7 +12,8 @@ class Api::NotebooksController < ApplicationController
     end
 
     def create
-        @notebook = current_user.notebooks.new(notebook_params)
+        @notebook = Notebook.new(notebook_params)
+        @notebook.user = current_user;
 
         if @notebook.save
             render :show

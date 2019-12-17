@@ -11,7 +11,7 @@ export default ({currentUser, notebooks, logout, openModal, closeModal}) => {
             <HomeContainer />
             <NoteIndexContainer />
             {/* <NotebookIndexContainer notebooks={notebooks}/> */}
-            <button onClick={() => openModal('logout')}>Logout</button>
+            <button className="logout" onClick={() => openModal('logout')}>Logout</button>
             {/* <div onClick={closeModal} className="close-x">X</div> */}
         </div>
     ) : (

@@ -6,7 +6,6 @@
 #  email           :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
-#  full_name       :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
@@ -22,14 +21,25 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
 
     has_many :notebooks,
-        foreign_key: :user_id
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Notebook,
+        foreign_key: :user_id,
+        dependent: :destroy
 
-    has_many :notebooked_notes,
-        through: :notebooks,
-        source: :notes
+    has_many :notes,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: :Note,
+        dependent: :destroy
 
     has_many :tags,
-        foreign_key: :user_id
+        foreign_key: :user_id,
+        dependent: :destroy
+
+    has_many :taggings,
+        through: :tags,
+        source: :notes
 
 
     attr_reader :password

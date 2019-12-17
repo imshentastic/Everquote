@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_12_202706) do
+ActiveRecord::Schema.define(version: 2019_12_17_071334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "notebooks", force: :cascade do |t|
-    t.string "title"
-    t.integer "user_id"
+    t.string "title", null: false
+    t.integer "user_id", null: false
     t.boolean "starred"
     t.boolean "default"
     t.boolean "trashed"
@@ -31,9 +31,10 @@ ActiveRecord::Schema.define(version: 2019_12_12_202706) do
   end
 
   create_table "notes", force: :cascade do |t|
-    t.string "heading"
+    t.string "heading", null: false
     t.string "body"
-    t.integer "notebook_id"
+    t.integer "notebook_id", null: false
+    t.integer "author_id", null: false
     t.boolean "starred"
     t.boolean "trashed"
     t.datetime "created_at", null: false
@@ -54,13 +55,21 @@ ActiveRecord::Schema.define(version: 2019_12_12_202706) do
     t.index ["tag_id"], name: "index_notes_tags_on_tag_id"
   end
 
+  create_table "taggings", force: :cascade do |t|
+    t.integer "note_id", null: false
+    t.string "tag_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["note_id", "tag_name"], name: "index_taggings_on_note_id_and_tag_name", unique: true
+  end
+
   create_table "tags", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "hashtag", null: false
+    t.string "name", null: false
     t.boolean "starred"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["hashtag"], name: "index_tags_on_hashtag"
+    t.index ["name"], name: "index_tags_on_name"
     t.index ["starred"], name: "index_tags_on_starred"
     t.index ["user_id"], name: "index_tags_on_user_id"
   end
@@ -69,7 +78,6 @@ ActiveRecord::Schema.define(version: 2019_12_12_202706) do
     t.string "email", null: false
     t.string "password_digest", null: false
     t.string "session_token", null: false
-    t.string "full_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

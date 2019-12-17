@@ -320,3 +320,13 @@
 .b7:hover {
     background-image: asset-data-url("whitenotebook.png");
 }
+
+.logout {
+    z-index: 100;
+    background-color: blue;
+    position:fixed;
+    bottom: 10px;
+    left: 10px;
+    height: 40px;
+    width: 40px;
+}
