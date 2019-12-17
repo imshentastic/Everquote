@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2019_12_17_151021) do
     t.boolean "trashed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.index ["body"], name: "index_notes_on_body"
     t.index ["heading"], name: "index_notes_on_heading"
     t.index ["notebook_id"], name: "index_notes_on_notebook_id"
