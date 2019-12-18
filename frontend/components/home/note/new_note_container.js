@@ -5,10 +5,10 @@ import { withRouter } from 'react-router-dom';
 import {fetchNotebooks} from '../../../actions/notebook_actions';
 import {closeModal} from '../../../actions/modal_actions';
 
-const msp = state => {
+const msp = (state, ownProps) => {
   return {
-    notebooks: Object.values(state.entities.notebooks)
-    // notebooks: state.entities.notebooks
+    notebooks: Object.values(state.entities.notebooks),
+    notebook: state.entities.notebooks[ownProps.match.params.notebookId]
   };
 };
 

@@ -1,5 +1,5 @@
 import * as NoteApiUtil from '../util/note_api_util';
-// import {emptyNote} from "../util/entities_util";
+import {emptyNote} from "../util/entities_util";
 
 export const RECEIVE_NOTES = "RECEIVE_NOTES";
 export const RECEIVE_NOTE = "RECEIVE_NOTE";
@@ -36,12 +36,12 @@ const receiveNoteErrors = errors => {
     };
   };
 
-// export const resetCurrNote = () => {
-//     return {
-//       type: RECEIVE_NOTE,
-//       note: emptyNote
-//     };
-//   };
+export const resetCurrNote = () => {
+    return {
+      type: RECEIVE_NOTE,
+      note: emptyNote
+    };
+  };
 
 export const fetchNotes = () => dispatch => {
     return NoteApiUtil.fetchNotes().then(
@@ -84,7 +84,6 @@ export const createNote = note => dispatch => {
         .then(newNote => {
             dispatch(receiveNote(newNote));
             dispatch(fetchNotebooks());
-            // dispatch(fetchAllTags());
             dispatch(clearErrors());
         }, errors => dispatch(receiveErrors(errors.responseJSON)));
     };

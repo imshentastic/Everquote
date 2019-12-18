@@ -26,35 +26,28 @@
   // Modal
   @import "base/modal.scss";
 
+  .new-note-container {
+    // display: grid;
+    // grid-template-columns: 435px 1fr;
+    // position: absolute;
+    height: 100vh;
+  }
 
-.greetingwrapper {
-    // display: flex;
-}
-
-.app-wrapper {
-  // display: flex;
-}
-
-// @-webkit-keyframes modal-fade-in {
-//   0% { opacity: 0; }
-//   100% { opacity: 1; }
+  // .new-note-container > * {
+  //   grid-column-start: 2;
+  //   word-wrap: normal;
+  // }
+// .quill {
+//   z-index: 100;
 // }
 
-// @keyframes modal-fade-in {
-//   0% { opacity: 0; }
-//   100% { opacity: 1; }
+
+
+// .note-select-options {
+//   z-index: 100;
 // }
 
-// .ReactModal__Overlay {
-//   -webkit-animation: modal-fade-in .3s ease-in-out;
-//   animation:         modal-fade-in .3s ease-in-out;
-// }
-
-// .ReactModal__Content {
-//   -webkit-animation: modal-fade-in .3s ease-in-out;
-//   animation:         modal-fade-in .3s ease-in-out;
-// }
-
-// .ReactModal__Overlay {
-//   z-index: 3;
+// .new-note-title {
+//   z-index: 110;
+//   word-wrap: normal;
 // }

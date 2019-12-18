@@ -9,7 +9,7 @@ export default ({currentUser, notebooks, logout, openModal, closeModal}) => {
     const greeting = currentUser ? (
         <div className="greetingwrapper">
             {/* <HomeContainer /> */}
-            <NoteIndexContainer />
+            {/* <NoteIndexContainer /> */}
             <button className="logout" onClick={() => openModal('logout')}>Logout</button>
         </div>
     ) : (

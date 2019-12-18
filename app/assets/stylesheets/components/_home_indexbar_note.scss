@@ -159,6 +159,42 @@
     background-image: asset-data-url("greentrash.png");
 }
 
+.modal-note-content-list-edit {
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        // opacity: 0;
+        transition: opacity 0.25s ease-in-out;
+        cursor: pointer;
+        font-size: 18px;
+        text-align: center;
+        z-index: 50;
+        visibility: hidden;
+        background-color: #40BC6C;
+        color: white;
+        align-self: flex-end;
+        // flex-direction: row;
+        position: absolute;
+    
+        // background-image: asset-data-url("whitetrash.png");
+        // background-size: 55%;
+        // // height: 10px;
+        // background-repeat: no-repeat;
+        // background-position: center;
+        margin-right: 20px;
+    }
+    
+    .modal-note-content-list > *:hover .modal-note-content-list-edit {
+        visibility: visible;
+        
+    }
+    
+    .modal-note-content-list-edit:hover {
+        background-color: white;
+        // color: grey;
+        background-image: asset-data-url("greentrash.png");
+    }
+
 .modal-note-content-list > *:hover .modal-note-content-list-hr {
     // color: #40BC6C;
     visibility: hidden;

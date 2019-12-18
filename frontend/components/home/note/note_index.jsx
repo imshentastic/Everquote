@@ -17,7 +17,7 @@ class NoteIndex extends React.Component {
                 <h1>NOTES</h1>
                 
                 <div></div>
-                {/* <ul > */}
+                <ul >
                     {
                         notes.map((note, idx) => (
                             
@@ -26,11 +26,12 @@ class NoteIndex extends React.Component {
                                 deleteNote={deleteNote}
                                 updateNote={updateNote}
                                 closeModal = {closeModal}
+                                openModal = {openModal}
                                 key={idx}
                             />
                         ))
                     }
-                {/* </ul> */}
+                </ul>
 
                 
             </Link>

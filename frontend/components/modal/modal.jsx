@@ -8,7 +8,7 @@ import NotebookIndexContainer from '../home/notebook/notebook_index_container';
 import CreateNotebookFormContainer from '../home/notebook/create_notebook_form_container';
 // import CreateNoteFormContainer from '../home/note/create_note_form_container';
 import NoteIndexContainer from '../home/note/note_index_container';
-import EditNotebookFormContainer from '../home/notebook/edit_notebook_form';
+import ShowNoteContainer from '../home/note/note_show_container';
 import NewNoteContainer from '../home/note/new_note_container';
 
 // import EditNotebookFormContainer from '../home/edit_notebook_form_container';
@@ -33,12 +33,6 @@ function Modal({modal, closeModal}) {
             ModalTypeChild="modal-child";
             clickAction=closeModal;
             break;
-        case 'notebooks':
-            component = <NotebookIndexContainer />;
-            ModalTypeBackground="modal-background2";
-            ModalTypeChild="modal-child2";
-            clickAction=closeModal;
-            break;
         case 'createNotebook':
             component = <CreateNotebookFormContainer />;
             // component2 = <NotebookIndexContainer />;
@@ -53,24 +47,14 @@ function Modal({modal, closeModal}) {
             ModalTypeChild="modal-child3";
             clickAction=closeModal;
             break;
-        
-            //need to close Modal and open index, or index perist
 
-
-        case 'notes':
-            component = <NoteIndexContainer />;
-            // ModalTypeBackground="modal-background2";
-            // ModalTypeChild="modal-child2";
+        case 'shownote':
+            component = <ShowNoteContainer/>;
+            // component2 = null;
+            ModalTypeBackground="modal-background3";
+            ModalTypeChild="modal-child3";
             clickAction=closeModal;
             break;
-
-            // case 'editNotebook':
-        //     component = <EditNotebookFormContainer/>;
-        //     // component2 = null;
-        //     ModalTypeBackground="modal-background5";
-        //     ModalTypeChild="modal-child5";
-        //     clickAction=closeModal;
-        //     break;
             
         default:
             return null;
@@ -78,22 +62,11 @@ function Modal({modal, closeModal}) {
 
     return (
         <>
-            {/* <div className="modal-background4" onClick = {clickAction}> */}
-            {/* <div className="modal-child4" >
-                        {component2}         
-            </div> */}
-            {/* </div> */}
-
             <div className={`${ModalTypeBackground}`} onClick = {clickAction}>
-                
                 <div className={`${ModalTypeChild}`} onClick={e => e.stopPropagation()}>
                     {component}
-
                 </div>
-                
             </div>
-            
-           
         </>
     );
 

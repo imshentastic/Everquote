@@ -3,6 +3,7 @@ import ReactQuill from 'react-quill';
 
 class NewNote extends React.Component {
 
+    
     componentDidUpdate() {
         this.attachQuillRefs();
     }
@@ -67,148 +68,137 @@ class NewNote extends React.Component {
         }
     }
 
-        //detects whether heading or body are changed from null
-        updateQuill(value) {
-            if (this.quillRef) {
-            this.setState({
-                body: value
-            
-            }, () => {
-                if (this.state.heading || this.state.body) {
-                document.querySelector('.add-note').disabled = false;
-                } else {
-                document.querySelector('.add-note').disabled = true;
-                }
-            });
-        }}
-
-        updateHeading(event) {
-            this.setState({
-              heading: event.currentTarget.value
-            }, () => {
-              if (this.state.heading || this.state.body) {
-                document.querySelector('.add-note').disabled = false;
-              } else {
-                document.querySelector('.add-note').disabled = true;
-              }
-            });
-          }
+    //detects whether heading or body are changed from null
+    updateQuill(value) {
+        if (this.quillRef) {
+        this.setState({
+            body: value
         
-          attachQuillRefs() {
-            if (typeof this.reactQuillRef.getEditor !== 'function') return;
-            this.quillRef = this.reactQuillRef.getEditor();
-          }
-        
-          handleCancel() {
-            document.querySelector('.cancel').classList.add('hidden');
-            this.props.closeModal();
-            this.props.history.push('/');
-          }
-        
-          handleAddNote() {
-            this.props.addNote(this.state)
-              .then(() => this.props.history.push('/'));
-            document.querySelector('.add-note').classList.add('hidden');
-          }
-        
-        
-          // toggleNotebookDropDown() {
-          //   document.querySelector('.notebook-dropdown').classList.toggle('hidden');
-          // }
-        
-          // handles creation of new notebook
-          handleAddNotebook() {
-            this.props.history.push('/api/notes');
-          }
-        
-          //select notebook and sets state based on notebookId
-          handleSelectNotebook(event) {
-            if (this.notebookId !== event.target.id) {
-              this.notebookId = event.target.id;
-              this.setState({
-                notebook_id: this.notebookId
-              });
+        }, () => {
+            if (this.state.heading || this.state.body) {
+            document.querySelector('.add-note').disabled = false;
+            } else {
+            document.querySelector('.add-note').disabled = true;
             }
+        });
+    }}
+
+    updateHeading(event) {
+      // debugger
+        this.setState({
+          heading: event.currentTarget.value
+        }, () => {
+          if (this.state.heading || this.state.body) {
+            document.querySelector('.add-note').disabled = false;
+          } else {
+            document.querySelector('.add-note').disabled = true;
           }
+        });
+      }
+    
+    attachQuillRefs() {
+      if (typeof this.reactQuillRef.getEditor !== 'function') return;
+      this.quillRef = this.reactQuillRef.getEditor();
+    }
+    
+    handleCancel() {
+      document.querySelector('.cancel').classList.add('hidden');
+      this.props.closeModal();
+      this.props.history.push('/');
+    }
+    
+    handleAddNote() {
+      this.props.addNote(this.state)
+        .then(() => this.props.history.push('/'));
+      document.querySelector('.add-note').classList.add('hidden');
+    }
+    
+  
+    // handles creation of new notebook
+    handleAddNotebook() {
+      this.props.history.push('/api/notes');
+    }
+  
+    //select notebook and sets state based on notebookId
+    handleSelectNotebook(event) {
+      if (this.notebookId !== this.props.notebooks[event.target.id].id) {
+        this.notebookId = this.props.notebooks[event.target.id].id;
+        // debugger
+        this.setState(
+          {
+          notebook_id: this.notebookId
+        });
+      }
+    }
 
-        //tags
+      render () {
+          const { notebooks, notebook } = this.props;
+          let notebookSelectItems, currentNotebook;
 
-        render () {
-            const { notebooks, note, tags } = this.props;
-            let notebookSelectItems, currentNotebook, noteTagIndex;
-            if (Object.keys(notebooks).length > 0) {
+          if (Object.keys(notebooks).length > 0) {
             if (!this.notebookId) {
                 this.notebookId = Object.keys(notebooks)[0];
             }
-            currentNotebook = notebooks[this.notebookId].title;
-            notebookSelectItems = Object.keys(notebooks).map((notebookId, idx) =>
-                <section
-                key={ idx }
-                className="notebook-select-item-container"
-                onClick={ this.handleSelectNotebook }>
-                <li
-                    key={ idx }
-                    className="notebook-select-item"
-                    id={ notebookId }>
-                    { notebooks[notebookId].title }
-                </li>
-                </section>
-            );
-            }
-            // noteTagIndex = this.state.tags.map((tagName, idx) =>
-            // <section
-            //     key={ idx }
-            //     className="note-tag-index-item">
-            //     { tagName }
-            //     <span
-            //     id={ tagName }
-            //     onClick={ this.handleDeleteTag }>
-            //     x
-            //     </span>
-            // </section>
-            // );
-            return(
-                <section className="new-note-container">
-                    <section className="note-select-options">
-                        
-                        <ul className="notebook-dropdown hidden">
-                            <li
-                              className="select-add-notebook"
-                              onClick={ this.handleAddNotebook }>
-                              {/* Create new notebook */}
-                            </li>
-                            { notebookSelectItems }
-                        </ul>
-                    </section>
-                    <nav
-                        className="select-notebook"
-                        onClick={ this.toggleNotebookDropDown }>
-                        { currentNotebook }
-                    </nav>
-                    
-                
-                    <button
-                        className="cancel hidden"
-                        onClick ={ this.handleCancel }>Cancel</button>
-                    <button
-                        className="add-note hidden"
-                        onClick ={ this.handleAddNote }>Save Note</button>
-                    <input
-                        type="text"
-                        className="new-note-title"
-                        placeholder="Title your note"
-                        value={ this.state.heading }
-                        onChange={ this.updateHeading } />
-                    <ReactQuill
-                        ref={(el) => { this.reactQuillRef = el; }}
-                        placeholder="Drag files here or just start typing..."
-                        value={this.state.body}
-                        onChange={this.updateQuill}
-                        theme={'snow'}
-                        modules={ this.modules } />
-                </section>
-            );
-        }
+            // debugger
+          // currentNotebook = notebooks[this.notebookId].title;
+          //need to fix
+          notebookSelectItems = Object.keys(notebooks).map((notebookId, idx) =>
+              <section
+              key={ idx }
+              className="notebook-select-item-container"
+              onClick={ this.handleSelectNotebook }>
+              <li
+                  key={ idx }
+                  className="notebook-select-item"
+                  id={ notebookId }>
+                  { notebooks[notebookId].title }
+              </li>
+              </section>
+          );
+          }
+          
+          return(
+              <section className="new-note-container">
+                  <section className="note-select-options">
+                      
+                      <ul className="notebook-dropdown hidden">
+                          <li
+                            className="select-add-notebook"
+                            onClick={ this.handleAddNotebook }>
+                            {/* Create new notebook */}
+                          </li>
+                          { notebookSelectItems }
+                      </ul>
+                  </section>
+                  <nav
+                      className="select-notebook"
+                      onClick={ this.toggleNotebookDropDown }>
+                      { currentNotebook }
+                  </nav>
+                  
+              
+                  <button
+                      className="cancel hidden"
+                      onClick ={ this.handleCancel }>Cancel</button>
+                  <button
+                      className="add-note hidden"
+                      onClick ={ this.handleAddNote }>Save Note</button>
+                  <input
+                      type="text"
+                      className="new-note-title"
+                      placeholder="Title your note"
+                      value={ this.state.heading }
+                      onChange={ this.updateHeading } />
+                  <ReactQuill
+                      ref={(el) => { this.reactQuillRef = el; }}
+                      placeholder="Drag files here or just start typing..."
+                      value={this.state.body}
+                      onChange={this.updateQuill}
+                      theme={'snow'}
+                      modules={ this.modules } />
+              </section>
+          );
+      }
 
 
 

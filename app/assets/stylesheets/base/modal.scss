@@ -53,25 +53,18 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 25;
-    width: 90%;
-    height: 90%;
+    width: 70%;
+    height: 100%;
     
   }
 
-  // .modal-background4 {
-  //   position: fixed;
-  //   top: 0;
-  //   bottom: 0;
-  //   right: 0;
-  //   left: 0;
-  //   background: rgba(255, 255, 255, 0.7);
-  //   z-index: 10;
-  // }
 
 
   .modal-child4 {
     // display: flex;
-    position: fixed;
+    display: grid;
+    position: absolute;
+    grid-template-columns: 450px 1fr;
     // top: 50%;
     width: 456px;
     left: 73px;
@@ -80,6 +73,8 @@
     border: 2px solid #F2F2F2;
     // z-index: 2;
   }
+
+ 
 
   .modal-background5 {
     // display: flex;

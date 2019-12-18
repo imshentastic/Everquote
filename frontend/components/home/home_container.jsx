@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import {logout} from '../../actions/session_actions';
 import Home from './home';
+import {withRouter} from 'react-router-dom';
 import {openModal, closeModal, toggleModal} from '../../actions/modal_actions';
 
 const mapStateToProps = ({entities, session}) => {
@@ -18,4 +19,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Home));

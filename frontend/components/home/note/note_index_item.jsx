@@ -1,24 +1,58 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NoteIndexItem = props => (
-  
-  
-  <li className="modal-note-content-list">
-      
-      <Link to={`/api/notes/${props.note.id}/edit`}>
-        <div className="modal-note-content-list-hr"></div>
-        <h3>{props.note.heading}</h3>
-        {/* <h3 class="small">{props.note.updated_at}</h3> */}
-        {/* <h3 class="small">{props.note.starred}</h3> */}
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+// import { deleteNote, fetchNotes, fetchNote, updateNote, openModal, closeModal } from '../../../actions/note_actions';
 
-        <h3 class="small">{props.note.body}</h3>
-        <button className="modal-note-content-list-delete" onClick={() => props.deleteNote(props.note.id)}></button>
-        
-        
-      </Link>
-      
-  </li>
-);
+// const NoteIndexItem = props => {
+    // return (
+  class NoteIndexItem extends React.Component {
+    
+    constructor(props) {
+      super(props);
+    }
 
-export default NoteIndexItem;
+    render() {
+      // debugger
+      return (
+        <li className="modal-note-content-list">
+              <Link to={`/api/notes/${this.props.note.id}/show`}>
+          
+                  <div className="modal-note-content-list-hr"></div>
+                  
+                  <Link className="modal-note-content-list-info-edit" to={`/api/notes/${this.props.note.id}/edit`}><h3>{this.props.note.heading}</h3></Link>
+
+                  <h3 class="small">{this.props.note.body}</h3>
+                  <button className="modal-note-content-list-delete" onClick={() => this.props.deleteNote(this.props.note.id)}></button>
+              </Link>
+            
+        </li>
+      );
+      }
+    
+  }
+
+// export default NoteIndexItem;
+
+
+const mapStateToProps = state => {
+  return {
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchNotes: () => dispatch(fetchNotes()),
+    fetchNote: noteId => dispatch(fetchNote(noteId)),
+    deleteNote: noteId => dispatch(deleteNote(noteId)),
+    updateNote: note => dispatch(updateNote(note)),
+    openModal: modal => dispatch(openModal(modal)),
+    closeModal: () => dispatch(openModal())
+  };
+};
+
+export default withRouter(connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NoteIndexItem));

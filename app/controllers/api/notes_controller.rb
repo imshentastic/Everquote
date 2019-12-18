@@ -22,7 +22,9 @@ class Api::NotesController < ApplicationController
     end
 
     def create
+        # debugger
         @note = Note.new(note_params)
+        # debugger
         if params[:note][:heading] == ""
             @note.heading = "Untitled Note"
         end
@@ -30,6 +32,7 @@ class Api::NotesController < ApplicationController
         @note.author = current_user
 
         # @notebook = Notebook.find(params[:notebook_id])
+        # debugger
         if @note.save
             if params[:note][:tags]
                 params[:note][:tags].each do |tag|

@@ -1,8 +1,19 @@
 import {Link} from 'react-router-dom';
 import React from 'react';
 
-export default ({currentUser, notebooks, logout, openModal, closeModal, toggleModal}) => {
-   
+export default ({currentUser, notebooks, logout, openModal, closeModal, toggleModal, location}) => {
+    const routeNotebooks = (location.pathname === '/api/notebooks') ? (
+        <Link to="/" >
+            <button className="b7">
+            </button>
+        </Link>
+     ) : ( 
+        <Link to="/api/notebooks" >
+            <button className="b7">
+            </button>
+        </Link>
+     );
+
     return (
         <>
             <div className="wrapper">
@@ -12,13 +23,11 @@ export default ({currentUser, notebooks, logout, openModal, closeModal, toggleMo
                     <div></div>
                     <div></div>
                     <div></div>
-                    <button className="b5" onClick={() => toggleModal('starred')}>o</button>
-            
                     
-                    <button className="b6" onClick={() => toggleModal('notes')}></button>  
-                    
-                            
-                    <button className="b7" onClick={() => toggleModal('notebooks')}></button>
+                    <Link to="/" ><button className="b6" onClick={() => closeModal()}></button></Link>
+
+                    {routeNotebooks}
+                   
 
                 </Link>
 

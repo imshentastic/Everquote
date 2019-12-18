@@ -3,8 +3,11 @@ import CreateNotebookFormContainer from './notebook/create_notebook_form_contain
 import NotebookIndexContainer from './notebook/notebook_index_container';
 
 import NoteIndexContainer from './note/note_index_container';
+import NoteShowContainer from './note/note_show_container';
 
 import HomeContainer from './home_container';
+import GreetingContainer from '../greeting/greeting_container';
+// import ShowNoteContainer from './note/note_show_container';
 
 // import NotesHeader from './notes_header';
 // import NotesHeaderContainer from './notes_header_container';
@@ -15,25 +18,6 @@ import HomeContainer from './home_container';
 
 class Dashboard extends React.Component {
 
-//   componentWillMount() {
-//     if (this.props.match.params.notebookId) {
-//       this.props.fetchNotesFromNotebook(this.props.match.params.notebookId);
-//     } else {
-//       this.props.fetchNotes();
-//     }
-//     // on render, need to fetch all notes into state, or if on a notebook page - fetch notes from specific notebook
-
-//     if (this.props.match.params.noteId) {
-//       this.props.fetchNote(this.props.match.params.noteId);
-//     }
-//     // fetch single note object if on a note page
-
-//     if (this.props.location.pathname === '/new-notebook') {
-//       this.createNotebook = true;
-//     } else {
-//       this.createNotebook = false;
-//     }
-//   }
 
   //componentDidUpdate(prevProps, prevState, snapshot
   // We want to update state values with new props values. Method called when prop values change
@@ -102,7 +86,9 @@ class Dashboard extends React.Component {
                 <section className="notes-header-and-index">
                     { this.header }
                     <NoteIndexContainer />
+                    <GreetingContainer />
                     <HomeContainer />
+                    {/* <NoteShowContainer /> */}
                 </section>
 
                 {/* { noteDetail }         */}

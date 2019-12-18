@@ -28,7 +28,7 @@ class NotebookForm extends React.Component {
   }
 
   render() {
-
+    
     return (
       <div className="notebookform">
         <img src={window.penguinImg} alt="Penguin" />

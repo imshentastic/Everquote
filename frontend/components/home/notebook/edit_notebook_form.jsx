@@ -11,7 +11,7 @@ class EditNotebookForm extends React.Component {
     this.state = this.props.notebook;
     
 
-    // this.handleSubmit = this.handleSubmit.bind(this);
+
     this.handleClick = this.handleClick.bind(this);
   }
     //componentDidMount() {
@@ -19,14 +19,6 @@ class EditNotebookForm extends React.Component {
     this.props.fetchNotebook(this.props.match.params.notebookId);
     <Link to={`/api/notebooks/${this.props.notebook.id}`}></Link>
   }
-
-
-  // handleSubmit(e) {
-    
-    // let history = useHistory();
-    // useHistory.push('/');
-    //close modal and force url here
-  // }
 
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });

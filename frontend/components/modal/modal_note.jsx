@@ -1,7 +1,6 @@
 import React from 'react';
 import {closeModal, closeCreateNotesModal} from '../../actions/modal_actions';
 import {connect} from 'react-redux';
-// import NoteContainer from '../home/note/note';
 import GreetingContainer from '../greeting/greeting_container';
 // import HomeLogout from '../home/note/home_logout';
 import HomeLogoutContainer from '../home/note/home_logout_container';

@@ -78,9 +78,10 @@
 }
 
 
-.sidebar > button:hover {
+.sidebar > * button:hover {
     background-color: #2DBE60;
     color: #FFFFFF;
+    border-radius: 50%;
 }
 
 .indexbar {
@@ -311,8 +312,8 @@
 .b6 {
     background-image: asset-data-url("greennote.png");
     background-size: 55%;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     background-repeat: no-repeat;
     background-position: center;
     // border: 1px solid #ECECEC;
@@ -326,7 +327,9 @@
 .b7 {
     background-image: asset-data-url("greennotebook.png");
     background-size: 55%;
-    // height: 10px;
+    height: 40px;
+    width: 40px;
+    
     background-repeat: no-repeat;
     background-position: center;
     // border: 1px solid #ECECEC;
@@ -335,6 +338,7 @@
 
 .b7:hover {
     background-image: asset-data-url("whitenotebook.png");
+    color: #2DBE60;
 }
 
 .logout {
