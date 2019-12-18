@@ -27,7 +27,7 @@ class NoteIndex extends React.Component {
                                 updateNote={updateNote}
                                 closeModal = {closeModal}
                                 openModal = {openModal}
-                                key={idx}
+                                key={note.id}
                             />
                         ))
                     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import EditNotebookForm from './edit_notebook_form';
-import NoteIndexItem from '../note/note_index_item';
+import NoteIndexItemContainer from '../note/note_index_item_container';
 
 class NotebookShow extends React.Component {
     constructor(props) {

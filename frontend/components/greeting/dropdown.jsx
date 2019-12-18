@@ -44,46 +44,6 @@ class Dropdown extends React.Component {
         );
     }
 }
-    // constructor(props) {
-    //     super(props);
-    //     state = {
-    //         display: false,
-    //     };
-    // }
     
-
-    // toggle = () => {
-    //     this.setState(prevstate => ({
-    //     display: !prevstate.display,
-    //     }));
-    // };
-
-    // toggleDropdown () {
-    //     this.setState(prevstate => ({
-    //         display: !prevstate.display
-    //     }));
-    // }
-        
-
-    // render() {
-    //     return (
-    //     <div className="container">
-    //         <button 
-    //         className={cx('toggler', {
-    //             'toggler--active': this.state.display,
-    //         })}
-    //         onClick={this.toggle}>Show</button>
-    //         {this.state.display && (
-    //         <div className="menu">
-    //             <ul className="list">
-    //             <li className="list-item">Rajat</li>
-    //             <li className="list-item">Writes Posts</li>
-    //             <li className="list-item">Loves Pizza</li>
-    //             </ul>
-    //         </div>
-    //         )}
-    //     </div>
-    //     )
-    // }
 
 export default Dropdown;

@@ -35,18 +35,18 @@ class NotebookForm extends React.Component {
         <h2>{this.props.formType}</h2>
         <div> </div>
         <form className="notebookform-form" onSubmit={this.handleSubmit}>
-            {/* <label> */}
+            
                 <input
                     type='text'
                     value={this.state.title}
                     onChange={this.update('title')}
                     placeholder="Title your notebook"
                 />
-            {/* </label> */}
+           
 
             <div>
               <button className="notebookform-button-cancel" onClick={this.props.closeModal}>Cancel</button>
-              <button className="notebookform-button" >{this.props.formType}</button>
+              <button className="notebookform-button" onClick={this.props.closeModal}>{this.props.formType}</button>
             </div>
             
         </form>

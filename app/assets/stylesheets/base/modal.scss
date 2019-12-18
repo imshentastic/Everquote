@@ -45,6 +45,8 @@
     left: 0;
     background: rgba(255, 255, 255, 0.96);
     z-index: 11;
+    display: flex;
+    justify-content: center;
   }
   
   .modal-child3 {

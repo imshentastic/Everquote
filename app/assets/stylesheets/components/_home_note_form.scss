@@ -108,3 +108,74 @@
 .noteform-button:hover {
     background: #4FA956;
 }
+
+
+.notebook-dropdown {
+    position: absolute;
+    background-color: white;
+    -webkit-box-shadow: 0 0 7px 3px #ECECEC;
+            box-shadow: 0 0 7px 3px #ECECEC;
+    border-radius: 5px;
+    top: 55px;
+    left: 15px;
+    width: 300px;
+    height: auto;
+    z-index: 2;
+    color: #4B4B4B;
+  }
+
+
+  .select-add-notebook {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-weight: bold;
+    padding: 13px 10px;
+    margin: 0 10px;
+    font-family: 'Gotham';
+    border-bottom: 1px solid #ECECEC;
+  }
+  
+  .select-add-notebook:hover {
+    color: #2DBE60;
+    cursor: pointer;
+  }
+  
+  .select-add-notebook-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+  }
+
+  .small-notebook-icon {
+    width: 12px;
+    height: 13px;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+
+  .select-notebook {
+    cursor: pointer;
+    color: #606060;
+    margin-left: 8px;
+    font-weight: bold;
+  }
+  
+  .select-notebook::after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+    margin-top: 2px;
+    margin-left: 8px;
+    vertical-align: top;
+    background: url('https://res.cloudinary.com/malice/image/upload/v1500438313/caret_gray_10x6_iz0o7w.png') center;
+    background-size: 10px 6px;
+    position: absolute;
+  }

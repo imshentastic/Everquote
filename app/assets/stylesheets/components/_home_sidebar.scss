@@ -111,6 +111,9 @@
     z-index: 1;
     left: 73px;
     cursor: unset;
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+    
 
 }
 
@@ -175,6 +178,12 @@
     border-top: 0.5px solid #ECECEC;
 }
 
+.notebook-column {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+}
+
 .modal-notebook-content-list {
     display: flex;
     // grid-template-rows: repeat(10, 70px);
@@ -183,6 +192,7 @@
     // border-width: 90%;
     height: 59px;
     // width: 100%;
+    flex-direction: column-reverse;
     
     
     
@@ -199,7 +209,7 @@
     // padding: 15px;
     padding: 13px 23px 21px;
     height: 28px;
-    width: 100%;
+    width: 90%;
     
     flex-direction: column;
 }
@@ -298,6 +308,7 @@
 }
 .b1:hover {
     background-image: asset-data-url("whitecross.png");
+    background-color: #40BC6C;
 }
 
 

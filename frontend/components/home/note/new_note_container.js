@@ -3,7 +3,7 @@ import NewNote from './new_note';
 import { addNote } from '../../../actions/note_actions';
 import { withRouter } from 'react-router-dom';
 import {fetchNotebooks} from '../../../actions/notebook_actions';
-import {closeModal} from '../../../actions/modal_actions';
+import {closeModal, openModal} from '../../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
   return {
@@ -16,7 +16,8 @@ const mdp = dispatch => {
   return {
     addNote: note => dispatch(addNote(note)),
     fetchNotebooks: () => dispatch(fetchNotebooks()),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    openModal: modal => dispatch(openModal())
   };
 };
 

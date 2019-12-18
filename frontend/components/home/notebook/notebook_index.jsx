@@ -22,8 +22,7 @@ class NotebookIndex extends React.Component {
             <Link to={`/api/notebooks`} className="modal-notebook-content">
                 <h1>NOTEBOOKS</h1>
                 <button className="create-notebook-button" onClick={() => openModal('createNotebook')}></button>
-                {/* <button className="create-notebook-button" onClick={this.handleClick}>C</button> */}
-                {/* <h2>Find a notebook</h2> */}
+                
                 <input
                     type='text'
                     // value={this.state.title}
@@ -31,7 +30,7 @@ class NotebookIndex extends React.Component {
                     placeholder="Find a notebook"
                 />
                 <div></div>
-                <ul >
+                <ul className="notebook-column">
                     {
                         notebooks.map((notebook, idx) => (
                             <NotebookIndexItem

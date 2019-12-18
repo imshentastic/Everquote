@@ -66,15 +66,15 @@
             flex-direction: column;
   }
   
-  .notes-index-container {
-    overflow: -moz-scrollbars-vertical;
-    overflow-y: scroll;
-    height: 100%;
-    width: 347px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: 0 2px;
-  }
+  // .notes-index-container {
+  //   overflow: -moz-scrollbars-vertical;
+  //   overflow-y: scroll;
+  //   height: 100%;
+  //   width: 347px;
+  //   -webkit-box-sizing: border-box;
+  //           box-sizing: border-box;
+  //   padding: 0 2px;
+  // }
   
   .panel {
     display: -webkit-box;
@@ -105,58 +105,58 @@
       left: 422px;
   }
   
-  .note-detail-container {
-    width: 100%;
-    position: relative;
-  }
+  // .note-detail-container {
+  //   width: 100%;
+  //   position: relative;
+  // }
   
-  .note-detail-header {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: 8px;
-  }
+  // .note-detail-header {
+  //   width: 100%;
+  //   display: -webkit-box;
+  //   display: -ms-flexbox;
+  //   display: flex;
+  //   margin-bottom: 8px;
+  // }
   
-  .notes-header-info {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    font-size: 13.5px;
-    padding-bottom: 9px;
-    border-bottom: 1px solid #ECECEC;
-  }
+  // .notes-header-info {
+  //   width: 100%;
+  //   display: -webkit-box;
+  //   display: -ms-flexbox;
+  //   display: flex;
+  //   -ms-flex-wrap: wrap;
+  //       flex-wrap: wrap;
+  //   -webkit-box-pack: justify;
+  //       -ms-flex-pack: justify;
+  //           justify-content: space-between;
+  //   -webkit-box-align: center;
+  //       -ms-flex-align: center;
+  //           align-items: center;
+  //   font-size: 13.5px;
+  //   padding-bottom: 9px;
+  //   border-bottom: 1px solid #ECECEC;
+  // }
   
-  .notes-header {
-    font-size: 21px;
-    letter-spacing: 1px;
-    margin: 27px 24px;
-  }
+  // .notes-header {
+  //   font-size: 21px;
+  //   letter-spacing: 1px;
+  //   margin: 27px 24px;
+  // }
   
-  .note-count {
-    color: #ABABAB;
-    margin-left: 25px;
-  }
+  // .note-count {
+  //   color: #ABABAB;
+  //   margin-left: 25px;
+  // }
   
-  .notes-index-item {
-    margin: 0;
-    padding: 13.5px 24px;
-    height: auto;
-    position: relative;
-  }
+  // .notes-index-item {
+  //   margin: 0;
+  //   padding: 13.5px 24px;
+  //   height: auto;
+  //   position: relative;
+  // }
   
-  .notes-index-container div:first-of-type article {
-    margin-top: 2px;
-  }
+  // .notes-index-container div:first-of-type article {
+  //   margin-top: 2px;
+  // }
   
   .selected-index-item {
     outline: 2px solid #D9D9D9;
@@ -170,33 +170,33 @@
     margin: 0 auto;
   }
   
-  .notes-index-item:hover, .notes-index-item:hover h3 {
-    background-color: #40bc6c;
-    cursor: pointer;
-    color: white;
-    outline: 2px solid #40bc6c;
-  }
+  // .notes-index-item:hover, .notes-index-item:hover h3 {
+  //   background-color: #40bc6c;
+  //   cursor: pointer;
+  //   color: white;
+  //   outline: 2px solid #40bc6c;
+  // }
   
-  .notes-index-title {
-    font-family: 'Caecilia';
-    font-size: 1.3em;
-    color: #4A4A4A;
-    padding-top: 3px;
-  }
+  // .notes-index-title {
+  //   font-family: 'Caecilia';
+  //   font-size: 1.3em;
+  //   color: #4A4A4A;
+  //   padding-top: 3px;
+  // }
   
-  .notes-index-updated {
-    text-transform: uppercase;
-    margin: 6px 0;
-    letter-spacing: 1px;
-  }
+  // .notes-index-updated {
+  //   text-transform: uppercase;
+  //   margin: 6px 0;
+  //   letter-spacing: 1px;
+  // }
   
-  .notes-index-body {
-    margin: 0;
-    font-size: 13px;
-    line-height: 17px;
-    overflow: hidden;
-    height: 50px;
-  }
+  // .notes-index-body {
+  //   margin: 0;
+  //   font-size: 13px;
+  //   line-height: 17px;
+  //   overflow: hidden;
+  //   height: 50px;
+  // }
   
   .index-item-delete {
     width: 24px;

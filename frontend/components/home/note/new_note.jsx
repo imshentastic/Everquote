@@ -34,7 +34,7 @@ class NewNote extends React.Component {
         this.updateHeading = this.updateHeading.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleAddNote = this.handleAddNote.bind(this);
-        // this.toggleNotebookDropDown = this.toggleNotebookDropDown.bind(this);
+        this.toggleNotebookDropDown = this.toggleNotebookDropDown.bind(this);
         this.handleAddNotebook = this.handleAddNotebook.bind(this);
         this.handleSelectNotebook = this.handleSelectNotebook.bind(this);
 
@@ -109,14 +109,23 @@ class NewNote extends React.Component {
     
     handleAddNote() {
       this.props.addNote(this.state)
-        .then(() => this.props.history.push('/'));
-      document.querySelector('.add-note').classList.add('hidden');
+        .then(() => this.props.history.push('/'))
+        .then (()=>this.props.closeModal());
+  
     }
     
   
     // handles creation of new notebook
     handleAddNotebook() {
-      this.props.history.push('/api/notes');
+      this.props.closeModal();
+        // () => this.props.openModal("createNote");
+      this.props.history.push('/api/create-notebook');
+      this.props.closeModal();
+    }
+
+    //toggles hidden class
+    toggleNotebookDropDown() {
+      document.querySelector('.notebook-dropdown').classList.toggle('hidden');
     }
   
     //select notebook and sets state based on notebookId
@@ -132,7 +141,7 @@ class NewNote extends React.Component {
     }
 
       render () {
-          const { notebooks, notebook } = this.props;
+          const { notebooks, notebook, addNote, fetchNotebooks, closeModal, openModal } = this.props;
           let notebookSelectItems, currentNotebook;
 
           if (Object.keys(notebooks).length > 0) {
@@ -140,8 +149,14 @@ class NewNote extends React.Component {
                 this.notebookId = Object.keys(notebooks)[0];
             }
             // debugger
-          // currentNotebook = notebooks[this.notebookId].title;
+            if (notebooks[this.notebookId] !== undefined) {
+              currentNotebook = notebooks[this.notebookId].title;
+            } else {
+              currentNotebook = null;
+            }
+          
           //need to fix
+          // debugger
           notebookSelectItems = Object.keys(notebooks).map((notebookId, idx) =>
               <section
               key={ idx }
@@ -160,12 +175,16 @@ class NewNote extends React.Component {
           return(
               <section className="new-note-container">
                   <section className="note-select-options">
-                      
+                    <div
+                      className="small-notebook-icon"
+                      onClick={ this.toggleNotebookDropDown }></div>
                       <ul className="notebook-dropdown hidden">
                           <li
                             className="select-add-notebook"
                             onClick={ this.handleAddNotebook }>
-                            {/* Create new notebook */}
+                            <img
+                              className="select-add-notebook-icon"/>
+                              Create new notebook
                           </li>
                           { notebookSelectItems }
                       </ul>
