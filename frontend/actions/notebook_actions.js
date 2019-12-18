@@ -35,33 +35,52 @@ export const fetchNotebooks = () => dispatch => {
         }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
-export const fetchNotebook = (notebookId) => dispatch => (
-    NotebookApiUtil.fetchNotebook(notebookId)
-        .then(notebook => dispatch(receiveNotebook(notebook)))
-);
-
-export const createNotebook = notebook => dispatch => (
-    NotebookApiUtil.createNotebook(notebook)
-        .then(notebook => dispatch(receiveNotebook(notebook)))
-);
-
-export const updateNotebook = notebook => dispatch => {
-    return(
-    NotebookApiUtil.updateNotebook(notebook)
-        .then(notebook => dispatch(receiveNotebook(notebook)))
-    )
+export const fetchNotebook = (notebookId) => dispatch => {
+    return NotebookApiUtil.fetchNotebook(notebookId)
+        .then(notebook => {
+            dispatch(receiveNotebook(notebook));
+            dispatch(clearErrors());
+        }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
-export const deleteNotebook = notebookId => dispatch => (
-    NotebookApiUtil.deleteNotebook(notebookId)
-        .then( () => dispatch(removeNotebook(notebookId)))
-);
+export const createNotebook = notebook => dispatch => {
+    return NotebookApiUtil.createNotebook(notebook)
+        .then(notebook => {
+            dispatch(receiveNotebook(notebook));
+            dispatch(clearErrors());
+        }, errors => dispatch(receiveErrors(errors.responseJSON)));
+};
 
+export const updateNotebook = notebook => dispatch => {
+    return NotebookApiUtil.updateNotebook(notebook)
+        .then(notebook => {
+            dispatch(receiveNotebook(notebook));
+            dispatch(clearErrors());
+        }, errors => dispatch(receiveErrors(errors.responseJSON)));
+    
+};
 
-// export const addNotebook = notebook => dispatch => {
-//     return notebooksAPIUtil.addNotebook(notebook)
-//       .then(newerNotebook => {
-//         dispatch(fetchAllNotebooks());
-//         dispatch(clearErrors());
-//       }, errors => dispatch(receiveErrors(errors.responseJSON)));
-//   };
+export const deleteNotebook = notebookId => dispatch => {
+    return NotebookApiUtil.deleteNotebook(notebookId)
+        .then( () => {
+            dispatch(removeNotebook(notebookId));
+            dispatch(clearErrors());
+        }, errors => dispatch(receiveErrors(errors.responseJSON)));
+};
+
+export const fetchNotesFromNotebook = notebookId => dispatch => {
+    return notebooksAPIUtil.fetchNotesFromNotebook(notebookId)
+      .then(notes => {
+        dispatch(receiveNotes(notes));
+        dispatch(receiveNoteDetail(null));
+        dispatch(clearErrors());
+      }, errors => dispatch(receiveErrors(errors.responseJSON)));
+  };
+
+export const addNotebook = notebook => dispatch => {
+    return notebooksAPIUtil.addNotebook(notebook)
+      .then(newerNotebook => {
+        dispatch(fetchAllNotebooks());
+        dispatch(clearErrors());
+      }, errors => dispatch(receiveErrors(errors.responseJSON)));
+  };

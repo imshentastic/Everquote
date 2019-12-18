@@ -1,7 +1,5 @@
 import React from 'react';
 import NoteIndexItem from './note_index_item';
-
-import CreateNoteFormContainer from './create_note_form_container';
 import {Link} from 'react-router-dom'
 
 
@@ -17,10 +15,9 @@ class NoteIndex extends React.Component {
         return(
             <Link to="/api/notes" className="modal-note-content">
                 <h1>NOTES</h1>
-                {/* <button className="create-note-button" onClick={() => openModal('createNote')}>C</button> */}
                 
                 <div></div>
-                <ul >
+                {/* <ul > */}
                     {
                         notes.map((note, idx) => (
                             
@@ -33,7 +30,7 @@ class NoteIndex extends React.Component {
                             />
                         ))
                     }
-                </ul>
+                {/* </ul> */}
 
                 
             </Link>

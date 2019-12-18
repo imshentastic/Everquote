@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import NoteForm from './note_form';
+// import NoteForm from './note_form';
 import { fetchNote, updateNote } from '../../../actions/note_actions';
 import {Link} from 'react-router-dom';
 

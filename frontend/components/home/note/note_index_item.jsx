@@ -6,7 +6,7 @@ const NoteIndexItem = props => (
   
   <li className="modal-note-content-list">
       
-      <Link to={`/api/notes/${props.note.id}`}>
+      <Link to={`/api/notes/${props.note.id}/edit`}>
         <div className="modal-note-content-list-hr"></div>
         <h3>{props.note.heading}</h3>
         {/* <h3 class="small">{props.note.updated_at}</h3> */}
@@ -22,4 +22,3 @@ const NoteIndexItem = props => (
 );
 
 export default NoteIndexItem;
-//the myBtn is not working.. (modal.js, _home_show_note.scss)

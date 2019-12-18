@@ -10,9 +10,9 @@ class NewNote extends React.Component {
     componentWillReceiveProps(nextProps) {
         this.attachQuillRefs();
         this.quillRef.focus();
-        if (Object.keys(nextProps.notebooks).length > 0) {
+        if (Object.values(nextProps.notebooks).length > 0) {
           this.setState({
-            notebook_id: Object.keys(nextProps.notebooks)[0]
+            notebook_id: Object.values(nextProps.notebooks)[0]
           });
         }
     }
@@ -33,7 +33,7 @@ class NewNote extends React.Component {
         this.updateHeading = this.updateHeading.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleAddNote = this.handleAddNote.bind(this);
-        this.toggleNotebookDropDown = this.toggleNotebookDropDown.bind(this);
+        // this.toggleNotebookDropDown = this.toggleNotebookDropDown.bind(this);
         this.handleAddNotebook = this.handleAddNotebook.bind(this);
         this.handleSelectNotebook = this.handleSelectNotebook.bind(this);
 
@@ -112,13 +112,13 @@ class NewNote extends React.Component {
           }
         
         
-          toggleNotebookDropDown() {
-            document.querySelector('.notebook-dropdown').classList.toggle('hidden');
-          }
+          // toggleNotebookDropDown() {
+          //   document.querySelector('.notebook-dropdown').classList.toggle('hidden');
+          // }
         
           // handles creation of new notebook
           handleAddNotebook() {
-            this.props.history.push('/create-notebook');
+            this.props.history.push('/api/notes');
           }
         
           //select notebook and sets state based on notebookId
@@ -170,20 +170,12 @@ class NewNote extends React.Component {
             return(
                 <section className="new-note-container">
                     <section className="note-select-options">
-                        {/* <img
-                            src="https://res.cloudinary.com/malice/image/upload/v1500410337/notebook-small-gray_hutdbh.png"
-                            alt="Notebook Icon"
-                            className="small-notebook-icon"
-                            onClick={ this.toggleNotebookDropDown } /> */}
+                        
                         <ul className="notebook-dropdown hidden">
                             <li
-                            className="select-add-notebook"
-                            onClick={ this.handleAddNotebook }>
-                            {/* <img
-                                src="https://res.cloudinary.com/malice/image/upload/v1500766546/add-notebook.png"
-                                alt="Add Notebook Icon"
-                                className="select-add-notebook-icon" /> */}
-                            Create new notebook
+                              className="select-add-notebook"
+                              onClick={ this.handleAddNotebook }>
+                              {/* Create new notebook */}
                             </li>
                             { notebookSelectItems }
                         </ul>
@@ -193,19 +185,7 @@ class NewNote extends React.Component {
                         onClick={ this.toggleNotebookDropDown }>
                         { currentNotebook }
                     </nav>
-                    {/* <img
-                        src="https://res.cloudinary.com/malice/image/upload/v1500410338/tag-small-gray_riahyt.png"
-                        alt="Tag Icon"
-                        className="small-tag-icon" /> */}
-                    <section className="note-tag-index">
-                        { noteTagIndex }
-                        <input
-                        className="new-note-tag"
-                        placeholder="+"
-                        onChange={ this.updateNewTag }
-                        onKeyDown={ this.addTagToNote }
-                        value={ this.state.newTag } />
-                    </section>
+                    
                 
                     <button
                         className="cancel hidden"

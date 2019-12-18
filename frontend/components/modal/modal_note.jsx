@@ -6,7 +6,7 @@ import GreetingContainer from '../greeting/greeting_container';
 // import HomeLogout from '../home/note/home_logout';
 import HomeLogoutContainer from '../home/note/home_logout_container';
 import NoteIndexContainer from '../home/note/note_index_container';
-import CreateNoteFormContainer from '../home/note/create_note_form_container';
+// import CreateNoteFormContainer from '../home/note/create_note_form_container';
 // import EditNoteFormContainer from '../home/note/edit_note_form_container';
 
 function Modal({modal, closeModal}) {

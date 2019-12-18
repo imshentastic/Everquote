@@ -4,11 +4,11 @@ import {closeModal, closeCreateNotebooksModal} from '../../actions/modal_actions
 import {connect} from 'react-redux';
 
 import HomeLogoutContainer from '../home/home_logout_container';
-import NotebookIndexContainer from '../home/notebook_index_container';
-import CreateNotebookFormContainer from '../home/create_notebook_form_container';
-import CreateNoteFormContainer from '../home/note/create_note_form_container';
+import NotebookIndexContainer from '../home/notebook/notebook_index_container';
+import CreateNotebookFormContainer from '../home/notebook/create_notebook_form_container';
+// import CreateNoteFormContainer from '../home/note/create_note_form_container';
 import NoteIndexContainer from '../home/note/note_index_container';
-import EditNotebookFormContainer from '../home/edit_notebook_form';
+import EditNotebookFormContainer from '../home/notebook/edit_notebook_form';
 import NewNoteContainer from '../home/note/new_note_container';
 
 // import EditNotebookFormContainer from '../home/edit_notebook_form_container';
@@ -49,19 +49,13 @@ function Modal({modal, closeModal}) {
         case 'createNote':
             component = <NewNoteContainer />;
             // component2 = <NoteIndexContainer />;
-            // ModalTypeBackground="modal-background3";
+            ModalTypeBackground="modal-background3";
             ModalTypeChild="modal-child3";
             clickAction=closeModal;
             break;
         
             //need to close Modal and open index, or index perist
 
-        // case 'starred':
-        //     component = <ShowStarredContainer />;
-        //     ModalTypeBackground="modal-background3";
-        //     ModalTypeChild="modal-child3";
-        //     clickAction=closeModal;
-        //     break;
 
         case 'notes':
             component = <NoteIndexContainer />;
