@@ -1,4 +1,9 @@
-
+.note-column-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    margin-top: auto;
+}
 
 .modal-note-content {
     display: grid;
@@ -130,7 +135,7 @@
     letter-spacing: 0.09em;
     max-width: 305px;
     text-overflow: ellipsis;
-    white-space: initial;
+    white-space: nowrap;
     overflow: hidden;
     line-height: 19px;
 }

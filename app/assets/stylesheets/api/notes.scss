@@ -6,35 +6,6 @@
     visibility: hidden;
   }
   
-  .overlay {
-    width: 100vw;
-    height: 100vh;
-    z-index: 2;
-    position: absolute;
-    background-color: white;
-    opacity: .9;
-    -webkit-animation: fade-in .3s ease-in-out;
-    -moz-animation:    fade-in .3s ease-in-out;
-    -o-animation:      fade-in .3s ease-in-out;
-    animation:         fade-in .3s ease-in-out;
-    -webkit-transition: opacity .3s;
-    transition: opacity .3s;
-  }
-  
-  .overlay.hidden {
-    opacity: 0;
-  }
-  
-  @-webkit-keyframes fade-in {
-    0% { opacity: 0; }
-    100% { opacity: .9; }
-  }
-  
-  @keyframes fade-in {
-    0% { opacity: 0; }
-    100% { opacity: .9; }
-  }
-  
   .notes-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -43,13 +14,6 @@
     height: 100vh;
     width: 100%;
     position: relative;
-  }
-  
-  .notes-sidebar-header-index {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: 'absolute';
   }
   
   .notes-header-and-index {
@@ -334,16 +298,26 @@
     background-color: #D9D9D9;
   }
   
+  // .note-container-wrap {
+  //   height: 100vh;
+  // }
+
   .note-container {
-    width: 94%;
-    margin: 20px auto 30px auto;
-    position: relative;
+    width: auto;
+    margin: 42px 30px 20px 30px;
+    position: fixed;
+    z-index: 100;
+    left: 440px;
+    min-width: 600px;
+    font-family: Helvetica;
   }
   
   .new-note-container {
     width: 94%;
     margin: 58px auto 0 auto;
     position: relative;
+    height: 100vh;
+    font-family: Helvetica;
   }
   
   .note-title, .new-note-title {
@@ -351,7 +325,7 @@
     top: 100px;
     left: 15px;
     color: #2DBE60;
-    font-family: 'Caecilia Light';
+   
     font-size: 28px;
     z-index: 1;
     width: 98%;
@@ -413,3 +387,8 @@
     margin-top: 80px;
   }
   
+  @media all and (max-width: 1275px) {
+    .note-container {
+      margin: 20px 30px 20px 30px;
+    }
+  }

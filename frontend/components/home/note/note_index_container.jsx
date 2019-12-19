@@ -6,8 +6,8 @@ import {openModal, closeModal} from '../../../actions/modal_actions';
 const mapStateToProps = (state, ownProps) => {
     // const notes = state.entities.notes[ownProps.match.params.noteId];
     return {
-        notes: Object.values(state.entities.notes)
-        // notes
+        notes: Object.values(state.entities.notes),
+        // note: state.entities.notes[ownProps.match.params.noteId]
     };
 };
 

@@ -58,6 +58,7 @@ class Api::NotesController < ApplicationController
     end
 
     def update
+        # debugger
         @note = current_user.notes.find(params[:id])
 
         if @note && @note.update(note_params)

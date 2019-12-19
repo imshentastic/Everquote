@@ -29,7 +29,7 @@ import NoteIndexContainer from './home/note/note_index_container';
                     {/* <ProtectedRoute exact path="/api/notebooks/:notebookId" component={ShowNotebookContainer} /> */}
                     <ProtectedRoute exact path="/api/notebooks/:notebookId/edit" component={EditNotebookFormContainer} />
                     <ProtectedRoute exact path="/api/notes/:noteId/show" component={NoteShowContainer} />
-                    <ProtectedRoute exact path="/api/notes/:noteId/edit" component={EditNoteFormContainer} />
+                    {/* <ProtectedRoute exact path="/api/notes/:noteId/edit" component={EditNoteFormContainer} /> */}
                     <ProtectedRoute exact path="/api/create-notebook" component={CreateNotebookFormContainer} />
                     <ProtectedRoute exact path="/api/create-note" component={NewNoteContainer} />
 
@@ -38,11 +38,13 @@ import NoteIndexContainer from './home/note/note_index_container';
                     <Modal />
 
                         <ProtectedRoute exact path="/api/notebooks" component={NotebookIndexContainer} />
+                       
                         <ProtectedRoute exact path="/api/notebooks/:notebookId" component={ShowNotebookContainer} />
                         <ProtectedRoute exact path='/' component={Dashboard} />
                         <ProtectedRoute exact path='/api/notebooks' component={Dashboard} />
                         <ProtectedRoute exact path='/api/notes' component={Dashboard} />
-                        {/* <ProtectedRoute exact path='/api/notes/:noteId/edit' component={Dashboard} /> */}
+                        <ProtectedRoute exact path='/api/notebooks/:notebookId' component={Dashboard} />
+                        <ProtectedRoute exact path='/api/notes/:noteId/show' component={Dashboard} />
                         {/* <ProtectedRoute exact path='/api/create-note' component={Dashboard} /> */}
 
                     <Switch>

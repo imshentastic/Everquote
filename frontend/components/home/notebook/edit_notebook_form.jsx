@@ -17,7 +17,7 @@ class EditNotebookForm extends React.Component {
     //componentDidMount() {
   componentDidMount() {
     this.props.fetchNotebook(this.props.match.params.notebookId);
-    <Link to={`/api/notebooks/${this.props.notebook.id}`}></Link>
+    // <Link to={`/api/notebooks/${this.props.notebook.id}`}></Link>
   }
 
   update(field) {

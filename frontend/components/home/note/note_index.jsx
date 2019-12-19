@@ -7,6 +7,7 @@ class NoteIndex extends React.Component {
 
     componentDidMount() {
             this.props.fetchNotes();
+            // this.props.fetchNote(this.props.match.params.noteId);
     }
 
 
@@ -17,7 +18,7 @@ class NoteIndex extends React.Component {
                 <h1>NOTES</h1>
                 
                 <div></div>
-                <ul >
+                <ul className="note-column-reverse">
                     {
                         notes.map((note, idx) => (
                             

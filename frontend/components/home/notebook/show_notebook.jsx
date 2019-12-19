@@ -18,13 +18,26 @@ class NotebookShow extends React.Component {
   }
 
   render() {
-    const { notebook, notebooks, openModal, deleteNote, updateNote, closeModal } = this.props;
+    const { notebook, notebooks, openModal, deleteNote, updateNote, closeModal, notes } = this.props;
 
     let notebookSelectItems, currentNotebook, noteTagIndex;
     currentNotebook = notebook;
     notebookSelectItems = notebooks;
     
     if (!notebook) return null;
+    
+    const relatedNotes = notebook.notes.map((noteId) => (
+      <li className="modal-note-content-list">
+      
+          <Link className="modal-note-content-list-link" to={`/api/notes/${noteId}/show`}>
+              <div className="modal-note-content-list-info-edit"><h3>{notes[noteId].heading}</h3></div>
+              {/* <h4 className="modal-note-content-list-info-lastupdate">{ this.state.lastUpdate }</h4> */}
+              <h3 class="small">{notes[noteId].body}</h3>
+            
+          </Link>
+          <div className="modal-note-content-list-hr"></div>
+      </li>
+  ))
 
     return (
         <div>
@@ -38,13 +51,18 @@ class NotebookShow extends React.Component {
                 <h1>{notebook.title}</h1>
                 <h2>Share</h2>
             <h3>{notebook.notes.length} notes</h3>
-                  
+
+            {/* <section className="modal-note-content"> */}
+                <ul >
+                      {relatedNotes}
+                </ul>
+            {/* </section> */}
                   
                   
                 
               
             </div>
-            {/* </Link> */}
+
         
          </div>
 

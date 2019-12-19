@@ -51,8 +51,8 @@ function Modal({modal, closeModal}) {
         case 'shownote':
             component = <ShowNoteContainer/>;
             // component2 = null;
-            ModalTypeBackground="modal-background3";
-            ModalTypeChild="modal-child3";
+            ModalTypeBackground="modal-background4";
+            ModalTypeChild="modal-child4";
             clickAction=closeModal;
             break;
             

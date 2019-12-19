@@ -108,16 +108,16 @@ class NewNote extends React.Component {
       this.props.addNote(this.state)
         .then(() => this.props.history.push('/api/notes'))
         .then (()=>this.props.closeModal());
-        document.querySelector('.add-note').classList.add('hidden');
+        // document.querySelector('.add-note').classList.add('hidden');
     }
     
   
     // handles creation of new notebook
     handleAddNotebook() {
       this.props.closeModal();
-        // () => this.props.openModal("createNote");
-      this.props.history.push('/api/create-notebook');
-      this.props.closeModal();
+        // this.props.history.push('/api/create-notebook');
+        this.props.openModal("createNotebook");
+      // this.props.closeModal();
     }
 
     //toggles hidden class
@@ -149,20 +149,20 @@ class NewNote extends React.Component {
             if (notebooks[this.notebookId] !== undefined) {
               currentNotebook = notebooks[this.notebookId].title;
             } else {
-              currentNotebook = null;
+              currentNotebook = "michael";
             }
           
           notebookSelectItems = Object.keys(notebooks).map((notebookId, idx) =>
               <section
-              key={ idx }
-              className="notebook-select-item-container"
-              onClick={ this.handleSelectNotebook }>
-              <li
-                  key={ idx }
-                  className="notebook-select-item"
-                  id={ notebookId }>
-                  { notebooks[notebookId].title }
-              </li>
+                key={ idx }
+                className="notebook-select-item-container"
+                onClick={ this.handleSelectNotebook }>
+                <li
+                    key={ idx }
+                    className="notebook-select-item"
+                    id={ notebookId }>
+                    { notebooks[notebookId].title }
+                </li>
               </section>
           );
           }

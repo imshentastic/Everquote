@@ -34,6 +34,7 @@ class NotesIndexItem extends React.Component {
   componentWillUnmount() {
     clearInterval(this.intervalId);
   }
+  
 
   constructor(props) {
     super(props);
@@ -48,14 +49,17 @@ class NotesIndexItem extends React.Component {
   }
 
   render() {
-    const { note, match, deleteNote } = this.props;
+    const { note, match, deleteNote, openModal } = this.props;
     return (
         <li className="modal-note-content-list">
-            <Link className="modal-note-content-list-link" to={`/api/notes/${note.id}/show`}>
-                <Link className="modal-note-content-list-info-edit" to={`/api/notes/${note.id}/edit`}><h3>{note.heading}</h3></Link>
+            {/* <Link className="modal-note-content-list-link" to={`/api/notes/${note.id}/show`} onClick={() => openModal('shownote')}> */}
+            <Link className="modal-note-content-list-link" to={`/api/notes/${note.id}/show`} >
+            {/* <div className="modal-note-content-list-link" onClick={() => openModal('shownote')}> */}
+                {/* <Link className="modal-note-content-list-info-edit" to={`/api/notes/${note.id}/edit`}><h3>{note.heading}</h3></Link> */}
+                <div className="modal-note-content-list-info-edit" ><h3>{note.heading}</h3></div>
                 <h4 className="modal-note-content-list-info-lastupdate">{ this.state.lastUpdate }</h4>
                 <h3 class="small">{note.body}</h3>
-                <Link to="/api/notes" className="modal-note-content-list-delete" onClick={() => deleteNote(note.id)}></Link>
+                <Link to="/" className="modal-note-content-list-delete" onClick={() => deleteNote(note.id)}></Link>
             </Link>
                   <div className="modal-note-content-list-hr"></div>
         </li>

@@ -17,7 +17,7 @@ const mdp = dispatch => {
     addNote: note => dispatch(addNote(note)),
     fetchNotebooks: () => dispatch(fetchNotebooks()),
     closeModal: () => dispatch(closeModal()),
-    openModal: modal => dispatch(openModal())
+    openModal: modal => dispatch(openModal(modal))
   };
 };
 

@@ -15,7 +15,8 @@ class NotebookForm extends React.Component {
     // e.preventDefault();
     this.props.formAction(this.state);
     this.props.closeModal();
-    this.props.history.goBack();
+    // this.props.history.goBack();
+    //still not working
   }
 
   update(field) {
