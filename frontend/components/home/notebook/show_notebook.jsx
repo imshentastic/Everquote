@@ -6,8 +6,6 @@ import NoteIndexItemContainer from '../note/note_index_item_container';
 class NotebookShow extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state={};
     }
   componentDidMount() {
     this.props.fetchNotebook(this.props.match.params.notebookId);

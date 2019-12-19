@@ -38,7 +38,7 @@ class NotebookIndex extends React.Component {
                                 deleteNotebook={deleteNotebook}
                                 updateNotebook={updateNotebook}
                                 closeModal = {closeModal}
-                                key={idx}
+                                key={idx*4}
                                 // fetchNotes = {this.props.fetchNotes}
                                 // deleteNotebook = {this.props.deleteNotebook}
                             />

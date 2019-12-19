@@ -3,17 +3,20 @@ import ReactQuill from 'react-quill';
 
 class NewNote extends React.Component {
 
-    
+    componentdidMount() {
+      this.attachQuillRefs();
+      this.quillRef.focus();
+      document.querySelector('.cancel').classList.remove('hidden');
+      // document.querySelector('.add-note').classList.remove('hidden');
+      // if (this.state.heading || this.state.body) {
+      //     document.querySelector('.add-note').disabled = false;
+      // } else {
+      //     document.querySelector('.add-note').disabled = true;
+      // }
+    }
+
     componentDidUpdate() {
         this.attachQuillRefs();
-        this.quillRef.focus();
-        document.querySelector('.cancel').classList.remove('hidden');
-        document.querySelector('.add-note').classList.remove('hidden');
-        if (this.state.title || this.state.body) {
-          document.querySelector('.add-note').disabled = false;
-        } else {
-          document.querySelector('.add-note').disabled = true;
-      }
     }
 
     componentWillReceiveProps(nextProps) {
@@ -30,7 +33,8 @@ class NewNote extends React.Component {
         super(props);
         this.state = {
           heading: "",
-          body: ""
+          body: "",
+          plain_text_body: ""
         };
 
         this.quillRef = null;
@@ -51,12 +55,11 @@ class NewNote extends React.Component {
             toolbar: [
             
             [{ 'font': [] }],
-            [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+            [{ 'size': ['small', false, 'large', 'huge'] }],
             [{ 'color': [] }, { 'background': [] }, 'bold', 'italic', 'underline','strike', 'blockquote', 'code-block'],
             [{ 'align': [] }, {'list': 'bullet'}, {'list': 'ordered'}],
             ['link', 'image'],
             [{'indent': '+1'}, {'indent': '-1'}],
-            
             [{ 'direction': 'rtl' }],   
             [{ 'script': 'sub'}, { 'script': 'super' }, 'clean']
             ]
@@ -64,32 +67,18 @@ class NewNote extends React.Component {
     }
     //~~~~~~~~~~~end of constructor
 
-    componentdidMount() {
-        this.attachQuillRefs();
-        this.quillRef.focus();
-        document.querySelector('.cancel').classList.remove('hidden');
-        document.querySelector('.add-note').classList.remove('hidden');
-        if (this.state.heading || this.state.body) {
-            document.querySelector('.add-note').disabled = false;
-        } else {
-            document.querySelector('.add-note').disabled = true;
-        }
-    }
+    
 
     //detects whether heading or body are changed from null
     updateQuill(value) {
         if (this.quillRef) {
         this.setState({
-            body: value
+            body: value,
+            plain_text_body: this.quillRef.getText()
         
-        }, () => {
-            if (this.state.heading || this.state.body) {
-            document.querySelector('.add-note').disabled = false;
-            } else {
-            document.querySelector('.add-note').disabled = true;
-            }
         });
-    }}
+    }
+  }
 
     updateHeading(event) {
       // debugger
@@ -112,14 +101,14 @@ class NewNote extends React.Component {
     handleCancel() {
       document.querySelector('.cancel').classList.add('hidden');
       this.props.closeModal();
-      this.props.history.push('/');
+      this.props.history.push('/api/notes');
     }
-    
+    // handles creation of new note
     handleAddNote() {
       this.props.addNote(this.state)
-        .then(() => this.props.history.push('/'))
+        .then(() => this.props.history.push('/api/notes'))
         .then (()=>this.props.closeModal());
-  
+        document.querySelector('.add-note').classList.add('hidden');
     }
     
   
@@ -156,15 +145,13 @@ class NewNote extends React.Component {
             if (!this.notebookId) {
                 this.notebookId = Object.keys(notebooks)[0];
             }
-            // debugger
+            
             if (notebooks[this.notebookId] !== undefined) {
               currentNotebook = notebooks[this.notebookId].title;
             } else {
               currentNotebook = null;
             }
           
-          //need to fix
-          // debugger
           notebookSelectItems = Object.keys(notebooks).map((notebookId, idx) =>
               <section
               key={ idx }
@@ -190,9 +177,9 @@ class NewNote extends React.Component {
                           <li
                             className="select-add-notebook"
                             onClick={ this.handleAddNotebook }>
-                            <img
-                              className="select-add-notebook-icon"/>
-                              Create new notebook
+                            <div
+                              className="select-add-notebook-icon">New notebook!</div>
+                              
                           </li>
                           { notebookSelectItems }
                       </ul>
@@ -205,10 +192,10 @@ class NewNote extends React.Component {
                   
               
                   <button
-                      className="cancel hidden"
+                      className="cancel"
                       onClick ={ this.handleCancel }>Cancel</button>
                   <button
-                      className="add-note hidden"
+                      className="add-note"
                       onClick ={ this.handleAddNote }>Save Note</button>
                   <input
                       type="text"

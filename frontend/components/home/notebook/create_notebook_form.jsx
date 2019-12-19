@@ -6,8 +6,6 @@ class NotebookForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.notebook;
-    
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -17,10 +15,7 @@ class NotebookForm extends React.Component {
     // e.preventDefault();
     this.props.formAction(this.state);
     this.props.closeModal();
-    // this.props.history.push('/notebooks');
-    // let history = useHistory();
-    // useHistory.push('/');
-    //close modal and force url here
+    this.props.history.goBack();
   }
 
   update(field) {
@@ -46,7 +41,7 @@ class NotebookForm extends React.Component {
 
             <div>
               <button className="notebookform-button-cancel" onClick={this.props.closeModal}>Cancel</button>
-              <button className="notebookform-button" onClick={this.props.closeModal}>{this.props.formType}</button>
+              <button className="notebookform-button" >{this.props.formType}</button>
             </div>
             
         </form>
