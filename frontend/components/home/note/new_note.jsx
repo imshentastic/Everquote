@@ -6,6 +6,14 @@ class NewNote extends React.Component {
     
     componentDidUpdate() {
         this.attachQuillRefs();
+        this.quillRef.focus();
+        document.querySelector('.cancel').classList.remove('hidden');
+        document.querySelector('.add-note').classList.remove('hidden');
+        if (this.state.title || this.state.body) {
+          document.querySelector('.add-note').disabled = false;
+        } else {
+          document.querySelector('.add-note').disabled = true;
+      }
     }
 
     componentWillReceiveProps(nextProps) {

@@ -78,7 +78,7 @@
     font-size: 15px;
     color: #6a6a6a;
     text-align: center;
-    cursor: button;
+    cursor: pointer;
 }
 
 .sessionform-button:hover {
@@ -93,7 +93,7 @@
     font-size: 14px;
     // overflow: hidden;
     width: 100%;
-    margin-bottom: 7px;
+    margin: 7px 0px 12px;
 }
 
 .line::before, .line::after{
@@ -136,7 +136,7 @@
     max-width: 280px;
     padding: 12px 16px;
     border-radius: 7px;
-    margin: 4px 0px;
+    margin: 3px 0px;
     
 }
 
@@ -163,17 +163,36 @@ input[type="checkbox"] {
 }
 
 .altform > h3 {
-    margin-top: 40px;
+    margin-top: 37px;
 }
 
 .altform > div {
     color: #00A82D;
     font-size: 17px;
-    padding: 13px;
+    padding: 8px;
 }
 
 .altform > div:hover {
     color: #008A2D;
+}
+
+.sessionform-button2 {
+    background-color: #51AA30;
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    max-width: 280px;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 7px;
+    align-self: center;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    height: 33px;
+    margin: 17px 0;
+}
+.sessionform-button2:hover {
+    background-color: #008A2D;
 }
 
 //need to fix media screen

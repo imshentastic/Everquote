@@ -1,7 +1,4 @@
-.app-wrapper {
-    display: flex;
-    justify-content: center;
-}
+
 
 .modal-note-content {
     display: grid;
@@ -76,13 +73,14 @@
 // }
 
 .modal-note-content-list {
-    display: flex;
+    display: grid;
     grid-auto-rows: repeat(1, 120px);
     grid-auto-flow: row;
     // border-top: 1px solid #ECECEC;
     // border-width: 90%;
-    height: 83px;
+    height: 117px;
     // width: 100%;
+    // border-bottom: 1px solid #ECECEC;
 
     
 }
@@ -90,13 +88,13 @@
 .modal-note-content-list > * {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
-    font-size: 15px;
+    font-size: 16px;
     -webkit-font-smoothing: antialiased;
-    
+    color: #4A4A4A;
     // padding: 15px;
-    padding: 15px 23px 19px;
+    padding: 19px 25px 19px;
     // margin-bottom: 25px;
-    height: 81px;
+    height: 120px;
     width: 100%;
     
     flex-direction: column;
@@ -108,6 +106,7 @@
     line-height: 15px;
 }
 
+
 .modal-note-content > *:focus {
     box-sizing: border-box;
     border: 2px solid #D9D9D9;
@@ -117,11 +116,18 @@
     font-size: 12px;
     color: #878787;
     line-height: 25px;
+    word-wrap: normal;
+    // padding-bottom: 32px;
 }
 
 
 .modal-note-content-list > *:hover {
     background-color: #40BC6C;
+    color: white;
+}
+
+.modal-note-content-list-link:hover .small{
+    
     color: white;
 }
 
@@ -147,6 +153,7 @@
     align-self: flex-end;
     // flex-direction: row;
     position: absolute;
+    right: 12px;
 
     background-image: asset-data-url("whitetrash.png");
     background-size: 55%;
@@ -202,14 +209,23 @@
         background-image: asset-data-url("greentrash.png");
     }
 
-.modal-note-content-list > *:hover .modal-note-content-list-hr {
-    // color: #40BC6C;
-    visibility: hidden;
-}
 
-.modal-note-content-list-hr {
-    border: 0.4px solid #ECECEC;
-    // border-width: 80%;
-    margin-top: -16px;
-    margin-bottom: 13px;
-}
+    .modal-note-content-list > *:hover .modal-note-content-list-hr {
+        // color: #40BC6C;
+        visibility: hidden;
+    }
+
+    .modal-note-content-list-link {
+        position: relative;
+    }
+
+    .modal-note-content-list-hr {
+        border-top: 0.4px solid #ECECEC;
+        top: 118px;
+        width: 90%;
+        justify-self: center;
+        
+        // border-width: 80%;
+        // margin-top: 57px;
+        // margin-bottom: 13px;
+    }

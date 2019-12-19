@@ -27,7 +27,7 @@ class NotebookIndexItem extends React.Component {
    
         
           <h4>{notebook.title}</h4>
-          {/* <h5>{notebook.notes.length} notes</h5> */}
+          <h5>{notebook.notes.length} notes</h5>
           <Link to="/api/notebooks" className="modal-notebook-content-list-delete" onClick={() => this.props.deleteNotebook(this.props.notebook.id)}></Link>
           
           <div className="modal-notebook-content-list-hr"></div>

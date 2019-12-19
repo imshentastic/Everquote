@@ -25,8 +25,8 @@ export default class HomeLogout extends React.Component {
     render() {
         const {currentUser, closeModal} = this.props;
         const greeting = currentUser ? (
-            <div>
-                <span>{currentUser.email}, you are logged in.</span>
+            <div className="logout-text">
+                <span>{currentUser.email}</span>
                 <button onClick={this.handleSubmit}>Log Out</button>
             </div>
         ) : (

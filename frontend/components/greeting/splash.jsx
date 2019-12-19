@@ -13,9 +13,9 @@ export default ({currentUser, logout}) => {
                             Effortless.
                         </h2>
                     </div>
-                    <h4 className="splash-main-body">Take notes anywhere. Find information faster. Share ideas with anyone. Meeting notes, web pages, projects, to-do lists—with Evernote as your note taking app, nothing falls through the cracks.</h4>
+                    <h4 className="splash-main-body">Take notes anywhere. Find information faster. Share ideas with anyone. Meeting notes, web pages, projects, to-do lists—with Everquote as your note taking app, nothing falls through the cracks.</h4>
                     <Link to='/signup' >
-                        <button className="splash-main-signup">SIGN UP FOR FREE
+                        <button className="splash-main-signup"><h1>SIGN UP FOR FREE</h1>
                         </button>
                     </Link>
                     <img className="splash-main-img"src={window.splashImg} alt=""/>

@@ -5,12 +5,13 @@ import Splash from './splash';
 import Dropdown from './dropdown';
 import NoteIndexContainer from '../home/note/note_index_container';
 
-export default ({currentUser, notebooks, logout, openModal, closeModal}) => {
+export default ({currentUser, notebooks, logout, openModal, closeModal, toggleModal}) => {
     const greeting = currentUser ? (
         <div className="greetingwrapper">
             {/* <HomeContainer /> */}
             {/* <NoteIndexContainer /> */}
-            <button className="logout" onClick={() => openModal('logout')}>Logout</button>
+            <div></div>
+            <button className="logout" onClick={() => toggleModal('logout')}>Logout</button>
         </div>
     ) : (
         <>
