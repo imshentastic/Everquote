@@ -17,13 +17,15 @@
   }
  
  .splash-icon {
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     justify-self: center;
     align-self: center;
+    padding-bottom: 3px;
+    padding-left: 3px;
  
  }
  
@@ -56,6 +58,7 @@
    margin-top: 23px;
    margin-left: 20px;
    position: relative;
+   
   
 
  }
@@ -65,19 +68,20 @@
  .splash-nav-dropdown:hover .splash-nav-dropdown-sub {
   //  height: 100px;
    grid-area: 1 / 3;
-   margin-left: -15px;
+   margin-left: -8px;
    position: absolute;
    align-self: baseline;
    color: black;
    font-weight: bold;
-   line-height: 50px;
+   line-height: 30px;
    margin-top: 0px;
    background: white;
    opacity: 1;
    box-shadow: 0 10px 8px 0 rgba(0,0,0,0.2);
-   width: 314px;
-   padding: 16px;
+   width: 108px;
+   padding: 8px;
    height: auto;
+   border-radius: 5px;
 
  }
 
