@@ -11,7 +11,7 @@ export default ({currentUser, notebooks, logout, openModal, closeModal, toggleMo
             {/* <HomeContainer /> */}
             {/* <NoteIndexContainer /> */}
             <div></div>
-            <button className="logout" onClick={() => toggleModal('logout')}>Logout</button>
+            <button className="logout" onClick={() => toggleModal('logout')}></button>
         </div>
     ) : (
         <>

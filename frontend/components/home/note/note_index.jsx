@@ -13,14 +13,15 @@ class NoteIndex extends React.Component {
 
     render() {
         const {notes, deleteNote, updateNote, openModal, closeModal} = this.props;
+        const notesRev = notes.reverse();
         return(
             <Link to="/api/notes" className="modal-note-content">
                 <h1>NOTES</h1>
-                
+                <h2>{notes.length} notes</h2>
                 <div></div>
                 <ul className="note-column-reverse">
                     {
-                        notes.map((note, idx) => (
+                        notesRev.map((note) => (
                             
                             <NoteIndexItem
                                 note={note}

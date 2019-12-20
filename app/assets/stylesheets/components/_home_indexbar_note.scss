@@ -1,9 +1,10 @@
-.note-column-reverse {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-evenly;
-    margin-top: auto;
-}
+// .note-column-reverse {
+    // display: flex;
+    // flex-direction: column-reverse;
+    // justify-content: space-evenly;
+    // align
+    // justify-content: end;
+// }
 
 .modal-note-content {
     display: grid;
@@ -14,7 +15,7 @@
     border: 1px solid #ECECEC;
     background-color: #FFFFFF;
     -webkit-font-smoothing: antialiased;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
     // z-index: 8;
     left: 73px;
     overflow: -moz-scrollbars-vertical;
@@ -32,6 +33,17 @@
     letter-spacing: 0.3px;
     height: 10px;
     font-weight: lighter;
+}
+
+.modal-note-content > h2 {
+    font-size: 13px;
+    
+    padding: 12px 25px;
+    color: #878787;
+    letter-spacing: 0.3px;
+    height: 10px;
+    font-weight: lighter;
+    
 }
 
 .modal-note-content > div {
@@ -91,19 +103,25 @@
 }
 
 .modal-note-content-list > * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
     display: flex;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     color: #4A4A4A;
     // padding: 15px;
-    padding: 19px 25px 19px;
+    padding: 19px 24px 19px;
     // margin-bottom: 25px;
-    height: 120px;
+    height: 116px;
     width: 100%;
     
     flex-direction: column;
     
+}
+
+.modal-note-content-list-space {
+    height: 18px;
+    margin-top: 104px;
+    background: white;
 }
 
 .modal-note-content-list > h3 {
@@ -145,7 +163,10 @@
     background-color: #40BC6C;
     color: white;
 }
-
+// .modal-note-content-list-hr:hover {
+//     background-color: transparent;
+//     color: white;
+// }
 
 .modal-note-content-list-link:hover .modal-note-content-list-info-edit{
     text-overflow: ellipsis;
@@ -250,6 +271,7 @@
 
     .modal-note-content-list-link {
         position: relative;
+        background: white;
     }
 
     .modal-note-content-list-hr {
@@ -257,8 +279,104 @@
         top: 118px;
         width: 86%;
         justify-self: center;
+        z-index:10;
+        height: 1px;
+        padding: 0px;
         
         // border-width: 80%;
         // margin-top: 57px;
         // margin-bottom: 13px;
     }
+
+
+
+
+    ///
+
+    .modal-note-content-list-b {
+        display: grid;
+        grid-auto-rows: repeat(1, 120px);
+        grid-auto-flow: row;
+        // border-top: 1px solid #ECECEC;
+        // border-width: 90%;
+        height: 117px;
+        // width: 100%;
+        // border-bottom: 1px solid #ECECEC;
+    
+        
+    }
+    
+    .modal-note-content-list-b > * {
+        font-family: Helvetica, sans-serif;
+        display: flex;
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        color: #4A4A4A;
+        // padding: 15px;
+        padding: 19px 24px 19px;
+        // margin-bottom: 25px;
+        height: 86px;
+        width: 86%;
+        background: white;
+        z-index:20;
+        
+        flex-direction: column;
+        
+    }
+    .small-b {
+        font-size: 12px;
+        color: #878787;
+        line-height: 25px;
+        word-wrap: break-word;
+        // padding-bottom: 32px;
+        letter-spacing: 0.09em;
+        max-width: 305px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        line-height: 19px;
+    }
+    
+    
+    .modal-note-content-list-b > *:hover {
+        background-color: #40BC6C;
+        color: white;
+    }
+    
+    
+    .modal-note-content-list-link:hover-b .modal-note-content-list-info-edit-b{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    
+    .modal-note-content-list-link-b:hover .small-b{
+        
+        color: white;
+    }
+    
+    .modal-note-content-list-link-b:hover .modal-note-content-list-info-lastupdate-b{
+        
+        color: white;
+    }
+    
+    
+    
+        
+    
+    
+        .modal-note-content-list > *:hover .modal-note-content-list-hr-b {
+            // color: #40BC6C;
+            visibility: hidden;
+        }
+
+        .modal-note-content-list-hr-b {
+            border-top: 0.4px solid #ECECEC;
+            top: 118px;
+            width: 86%;
+            justify-self: center;
+            
+            // border-width: 80%;
+            // margin-top: 57px;
+            // margin-bottom: 13px;
+        }

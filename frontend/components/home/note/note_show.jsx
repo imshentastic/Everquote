@@ -21,7 +21,6 @@ class NoteShow extends React.Component {
     this.attachQuillRefs();
     this.quillRef.focus();
     
-    // debugger
     if (nextProps.note !== undefined) {
       this.notebookId = nextProps.note.notebook_id;
       this.setState({
@@ -31,14 +30,14 @@ class NoteShow extends React.Component {
         author_id: nextProps.note.author_id
       });
     }
-    // debugger
+
   }
 
   constructor(props) {
     super(props);
-    // debugger
+    
     // this.props.fetchNote(this.props.match.params.noteId);
-    // debugger
+    
     // this.state = this.props.note;
     this.state = {
       // id: this.props.note.id,
@@ -56,7 +55,8 @@ class NoteShow extends React.Component {
     this.reactQuillRef = null; // ReactQuill component
     this.updateQuill = this.updateQuill.bind(this);
     this.updateHeading = this.updateHeading.bind(this);
-    
+    this.handleCancel = this.handleCancel.bind(this);
+    this.handleUpdateNote = this.handleUpdateNote.bind(this);
     this.toggleNotebookDropDown = this.toggleNotebookDropDown.bind(this);
     this.handleAddNotebook = this.handleAddNotebook.bind(this);
     this.handleSelectNotebook = this.handleSelectNotebook.bind(this);
@@ -97,6 +97,18 @@ class NoteShow extends React.Component {
     this.quillRef = this.reactQuillRef.getEditor();
   }
 
+  handleCancel() {
+    document.querySelector('.cancel').classList.add('hidden');
+    this.props.closeModal();
+    this.props.history.push('/api/notes');
+  }
+  // handles creation of new note
+  handleUpdateNote() {
+    this.props.updateNote(this.state)
+      .then(() => this.props.history.push('/api/notes'))
+      .then (()=>this.props.closeModal());
+      // document.querySelector('.add-note').classList.add('hidden');
+  }
   
 
   toggleNotebookDropDown() {
@@ -121,7 +133,7 @@ class NoteShow extends React.Component {
   render() {
     const { notebooks, note, tags, fetchNotebooks } = this.props;
     let notebookSelectItems, currentNotebook, noteTagIndex;
-    // debugger
+    
     // if (Object.keys(notebooks).length > 0) {
       
     //   currentNotebook = notebooks[this.notebookId].title;
@@ -151,7 +163,7 @@ class NoteShow extends React.Component {
               className="select-add-notebook"
               onClick={ this.handleAddNotebook }>
               <div
-                className="select-add-notebook-icon"></div>
+                className="select-add-notebook-header"></div>
               {/* Create new notebook */}
             </li>
             {/* { notebookSelectItems } */}
@@ -165,6 +177,16 @@ class NoteShow extends React.Component {
             className="small-tag-icon"></div>
           
         </section>
+
+        <button
+            className="cancel"
+            onClick ={ this.handleCancel }>Cancel
+        </button>
+        <button
+            className="add-note"
+            onClick ={ this.handleUpdateNote }>Update Note
+        </button>
+
         <input
           type="text"
           className="note-title"

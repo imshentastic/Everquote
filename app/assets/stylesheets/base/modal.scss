@@ -9,18 +9,18 @@
   }
   
   .modal-child {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
     transform: translate(-50%, -50%);
     position: fixed;
-    top:662px;
+    top:822px;
     bottom: -5px;
     right: 45%;
     left: 193px;
     background: rgb(245, 245, 245);
     z-index: 12;
-    border-radius: 2%;
+    border-radius: 4%;
     -webkit-box-shadow: 0 0 7px 3px #ECECEC;
     box-shadow: 0 0 7px 3px #ECECEC;
   }

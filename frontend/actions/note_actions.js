@@ -16,7 +16,7 @@ const receiveNotes = notes => {
 };
 
 const receiveNote = note => {
-  // debugger
+  
     return {
         type: RECEIVE_NOTE,
         note
@@ -53,7 +53,7 @@ export const fetchNotes = () => dispatch => {
 
 
 export const fetchNote = noteId => dispatch => {
-  // debugger
+  
     return NoteApiUtil.fetchNote(noteId).then(
       note => dispatch(receiveNote(note)),
       errors => dispatch(receiveErrors(errors.responseJSON))
@@ -68,7 +68,7 @@ export const createNote = note => dispatch => {
   };
 
   export const updateNote = note => dispatch => {
-    // debugger
+    
     return NoteApiUtil.updateNote(note).then(
       updatedNote => dispatch(receiveNote(updatedNote)),
       errors => dispatch(receiveErrors(errors.responseJSON))

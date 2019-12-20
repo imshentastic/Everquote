@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchNotebook, updateNotebook } from '../../../actions/notebook_actions';
+import { fetchNotebook, updateNotebook, deleteNotebook } from '../../../actions/notebook_actions';
 import {Link, withRouter} from 'react-router-dom';
 import {closeModal} from '../../../actions/modal_actions';
 
@@ -36,25 +36,29 @@ class EditNotebookForm extends React.Component {
     return (
       <div className="notebookform-edit-background">
         <div className="notebookform-edit">
-          <div>i</div>
+          
           <h2>NOTEBOOK INFO</h2>
+          
           <h3>Overview</h3>
 
-          <form >
-            <label>TITLE
-              <input
+          <form className = "notebookform-edit-container">
+            <div className="notebookform-edit-div">
+              <div>TITLE</div>
+              <label className = "notebookform-edit-label">
+              <span>
+                <input
                   type='text'
                   // value={notebook.title}
                   onChange={this.update('title')}
                   placeholder={notebook.title}
-              />
-            </label>
-            <div>CREATOR:</div>
+                />
+              </span>
+              </label>
+            </div>
+            <h3>CREATOR:</h3>
             <h4>New notes are saved here unless you create them in another notebook.</h4>
-            {/* <button className="notebookform-button-delete" onClick={this.props.deleteNotebook}>Delete notebook</button> */}
-            <hr/>
-            <h4>Share settings</h4>
-            <h4>Sharing: Not Shared</h4>
+            <button className="notebookform-edit-delete" onClick={this.props.deleteNotebook}>Delete notebook</button>
+            
 
             <div>
               
@@ -82,7 +86,8 @@ const msp = (state, ownProps) => ({
 const mdp = dispatch => ({
   fetchNotebook: notebookId => dispatch(fetchNotebook(notebookId)),
   formAction: notebook => dispatch(updateNotebook(notebook)),
-  closeModal: () => dispatch(closeModal())
+  closeModal: () => dispatch(closeModal()),
+  deleteNotebook: notebook => dispatch(deleteNotebook(notebook))
 });
 
 export default withRouter(connect(msp, mdp)(EditNotebookForm));

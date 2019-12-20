@@ -138,8 +138,16 @@
     font-weight: bold;
     padding: 13px 10px;
     margin: 0 10px;
-    font-family: 'Gotham';
+    font-family: 'Helvetica';
     border-bottom: 1px solid #ECECEC;
+    -webkit-box-shadow: 0 0 7px 3px #ECECEC;
+            box-shadow: 0 0 7px 3px #ECECEC;
+  }
+
+  .notebook-select-item-container {
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
   }
   
   .select-add-notebook:hover {
@@ -147,10 +155,9 @@
     cursor: pointer;
   }
   
-  .select-add-notebook-icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 5px;
+  .select-add-notebook-header {
+    width: auto;
+    height: 13px;
   }
 
   .small-notebook-icon {

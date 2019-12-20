@@ -3,6 +3,7 @@ import {Switch} from 'react-router-dom';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 
 import GreetingContainer from './greeting/greeting_container';
+import HomeContainer from './home/home_container';
 import LoginContainer from './session/login_container';
 import SignupContainer from './session/signup_container';
 
@@ -44,6 +45,8 @@ import NoteIndexContainer from './home/note/note_index_container';
                         <ProtectedRoute exact path='/api/notebooks' component={Dashboard} />
                         <ProtectedRoute exact path='/api/notes' component={Dashboard} />
                         <ProtectedRoute exact path='/api/notebooks/:notebookId' component={Dashboard} />
+                        {/* <ProtectedRoute exact path='/api/notebooks/:notebookId' component={GreetingContainer} /> */}
+                        {/* <ProtectedRoute exact path='/api/notebooks/:notebookId' component={HomeContainer} /> */}
                         <ProtectedRoute exact path='/api/notes/:noteId/show' component={Dashboard} />
                         {/* <ProtectedRoute exact path='/api/create-note' component={Dashboard} /> */}
 

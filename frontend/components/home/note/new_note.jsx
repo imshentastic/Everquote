@@ -81,7 +81,7 @@ class NewNote extends React.Component {
   }
 
     updateHeading(event) {
-      // debugger
+      
         this.setState({
           heading: event.currentTarget.value
         }, () => {
@@ -129,13 +129,14 @@ class NewNote extends React.Component {
     handleSelectNotebook(event) {
       if (this.notebookId !== this.props.notebooks[event.target.id].id) {
         this.notebookId = this.props.notebooks[event.target.id].id;
-        // debugger
+        
         this.setState(
           {
           notebook_id: this.notebookId
         });
       }
     }
+    
 
       render () {
           const { notebooks, notebook, addNote, fetchNotebooks, closeModal, openModal } = this.props;
@@ -149,7 +150,7 @@ class NewNote extends React.Component {
             if (notebooks[this.notebookId] !== undefined) {
               currentNotebook = notebooks[this.notebookId].title;
             } else {
-              currentNotebook = "michael";
+              currentNotebook = null;
             }
           
           notebookSelectItems = Object.keys(notebooks).map((notebookId, idx) =>
@@ -178,7 +179,7 @@ class NewNote extends React.Component {
                             className="select-add-notebook"
                             onClick={ this.handleAddNotebook }>
                             <div
-                              className="select-add-notebook-icon">New notebook!</div>
+                              className="select-add-notebook-header">New notebook!</div>
                               
                           </li>
                           { notebookSelectItems }
@@ -192,24 +193,30 @@ class NewNote extends React.Component {
                   
               
                   <button
-                      className="cancel"
-                      onClick ={ this.handleCancel }>Cancel</button>
+                      className="cancel" tabindex="1"
+                      onClick ={ this.handleCancel }>Cancel
+                  </button>
                   <button
-                      className="add-note"
-                      onClick ={ this.handleAddNote }>Save Note</button>
+                      className="add-note" tabindex="2"
+                      onClick ={ this.handleAddNote }>Save Note
+                  </button>
+
                   <input
                       type="text"
                       className="new-note-title"
                       placeholder="Title your note"
                       value={ this.state.heading }
-                      onChange={ this.updateHeading } />
+                      onChange={ this.updateHeading }
+                  />
+
                   <ReactQuill
                       ref={(el) => { this.reactQuillRef = el; }}
                       placeholder="Drag files here or just start typing..."
                       value={this.state.body}
                       onChange={this.updateQuill}
                       theme={'snow'}
-                      modules={ this.modules } />
+                      modules={ this.modules }
+                  />
               </section>
           );
       }

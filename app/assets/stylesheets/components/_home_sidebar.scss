@@ -27,7 +27,7 @@
     // align-self: center;
     display: grid;
     grid-template-columns: 73px;
-    grid-template-rows: 83px repeat(3, 48px) 95px repeat(3, 48px) auto;
+    grid-template-rows: 83px repeat(3, 48px) 117px repeat(3, 48px) auto;
     height: 100vh;
     width: 73px;
     // grid-auto-flow: column;
@@ -42,8 +42,8 @@
 .sidebar-icon {
     // grid-column-start: 1;
     grid-row-start: 1;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     // align-self: baseline;
     // margin-top: 36px; 
     // padding: 12px 12px 24px 17px;
@@ -303,7 +303,7 @@
     height: 40px;
     width: 40px;
     // border: 1px solid #ECECEC;
-    border: 1px solid #ECECEC;
+    border: 1.2px solid #40BC6C;
     background-color: #FFFFFF;
     
 
@@ -370,8 +370,16 @@
     height: 40px;
     width: 40px;
     border-radius: 50%;
+    background-image: asset-data-url("whitelogout.png");
+    background-size: 55%;
+    // height: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    background-color:#40BC6C;
     
 }
+
 
 .logout-text {
     text-align: center;

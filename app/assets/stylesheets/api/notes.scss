@@ -263,13 +263,13 @@
   
   .cancel, .add-note {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 10px;
     border-radius: 5px;
     padding: 6px 15px;
     position: absolute;
     right: 0;
-    top: -30px;
-    right: -10px;
+    top: -8px;
+    right: 3px;
   }
   
   .cancel {
@@ -304,7 +304,7 @@
 
   .note-container {
     width: auto;
-    margin: 42px 30px 20px 30px;
+    margin: 20px 30px 20px 30px;
     position: fixed;
     z-index: 100;
     left: 440px;
@@ -350,7 +350,7 @@
   }
   
   .note-modal-title {
-    font-family: 'Caecilia Light';
+    font-family: 'Helvetica';
     font-size: 28px;
     letter-spacing: .6px;
     margin: 20px;
@@ -387,8 +387,8 @@
     margin-top: 80px;
   }
   
-  @media all and (max-width: 1275px) {
-    .note-container {
-      margin: 20px 30px 20px 30px;
-    }
-  }
+  // @media all and (max-width: 1275px) {
+  //   .note-container {
+  //     margin: 20px 30px 20px 30px;
+  //   }
+  // }

@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     background-color: #FFFFFF;
-    left: 75px;
+    left: 73px;
     margin: 0px 0px;
     // border: 1px solid #888;
     width: 353px; 
@@ -32,6 +32,8 @@
     text-align: center;
   }
 
+  
+
   .edit-notebook-button {
     position: absolute;
    
@@ -42,44 +44,68 @@
     width: 15px;
     transition: opacity 0.25s ease-in-out;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 13px;
     // text-align: center;
     z-index: 8;
     color: grey;
-    border: 1px solid grey;
-    font-weight: bolder;
+    border: 2px solid grey;
+    font-weight: 500;
     align-self: flex-end;
 }
 
-.home-show-notebook-content > h1 {
-  color: #fff;
+.edit-notebook-button:hover {
+    color: #62eb92;
+    border: 2px solid #62eb92;
+}
+
+.home-show-notebook-content > div {
+  color: #DBDBDC;
   text-overflow: ellipsis;
+  // white-space: nowrap;
+  // overflow: hidden;
   font-size: 18px;
   align-self: center;
-  // text-align: center;
   margin-top: 28px;
   letter-spacing: 0.6px;
+  font-weight: lighter;
 }
 .home-show-notebook-content > h2 {
-  background-color:#212426;
+  background-color: #222527;
   color: #62eb92;
   align-self: center;
-  margin-top: 24px;
-  font-size: 13px;
-  padding: 2px 15px 0;
+  margin-top: 34px;
+  font-size: 12px;
+  padding: 4px 28px;
   box-sizing: border-box;
-  height: 23px;
-  border-radius: 5px;
+  height: 27px;
+  border-radius: 3px;
+  border: 1.5px solid #1D1F22;
+}
+
+.home-show-notebook-content > h3 {
+  position: absolute;
+  left: 1px;
+  top: 152px;
+  font-size: 14px;
+  color: #CACACA;
+  background: white;
+  width: 95px;
+  padding: 35px 258px 100vh 0;
+  border-bottom: 1px solid rgb(207, 207, 207);
 }
 
 
   .notebookform-edit-background {
     display: flex;
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.90);
     height: 100%;
     width: 100%;
     z-index: 100;
+    justify-content: center;
+    align-content: center;
+    
+
   }
   .notebookform-edit {
     position: absolute; 
@@ -90,32 +116,110 @@
     background:  #FFFFFF;
     // background-color: blue;
     // border: 2px solid #F2F2F2;
-    top: 18%;
-    left: 28%;
+    // top: 18%;
+    // left: 28%;
     width: auto;
     height: auto; 
+    margin: auto;
+    margin-top: 21%;
     // min-height: 600px;
     overflow: auto; 
     // background-color: rgb(0,0,0); 
     // margin-left: 75px;
-    line-height: 40px;
-    font-family: 13px;
+    line-height: 60px;
+    font-family: Helvetica;
   }
 
-  .notebookform-edit > div {
-    font-size: 20px;
-  }
+  
 
   .notebookform-edit > h2 {
     letter-spacing: 1px;
+    font-size: 13px;
+    color: #747474;
+  }
+
+  .notebookform-edit > span {
+    width: 25%;
+    border-bottom: 1px solid #D9D9D9;
   }
 
   .notebookform-edit > h3 {
     text-align: start;
     font-size: 13px;
-    color: #999999;
-    border-bottom: 1px solid #999999;
+    color: #585858;
+    line-height: 25px;
+    padding-top: 28px;
+    // border-bottom: 1px solid #D9D9D9;
   
   }
 
- 
+  .modal-note-column-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+  }
+
+  .notebookform-edit-container {
+    width: 483px;
+    border-radius: 5px;
+
+  }
+
+  .notebookform-edit-div { 
+    border-radius:5px;
+    border: 1px solid #D9D9D9;
+    display: flex;
+    height: 36px;
+  }
+
+  .notebookform-edit-div > div {
+    border-radius:5px;
+    border: 1px solid #D9D9D9;
+    font-size: 11px;
+    color: #747474;
+    padding: 5px;
+    align-self: center;
+    line-height: 15px;
+    left: 8px;
+    position: absolute;
+
+  } 
+  .notebookform-edit-label > span { 
+    font-size: 14px;
+    margin-left: 59px;
+    width: 400px;
+    line-height: 15px;
+    color: #585858;
+    text-align: left;
+    height: 100%;
+    display: flex;
+  }
+
+  
+
+  .notebookform-edit-container > div {
+    font-size: 11px;
+    color: #747474;
+    max-height: 39px;
+    
+  }
+
+  .notebookform-edit-container > h3 {
+    text-align: start;
+    color: #747474;
+    font-size: 11px;
+    padding-top: 4px;
+  }
+  .notebookform-edit-container > h4 {
+    // justify-self: left;
+    color: #585858;
+    font-size: 13px;
+    text-align: start;
+    line-height: 11px;
+  }
+
+  .notebookform-edit-delete {
+    color: #2DBE60;
+    font-size: 13px;
+    text-align: start;
+  }
