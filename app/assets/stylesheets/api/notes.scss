@@ -182,30 +182,6 @@
     background: url('https://res.cloudinary.com/malice/image/upload/v1500610662/delete-white-hover_qcz34v.png') no-repeat center center;
   }
   
-  .note-detail-info, .note-detail-delete {
-    margin-left: 18px;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    margin-top: 14px;
-  }
-  
-  .note-detail-info {
-    background: url('https://res.cloudinary.com/malice/image/upload/v1500410337/info-small_idnucv.png') no-repeat center center;
-  }
-  
-  .note-detail-info:hover {
-    background: url('https://res.cloudinary.com/malice/image/upload/v1501249455/reminder-green_skqgt7.png') no-repeat center center;
-  }
-  
-  .note-detail-delete {
-    background: url('https://res.cloudinary.com/malice/image/upload/v1500410338/trashcan-gray_omn62d.png') no-repeat center center;
-  }
-  
-  .note-detail-delete:hover {
-    background: url('https://res.cloudinary.com/malice/image/upload/v1501249453/delete-big-green_b0dqxl.png') no-repeat center center;
-  }
-  
   .expand, .expand:hover, .collapse, .collapse:hover {
     width: 35px;
     height: 35px;

@@ -131,26 +131,8 @@ class NoteShow extends React.Component {
   
 
   render() {
-    const { notebooks, note, tags, fetchNotebooks } = this.props;
-    let notebookSelectItems, currentNotebook, noteTagIndex;
+    const { notebooks, note, fetchNotebooks } = this.props;
     
-    // if (Object.keys(notebooks).length > 0) {
-      
-    //   currentNotebook = notebooks[this.notebookId].title;
-    //   notebookSelectItems = Object.keys(notebooks).map((notebookId, idx) =>
-    //     <section
-    //       key={ idx }
-    //       className="notebook-select-item-container"
-    //       onClick={ this.handleSelectNotebook }>
-    //       <li
-    //         key={ idx }
-    //         className="notebook-select-item"
-    //         id={ notebookId }>
-    //         { notebooks[notebookId].title }
-    //       </li>
-    //     </section>
-    //   );
-    // }
     
     return(
       <div className="note-container">
