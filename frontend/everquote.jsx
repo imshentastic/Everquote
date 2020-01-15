@@ -29,13 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
     ReactDOM.render(<Root store={store} />, root);
 
     //testing
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch;
     // window.signup = signup;
     // window.login = login;
     // window.logout = logout;
-    window.fetchNotebooks = fetchNotebooks;
-    window.createNotebook = createNotebook;
-    window.deleteNotebook = deleteNotebook;
-    window.createNote = createNote;
+    // window.fetchNotebooks = fetchNotebooks;
+    // window.createNotebook = createNotebook;
+    // window.deleteNotebook = deleteNotebook;
+    // window.createNote = createNote;
 });
