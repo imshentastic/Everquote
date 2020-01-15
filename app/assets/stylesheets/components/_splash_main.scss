@@ -109,13 +109,13 @@
     
 }
 
-@media all and (max-width: 750px) {
+@media screen and (max-width: 750px) {
   .splash-main-text {
     grid-template-rows: 330px auto 40px 58px 50px;
   }
 }
 
-@media all and (max-width: 600px) {
+@media screen and (max-width: 600px) {
    .splash-main-text {
    //   flex-wrap: wrap;
       // grid-template-columns: 1fr;

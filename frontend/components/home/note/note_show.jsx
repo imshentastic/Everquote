@@ -2,7 +2,7 @@ import React from 'react';
 import ReactQuill from 'react-quill';
 
 class NoteShow extends React.Component {
-
+//testing new!
   componentDidMount() {
     this.attachQuillRefs();
     this.quillRef.focus();
