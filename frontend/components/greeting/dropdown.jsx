@@ -39,7 +39,7 @@ class Dropdown extends React.Component {
                         <a href="https://angel.co/mike-shen-4" rel="noopener noreferrer" target="_blank">AngelList</a>
                     </div>
                     <div>
-                        <a href="https://michaelshen.dev/" rel="noopener noreferrer" target="_blank">Portfolio / Resume</a>
+                        <a href="https://michaelshen.dev/" rel="noopener noreferrer" target="_blank">Portfolio</a>
                     </div>
                 </div>
             )}

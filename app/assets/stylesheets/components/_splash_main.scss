@@ -86,7 +86,7 @@
 
   .splash-main-signup > h1 {
     position: absolute;
-    left: 13%;
+    left: 14%;
     bottom: 31%;
   }
 
@@ -114,6 +114,8 @@
     grid-template-rows: 330px auto 40px 58px 50px;
   }
 }
+
+
 
 @media screen and (max-width: 600px) {
    .splash-main-text {
@@ -186,4 +188,35 @@
       top: 12%;
     }
 
+}
+
+@media screen and (max-width: 375px) {
+  .splash-main-text {
+  //   flex-wrap: wrap;
+     // grid-template-columns: 1fr;
+     // grid-template-rows: auto auto auto auto auto 500px;
+     // grid-auto-flow: column;
+     // display: inline-flex;
+     // flex-direction: column;
+     grid-template-columns: 1fr;
+    // grid-template-rows: 270px auto 10px 58px 92px;
+     max-width: 315px;
+     padding: 30px 30px 120px 30px;
+     margin: 0px;
+     // justify-items: center;
+  }
+  .splash-main-signup > h1 {
+    left: 17%;
+  }
+  .splash-nav {
+    margin-top: 0px;
+  }
+  .splash-main-img {
+    width: 315px;
+  }
+  .splash-nav-signup {
+    margin-top: 0px;
+  }
+
+  
 }

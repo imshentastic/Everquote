@@ -1,15 +1,12 @@
 import {Link} from 'react-router-dom';
 import React from 'react';
-import HomeContainer from '../home/home_container';
-import Splash from './splash';
 import Dropdown from './dropdown';
-import NoteIndexContainer from '../home/note/note_index_container';
+import Splash from './splash';
+import Footer from './footer';
 
 export default ({currentUser, notebooks, logout, openModal, closeModal, toggleModal}) => {
     const greeting = currentUser ? (
         <div className="greetingwrapper">
-            {/* <HomeContainer /> */}
-            {/* <NoteIndexContainer /> */}
             <div></div>
             <button className="logout" onClick={() => toggleModal('logout')}></button>
         </div>
@@ -19,8 +16,9 @@ export default ({currentUser, notebooks, logout, openModal, closeModal, toggleMo
                 <div className="splash-nav">
                     <img className="splash-icon" src={window.penguinImg} alt="Penguin by sandra from the Noun Project" />
                     <h1 className="splash-nav-title">Everquote</h1>
-                    <Dropdown />
-                    <div className="arrow-down"></div>
+                    <section></section>
+                    {/* <Dropdown /> */}
+                    {/* <div className="arrow-down"></div> */}
                     <Link to='/signup'>
                         <button className="splash-nav-signup">Sign up
                         </button>
@@ -33,6 +31,7 @@ export default ({currentUser, notebooks, logout, openModal, closeModal, toggleMo
                 </div>
             </div>
             <Splash />
+            <Footer />
         </>
 
     );
