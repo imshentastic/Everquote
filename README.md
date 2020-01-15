@@ -1,15 +1,30 @@
 # Everquote
 https://everquote-app.herokuapp.com/ "Everquote's Homepage"
 
-Everquote is a website and web app clone of Evernote - the popular notes editing and management site. It is a CRUD app built on Redux-React front-end and Rails back-end, using Postgres as our relational database management system, and using SCSS for styling. We also use Webpack to bundle modules for Javascript. It is written with a combination of Javascript, Ruby, and SQL.
+Everquote is a website and web app clone of Evernote - the popular notes editing and management site. It is a CRUD app built on a React framework and Redux cycle, a Ruby on Rails back-end, and hosted on Heroku. 
+
+We are using Postgres as our relational database management system. We also use Node package manager to install and bundle fronte end dependencies, and Webpack is usedto bundle Javascript modules and run scripts in the right order. The project is written with a combination of Javascript, Ruby, and SQL and uses SCSS for styling. 
 
 Everquote has many of the same capabilities of the original web app, including user creation/authentication, note and notebook creation, deletion, editing, and viewing. It also utilizes Quill, an open source  WYSIWYG text editor libary with customizable rich text formatting capabilities. 
 <p align="center">
-    <img width="600" height="600" src="https://github.com/imshentastic/Everquote/blob/master/app/assets/images/penguin-icon.png" alt="Everquote icon">
+    <img width="300px" height="300px" src="https://github.com/imshentastic/Everquote/blob/master/docs/penguin-icon.png" alt="Everquote icon">
+</p>
+
+<p align="center">
+    <img width="300px" height="300px" src="https://github.com/imshentastic/Everquote/blob/master/docs/splash.png" alt="Everquote splash">
 </p>
 
 ## Usage example
-![Notebook functionality](https://github.com/imshentastic/Everquote/blob/master/app/assets/images/notebook-functionality.gif)
+One implemented feature is the ability to access child notes belonging to parent notebooks from a notebooks-show page. Clicking on the child note brings you back to the child's edit page.
+
+<p align="center">
+    <img src="https://github.com/imshentastic/Everquote/blob/master/docs/notebook-functionality.gif" alt="Everquote icon">
+</p>
+
+Evernote's web app has functionality where the result of clicking on a button is dependent on what other containers and modals are already open. This complicates the standard use of modals as some modals would need to be layered and kept in separate slices of states. I ended up using a combination of routing and modals to achieve the desired behavior
+
+I've also set up a few media queries on the splash page as well as the login form. 
+
 
 
 ## Development setup
@@ -28,10 +43,12 @@ Michael Shen - michael.pocheng.shen@gmail.com
 
 https://github.com/imshentastic/Everquote
 
-
-1. Bonus Features: (To be implemented)
+## Bonus Features: (To be implemented)
+1. Tags
 2. Search Function
 3. Starred list
 4. Trashed list
 5. Auto-save and auto-complete
 6. AWS for hosting images
+7. Sanitizing inputs
+8. Allow public/private notes and share notes
