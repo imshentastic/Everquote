@@ -27,7 +27,8 @@ class NoteShow extends React.Component {
         // id: nextProps.note.id,
         heading: nextProps.note.heading,
         body: nextProps.note.body,
-        author_id: nextProps.note.author_id
+        author_id: nextProps.note.author_id,
+        notebook_id: Object.values(nextProps.notebooks)[0].id
       });
     }
 
@@ -42,9 +43,12 @@ class NoteShow extends React.Component {
     this.state = {
       // id: this.props.note.id,
         id: this.props.match.params.noteId,
-        heading: this.props.note.heading,
-        body: this.props.note.body,
-        notebook_id: this.notebookId
+        // heading: this.props.note.heading,
+        // body: this.props.note.body,
+        // notebook_id: this.notebookId
+        heading: "",
+        body: "",
+        notebook_id: ""
         
     };
     if (this.props.note!== undefined) {
@@ -208,7 +212,7 @@ class NoteShow extends React.Component {
           />
         <ReactQuill
           ref={(el) => { this.reactQuillRef = el; }}
-          value={ this.state.body }
+          value={ this.state.body || ''}
           onChange={ this.updateQuill }
           placeholder="Drag files here or just start typing..."
           theme={'snow'}

@@ -13,7 +13,19 @@ class NoteIndex extends React.Component {
 
     render() {
         const {notes, deleteNote, updateNote, openModal, closeModal} = this.props;
-        const notesRev = notes.reverse();
+        // compare function to adjust list of notes based on last updated
+        function compare(a,b) {
+            const noteA = a.updated_at;
+            const noteB = b.updated_at;
+            let comparison = 0;
+            if (noteA > noteB) {
+                comparison = -1;
+            } else if (noteA < noteB) {
+                comparison = 1;
+            }
+            return comparison;
+        }
+        const notesRev = notes.sort(compare);
         return(
             <Link to="/api/notes" className="modal-note-content">
                 <h1>NOTES</h1>
