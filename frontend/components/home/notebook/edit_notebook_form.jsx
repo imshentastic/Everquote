@@ -24,13 +24,11 @@ class EditNotebookForm extends React.Component {
   }
 
   handleClick(e) {
-    debugger
     this.props.formAction(this.state)
       .then(() => this.props.history.push('/api/notebooks'));
   }
   handleClickDelete(e) {
-    debugger
-    this.props.deleteNotebook(notebook.id)
+    this.props.deleteNotebook(this.props.notebook.id)
       .then(() => this.props.history.push('/api/notebooks'));
   }
   handleCancel(e) {
