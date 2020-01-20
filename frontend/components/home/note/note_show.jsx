@@ -61,6 +61,7 @@ class NoteShow extends React.Component {
     this.handleAddNotebook = this.handleAddNotebook.bind(this);
     this.handleSelectNotebook = this.handleSelectNotebook.bind(this);
     
+    this.props.fetchNotebooks();
     
    
     this.modules = {
@@ -125,6 +126,7 @@ class NoteShow extends React.Component {
       this.setState({
         notebook_id: this.notebookId
       });
+      // document.querySelector('.notebook-dropdown').classList.toggle('hidden');
     }
   }
 
@@ -133,6 +135,34 @@ class NoteShow extends React.Component {
   render() {
     const { notebooks, note, fetchNotebooks } = this.props;
     
+    let notebookSelectItems, currentNotebook;
+
+    if (Object.keys(notebooks).length > 0) {
+      if (!this.notebookId) {
+
+          this.notebookId = Object.keys(notebooks)[0];
+      }
+
+      // if (notebooks[this.notebookId] !== undefined) {
+        currentNotebook = notebooks[this.notebookId].title;
+      // } else {
+      //   currentNotebook = null;
+      // }
+    
+    notebookSelectItems = Object.keys(notebooks).map((notebookId, idx) =>
+        <section
+          key={ idx }
+          className="notebook-select-item-container"
+          onClick={ this.handleSelectNotebook }>
+          <li
+              key={ idx }
+              className="notebook-select-item"
+              id={ notebookId }>
+              { notebooks[notebookId].title }
+          </li>
+        </section>
+    );
+    }
     
     return(
       <div className="note-container">
@@ -146,9 +176,9 @@ class NoteShow extends React.Component {
               onClick={ this.handleAddNotebook }>
               <div
                 className="select-add-notebook-header"></div>
-              {/* Create new notebook */}
+              Create new notebook
             </li>
-            {/* { notebookSelectItems } */}
+            { notebookSelectItems }
           </ul>
           <nav
             className="select-notebook"

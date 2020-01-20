@@ -7,7 +7,8 @@ import {closeModal, openModal} from '../../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
   return {
-    notebooks: Object.values(state.entities.notebooks),
+    // notebooks: Object.values(state.entities.notebooks),
+    notebooks: state.entities.notebooks,
     notebook: state.entities.notebooks[ownProps.match.params.notebookId]
   };
 };

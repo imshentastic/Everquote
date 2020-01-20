@@ -8,8 +8,10 @@ import {fetchNotebooks} from '../../../actions/notebook_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     // notebooks: state.entities.notebooks,
-    notebooks: Object.values(state.entities.notebooks),
-    notes: Object.values(state.entities.notes), 
+    // notebooks: Object.values(state.entities.notebooks),
+    notebooks: state.entities.notebooks,
+    // notes: Object.values(state.entities.notes), 
+    notes: state.entities.notes, 
     notebook: state.entities.notebooks[ownProps.match.params.notebookId],
     note: state.entities.notes[ownProps.match.params.noteId]
   };

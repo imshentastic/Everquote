@@ -9,10 +9,9 @@ class EditNotebookForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.notebook;
-    
-
-
     this.handleClick = this.handleClick.bind(this);
+    this.handleClickDelete = this.handleClickDelete.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
     //componentDidMount() {
   componentDidMount() {
@@ -25,13 +24,21 @@ class EditNotebookForm extends React.Component {
   }
 
   handleClick(e) {
-    this.props.formAction(this.state);
-    // this.props.closeModal();
-    // this.props.history.push(`/notebooks/${notebook.id}`);
+    debugger
+    this.props.formAction(this.state)
+      .then(() => this.props.history.push('/api/notebooks'));
+  }
+  handleClickDelete(e) {
+    debugger
+    this.props.deleteNotebook(notebook.id)
+      .then(() => this.props.history.push('/api/notebooks'));
+  }
+  handleCancel(e) {
+    this.props.history.push(`/api/notebooks/${notebook.id}`);
   }
 
   render() {
-    const { formAction, formType, notebook, closeModal } = this.props;
+    const { formAction, formType, notebook, closeModal, deleteNotebook } = this.props;
     if (!notebook) return null;
     return (
       <div className="notebookform-edit-background">
@@ -57,21 +64,15 @@ class EditNotebookForm extends React.Component {
             </div>
             <h3>CREATOR:</h3>
             <h4>New notes are saved here unless you create them in another notebook.</h4>
-            <button className="notebookform-edit-delete" onClick={this.props.deleteNotebook}>Delete notebook</button>
+            <button className="notebookform-edit-delete" onClick={this.handleClickDelete}>Delete notebook</button>
             
-
-            <div>
-              
-              {/* <Link to={`/api/notebooks/${notebook.id}`}></Link> */}
-                
-              {/* </Link> */}
-            </div>
           </form>
           <Link to={`/api/notebooks/${notebook.id}`}>
                 <button className="notebookform-button-cancel">Cancel</button>
-                <button className="notebookform-button" onClick={this.handleClick}>Save</button>
           </Link>
-          
+
+          <button className="notebookform-button" onClick={this.handleClick}>Save</button>
+
         </div>
       </div>
     );

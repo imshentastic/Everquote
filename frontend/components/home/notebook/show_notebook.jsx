@@ -32,7 +32,7 @@ class NotebookShow extends React.Component {
           <Link className="modal-note-content-list-link-b" to={`/api/notes/${noteId}/show`}>
               <div className="modal-note-content-list-info-edit-b"><h3>{notes[noteId].heading}</h3></div>
               {/* <h4 className="modal-note-content-list-info-lastupdate">{ this.state.lastUpdate }</h4> */}
-              <h3 class="small-b">{notes[noteId].body.replace(/<p>/g, "\n").replace(/<[^>]+>/g, "")}</h3>
+              <h3 className="small-b">{notes[noteId].body.replace(/<p>/g, "\n").replace(/<[^>]+>/g, "")}</h3>
             
           <div className="modal-note-content-list-hr-b"></div>
           </Link>

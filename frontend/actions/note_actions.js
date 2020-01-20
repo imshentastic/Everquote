@@ -45,48 +45,60 @@ export const resetCurrNote = () => {
   };
 
 export const fetchNotes = () => dispatch => {
-    return NoteApiUtil.fetchNotes().then(
-      notes => dispatch(receiveNotes(notes)),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+    return NoteApiUtil.fetchNotes()
+      .then(notes => {
+        dispatch(receiveNotes(notes));
+        dispatch(clearErrors());
+      }, errors => dispatch(receiveErrors(errors.responseJSON))
     );
   };
 
 
 export const fetchNote = noteId => dispatch => {
   
-    return NoteApiUtil.fetchNote(noteId).then(
-      note => dispatch(receiveNote(note)),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+    return NoteApiUtil.fetchNote(noteId)
+      .then(note => {
+        dispatch(receiveNote(note));
+        dispatch(clearErrors());
+      }, errors => dispatch(receiveErrors(errors.responseJSON))
     );
   };
 
 export const createNote = note => dispatch => {
-    return NoteApiUtil.createNote(note).then(
-      newNote => dispatch(receiveNote(newNote)),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+    return NoteApiUtil.createNote(note)
+        .then( newNote => {
+        dispatch(receiveNote(newNote));
+        dispatch(clearErrors());
+      }, errors => dispatch(receiveErrors(errors.responseJSON))
     );
   };
 
   export const updateNote = note => dispatch => {
     
-    return NoteApiUtil.updateNote(note).then(
-      updatedNote => dispatch(receiveNote(updatedNote)),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+    return NoteApiUtil.updateNote(note)
+    .then(updatedNote => {
+      dispatch(receiveNote(updatedNote));
+      dispatch(clearErrors());
+    }, errors => dispatch(receiveErrors(errors.responseJSON))
     );
   };
 
   export const deleteNote = noteId => dispatch => {
-    return NoteApiUtil.deleteNote(noteId).then(
-      removedNote => dispatch(removeNote(removedNote)),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+    return NoteApiUtil.deleteNote(noteId)
+    .then( () => {
+      dispatch(removeNote(noteId));
+      // dispatch(receiveNotes());
+      dispatch(clearErrors());
+      }, errors => dispatch(receiveErrors(errors.responseJSON))
     );
   };
 
-    export const addNote = note => dispatch => {
-        return NoteApiUtil.addNote(note)
-        .then(newNote => {
-            dispatch(receiveNote(newNote));
-            dispatch(fetchNotebooks());
-            dispatch(clearErrors());
-        }, errors => dispatch(receiveErrors(errors.responseJSON)));
-    };
+  export const addNote = note => dispatch => {
+      return NoteApiUtil.addNote(note)
+      .then(newNote => {
+          dispatch(receiveNote(newNote));
+          // dispatch(fetchNotebooks());
+          // dispatch(receiveNotes());
+          dispatch(clearErrors());
+      }, errors => dispatch(receiveErrors(errors.responseJSON)));
+  };

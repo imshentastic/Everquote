@@ -36,7 +36,7 @@ class NewNote extends React.Component {
           body: "",
           plain_text_body: ""
         };
-
+        this.props.fetchNotebooks();
         this.quillRef = null;
         // Instance of quill, initiating as null
         this.reactQuillRef = null;
@@ -129,11 +129,11 @@ class NewNote extends React.Component {
     handleSelectNotebook(event) {
       if (this.notebookId !== this.props.notebooks[event.target.id].id) {
         this.notebookId = this.props.notebooks[event.target.id].id;
-        
         this.setState(
           {
           notebook_id: this.notebookId
         });
+        document.querySelector('.notebook-dropdown').classList.toggle('hidden');
       }
     }
     
@@ -144,14 +144,15 @@ class NewNote extends React.Component {
 
           if (Object.keys(notebooks).length > 0) {
             if (!this.notebookId) {
+
                 this.notebookId = Object.keys(notebooks)[0];
             }
-            
-            if (notebooks[this.notebookId] !== undefined) {
+
+            // if (notebooks[this.notebookId] !== undefined) {
               currentNotebook = notebooks[this.notebookId].title;
-            } else {
-              currentNotebook = null;
-            }
+            // } else {
+            //   currentNotebook = null;
+            // }
           
           notebookSelectItems = Object.keys(notebooks).map((notebookId, idx) =>
               <section
@@ -173,7 +174,8 @@ class NewNote extends React.Component {
                   <section className="note-select-options">
                     <div
                       className="small-notebook-icon"
-                      onClick={ this.toggleNotebookDropDown }></div>
+                      onClick={ this.toggleNotebookDropDown }>
+                    </div>
                       <ul className="notebook-dropdown hidden">
                           <li
                             className="select-add-notebook"
@@ -193,11 +195,11 @@ class NewNote extends React.Component {
                   
               
                   <button
-                      className="cancel" tabindex="1"
+                      className="cancel" tabIndex="1"
                       onClick ={ this.handleCancel }>Cancel
                   </button>
                   <button
-                      className="add-note" tabindex="2"
+                      className="add-note" tabIndex="2"
                       onClick ={ this.handleAddNote }>Save Note
                   </button>
 

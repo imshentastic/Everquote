@@ -12,7 +12,6 @@ class Home extends React.Component {
     handleClick(e) {
         this.props.fetchNotebooks()
             .then(() => this.props.history.push('/api/create-note'));
-            
       }
 
     render () {

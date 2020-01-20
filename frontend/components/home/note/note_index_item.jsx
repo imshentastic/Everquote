@@ -58,8 +58,9 @@ class NotesIndexItem extends React.Component {
                 {/* <Link className="modal-note-content-list-info-edit" to={`/api/notes/${note.id}/edit`}><h3>{note.heading}</h3></Link> */}
                 <div className="modal-note-content-list-info-edit" ><h3>{note.heading}</h3></div>
                 <h4 className="modal-note-content-list-info-lastupdate">{ this.state.lastUpdate }</h4>
-                <h3 class="small">{note.body.replace(/<p>/g, "\n").replace(/<[^>]+>/g, "")}</h3>
+                <h3 className="small">{note.body.replace(/<p>/g, "\n").replace(/<[^>]+>/g, "")}</h3>
                 <Link to="/" className="modal-note-content-list-delete" onClick={() => deleteNote(note.id)}></Link>
+                
             </Link>
                   <div className="modal-note-content-list-hr"></div>
         </li>
