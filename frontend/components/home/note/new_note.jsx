@@ -24,23 +24,25 @@ class NewNote extends React.Component {
         this.quillRef.focus();
         if (Object.values(nextProps.notebooks).length > 0) {
           this.setState({
-            notebook_id: Object.values(nextProps.notebooks)[0]
+            notebook_id: Object.values(nextProps.notebooks)[0].id
           });
         }
     }
 
-    constructor(props) {
+    constructor(props, nextProps) {
         super(props);
         this.state = {
           heading: "",
           body: "",
-          plain_text_body: ""
+          plain_text_body: "",
+          notebook_id: ""
         };
         this.props.fetchNotebooks();
         this.quillRef = null;
         // Instance of quill, initiating as null
         this.reactQuillRef = null;
         // Actual ReactQuill component
+        
 
         this.updateQuill = this.updateQuill.bind(this);
         this.updateHeading = this.updateHeading.bind(this);
@@ -105,6 +107,7 @@ class NewNote extends React.Component {
     }
     // handles creation of new note
     handleAddNote() {
+      
       this.props.addNote(this.state)
         .then(() => this.props.history.push('/api/notes'))
         .then (()=>this.props.closeModal());
