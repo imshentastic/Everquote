@@ -8,7 +8,34 @@ class NoteIndex extends React.Component {
     componentDidMount() {
             this.props.fetchNotes();
             // this.props.fetchNote(this.props.match.params.noteId);
+            // debugger
+
+            // this.props.fetchNote(this.props.match.params.noteId);
+            // this.props.history.push(`/api/notes/${this.props.notes.id}/show`);
+
+            
     }
+
+    // constructor(props) {
+    //     super(props);
+        
+    //     // this.props.fetchNote(this.props.match.params.noteId);
+        
+    //     // this.state = this.props.note;
+    //     this.state = {
+    //       // id: this.props.note.id,
+    //         id: this.props.match.params.noteId,
+    //         // heading: this.props.note.heading,
+    //         // body: this.props.note.body,
+    //         // notebook_id: this.notebookId
+    //         heading: "",
+    //         body: "",
+    //         notebook_id: ""
+            
+    //     };
+    //     if (this.props.note!== undefined) {
+    //       this.notebookId = this.props.note.notebook_id;
+    //     }
 
 
     render() {
@@ -26,6 +53,10 @@ class NoteIndex extends React.Component {
             return comparison;
         }
         const notesRev = notes.sort(compare);
+        // if (notesRev[0] !== undefined) {
+        //     console.log(notesRev[0].id);
+        //     this.props.history.push(`/api/notes/${notesRev[0].id}/show`);
+        // }
         return(
             <Link to="/api/notes" className="modal-note-content">
                 <h1>NOTES</h1>
