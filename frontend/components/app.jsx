@@ -56,8 +56,6 @@ import NoteIndexContainer from './home/note/note_index_container';
                         <AuthRoute exact path='/login' component={LoginContainer}/>
                         <AuthRoute exact path='/signup' component={SignupContainer}/>
 
-                        
-
                         {/* <ProtectedRoute exact path="/api/notebooks" component={NotebookIndexContainer} /> */}
                         {/*<ProtectedRoute exact path="/api/notebooks/:notebookId/edit" component={EditNotebookFormContainer} /> */}
                     </Switch>

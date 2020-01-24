@@ -6,25 +6,34 @@ class NoteShow extends React.Component {
   componentDidMount() {
     this.attachQuillRefs();
     this.quillRef.focus();
-    this.props.fetchNotebooks();
-    this.props.fetchNote(this.props.match.params.noteId);
+    // this.props.fetchNotebooks();
+    // this.props.fetchNote(this.props.match.params.noteId);
+    this.firstShow = true;
+    
   }
 
   componentDidUpdate() {
     this.attachQuillRefs();
+    this.firstShow = false;
 
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.autosaveTimer);
   }
 
 
   componentWillReceiveProps(nextProps) {
-
+    this.firstShow = true;
     this.attachQuillRefs();
     this.quillRef.focus();
-    
+    if (this.props !== nextProps) {
+      clearTimeout(this.autosaveTimer);
+    }
     if (nextProps.note !== undefined) {
       this.notebookId = nextProps.note.notebook_id;
       this.setState({
-        // id: nextProps.note.id,
+        id: nextProps.note.id,
         heading: nextProps.note.heading,
         body: nextProps.note.body,
         author_id: nextProps.note.author_id,
@@ -48,9 +57,11 @@ class NoteShow extends React.Component {
         // notebook_id: this.notebookId
         heading: "",
         body: "",
-        notebook_id: ""
+        notebook_id: this.notebookId
         
     };
+
+      
     if (this.props.note!== undefined) {
       this.notebookId = this.props.note.notebook_id;
     }
@@ -59,6 +70,12 @@ class NoteShow extends React.Component {
     this.reactQuillRef = null; // ReactQuill component
     this.updateQuill = this.updateQuill.bind(this);
     this.updateHeading = this.updateHeading.bind(this);
+
+    this.autosave = this.autosave.bind(this);
+    this.startAutosaveTimer = this.startAutosaveTimer.bind(this);
+    this.autosaveTimer = null;
+    this.autosaveInterval = 500;
+
     this.handleCancel = this.handleCancel.bind(this);
     this.handleUpdateNote = this.handleUpdateNote.bind(this);
     this.toggleNotebookDropDown = this.toggleNotebookDropDown.bind(this);
@@ -88,6 +105,10 @@ class NoteShow extends React.Component {
         body: value
       });
 
+      if (!this.firstShow) {
+        this.startAutosaveTimer();
+      }
+
     }
   }
 
@@ -100,6 +121,26 @@ class NoteShow extends React.Component {
   attachQuillRefs() {
     if (typeof this.reactQuillRef.getEditor !== 'function') return;
     this.quillRef = this.reactQuillRef.getEditor();
+  }
+
+  startAutosaveTimer(event) {
+    clearTimeout(this.autosaveTimer);
+    this.autosaveTimer = setTimeout(this.autosave, this.autosaveInterval);
+  }
+
+  autosave() {
+    // this.props.updateNote(this.state)
+    //   .then(() => {
+    //     const lastSelected = document.querySelector(".selected-index-item");
+    //     if (lastSelected) {
+    //       lastSelected.classList.remove("selected-index-item");
+    //     }
+    //     // debugger
+    //     // document.getElementById(`${this.props.note.id}`).classList.add("selected-index-item");
+    //   });
+    this.props.updateNote(this.state);
+    // .then(() => this.props.history.push(`/api/notes/${this.props.match.params.noteId}/show`));
+    // .then (()=>this.props.closeModal());
   }
 
   handleCancel() {
@@ -129,7 +170,7 @@ class NoteShow extends React.Component {
       this.notebookId = event.target.id;
       this.setState({
         notebook_id: this.notebookId
-      });
+      }, () => this.startAutosaveTimer());
       // document.querySelector('.notebook-dropdown').classList.toggle('hidden');
     }
   }
@@ -209,6 +250,7 @@ class NoteShow extends React.Component {
           placeholder="Title your note"
           value={ this.state.heading }
           onChange={ this.updateHeading }
+          onKeyUp={ this.startAutosaveTimer }
           />
         <ReactQuill
           ref={(el) => { this.reactQuillRef = el; }}
