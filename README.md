@@ -1,13 +1,9 @@
 # Everquote
 https://everquote-app.herokuapp.com/ "Everquote's Homepage"
 
-<<<<<<< HEAD
-Everquote is a website and web app clone of Evernote - the popular notes editing and management site. It is a CRUD app built on a React framework and Redux cycle, a Ruby on Rails back-end, and hosted on Heroku. 
+Everquote is a website and web app clone of Evernote - the popular notes editing and management site. It is a CRUD app built on a React.js and Redux front end framework, a Ruby on Rails back end, and hosted on Heroku. 
 
-We are using Postgres as our relational database management system. We also use Node package manager to install and bundle fronte end dependencies, and Webpack is usedto bundle Javascript modules and run scripts in the right order. The project is written with a combination of Javascript, Ruby, and SQL and uses SCSS for styling. 
-=======
-Everquote is a website and web app clone of Evernote - the popular notes editing and management site. It is a CRUD app built on Redux-React front-end and Ruby on Rails back-end, using PostgreSQL as our relational database management system, using SASS for styling, and Webpack to bundle JS modules.
->>>>>>> 7368175416e6f3c4244df01ba0c0e433557379b7
+We are using PostgreSQL as our relational database management system. We also use Node package manager to install and bundle front end dependencies, and Webpack is used to bundle Javascript modules and run scripts in the right order. The project is written with a combination of Javascript, Ruby, and SQL and uses SCSS for styling. 
 
 Everquote has many of the same capabilities of the original web app, including user creation/authentication, note and notebook creation, deletion, editing, and viewing. It also utilizes Quill, an open source  WYSIWYG text editor library with customizable rich text formatting capabilities. 
 <p align="center">
