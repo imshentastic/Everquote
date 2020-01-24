@@ -12,10 +12,10 @@ class NotebookForm extends React.Component {
   
 
   handleSubmit(e) {
-    // e.preventDefault();
+    e.preventDefault();
     this.props.formAction(this.state);
     this.props.closeModal();
-    // this.props.history.goBack();
+    this.props.history.goBack();
     //still not working
   }
 

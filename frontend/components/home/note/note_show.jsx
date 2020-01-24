@@ -76,8 +76,8 @@ class NoteShow extends React.Component {
     this.autosaveTimer = null;
     this.autosaveInterval = 500;
 
-    this.handleCancel = this.handleCancel.bind(this);
-    this.handleUpdateNote = this.handleUpdateNote.bind(this);
+    // this.handleCancel = this.handleCancel.bind(this);
+    // this.handleUpdateNote = this.handleUpdateNote.bind(this);
     this.toggleNotebookDropDown = this.toggleNotebookDropDown.bind(this);
     this.handleAddNotebook = this.handleAddNotebook.bind(this);
     this.handleSelectNotebook = this.handleSelectNotebook.bind(this);
@@ -139,30 +139,28 @@ class NoteShow extends React.Component {
     //     // document.getElementById(`${this.props.note.id}`).classList.add("selected-index-item");
     //   });
     this.props.updateNote(this.state);
-    // .then(() => this.props.history.push(`/api/notes/${this.props.match.params.noteId}/show`));
-    // .then (()=>this.props.closeModal());
   }
 
-  handleCancel() {
-    document.querySelector('.cancel').classList.add('hidden');
-    this.props.closeModal();
-    this.props.history.push('/api/notes');
-  }
+  // handleCancel() {
+  //   document.querySelector('.cancel').classList.add('hidden');
+  //   this.props.closeModal();
+  //   this.props.history.push('/api/notes');
+  // }
   // handles creation of new note
-  handleUpdateNote() {
-    this.props.updateNote(this.state)
-      .then(() => this.props.history.push('/api/notes'))
-      .then (()=>this.props.closeModal());
-      // document.querySelector('.add-note').classList.add('hidden');
-  }
+  // handleUpdateNote() {
+  //   this.props.updateNote(this.state)
+  //     .then(() => this.props.history.push('/api/notes'))
+  //     .then (()=>this.props.closeModal());
+  //     // document.querySelector('.add-note').classList.add('hidden');
+  // }
   
-
   toggleNotebookDropDown() {
     document.querySelector('.notebook-dropdown').classList.toggle('hidden');
   }
 
   handleAddNotebook() {
     this.props.history.push('/api/create-notebook');
+    // this.props.openModal("createNotebook");
   }
 
   handleSelectNotebook(event) {
@@ -171,7 +169,7 @@ class NoteShow extends React.Component {
       this.setState({
         notebook_id: this.notebookId
       }, () => this.startAutosaveTimer());
-      // document.querySelector('.notebook-dropdown').classList.toggle('hidden');
+      document.querySelector('.notebook-dropdown').classList.toggle('hidden');
     }
   }
 
@@ -235,14 +233,14 @@ class NoteShow extends React.Component {
           
         </section>
 
-        <button
+        {/* <button
             className="cancel"
             onClick ={ this.handleCancel }>Cancel
         </button>
         <button
             className="add-note"
             onClick ={ this.handleUpdateNote }>Update Note
-        </button>
+        </button> */}
 
         <input
           type="text"

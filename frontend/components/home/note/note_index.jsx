@@ -1,6 +1,6 @@
 import React from 'react';
 import NoteIndexItem from './note_index_item';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 
 class NoteIndex extends React.Component {
@@ -11,8 +11,6 @@ class NoteIndex extends React.Component {
             // debugger
 
             // this.props.fetchNote(this.props.match.params.noteId);
-            // this.props.history.push(`/api/notes/${this.props.notes.id}/show`);
-
             
     }
 
