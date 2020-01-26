@@ -9,8 +9,8 @@ class Api::NotesController < ApplicationController
                 note.notebook_id == params[:notebook_id].to_i
             end
             @notes = @notes.sort_by { |note| note.updated_at }.reverse
-        elsif params[:tag_id]
-            tag = current_user.tags.find_by(name: params[:tag_id])
+        elsif params[:tag_name]
+            tag = current_user.tags.find_by(name: params[:tag_name])
             @notes = tag.notes.sort_by  { |note| note.updated_at }.reverse
         else
             @notes = current_user.notes.sort_by {|note|note.updated_at}.reverse
@@ -40,7 +40,7 @@ class Api::NotesController < ApplicationController
                     if !created_tag
                         Tag.create(name: tag, user_id: current_user.id)
                     end
-                    Tagging.create(tag_id: tag.id, note_id: @note.id)
+                    Tagging.create(tag_name: tag, note_id: @note.id)
                 end
             end
             render :show
@@ -54,7 +54,7 @@ class Api::NotesController < ApplicationController
         @note = current_user.notes.find(params[:id])
         @note.destroy
 
-        render :show
+        # render :show
     end
 
     def update

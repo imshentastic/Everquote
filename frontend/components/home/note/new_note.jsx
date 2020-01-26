@@ -117,9 +117,10 @@ class NewNote extends React.Component {
   
     // handles creation of new notebook
     handleAddNotebook() {
-      this.props.closeModal();
-        // this.props.history.push('/api/create-notebook');
-        this.props.openModal("createNotebook");
+      // this.props.closeModal();
+      document.querySelector('.notebook-dropdown').classList.toggle('hidden');
+        this.props.history.push('/api/create-notebook');
+        // this.props.openModal("createNotebook");
       // this.props.closeModal();
     }
 
@@ -184,7 +185,7 @@ class NewNote extends React.Component {
                             className="select-add-notebook"
                             onClick={ this.handleAddNotebook }>
                             <div
-                              className="select-add-notebook-header">New notebook!</div>
+                              className="select-add-notebook-header">Click to create new notebook!</div>
                               
                           </li>
                           { notebookSelectItems }

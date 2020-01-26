@@ -120,8 +120,11 @@
     left: 15px;
     width: 300px;
     height: auto;
+    // max-height: 50vh;
     z-index: 2;
     color: #4B4B4B;
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
   }
 
 
@@ -140,8 +143,8 @@
     margin: 0 10px;
     font-family: 'Helvetica';
     border-bottom: 1px solid #ECECEC;
-    -webkit-box-shadow: 0 0 7px 3px #ECECEC;
-            box-shadow: 0 0 7px 3px #ECECEC;
+    // -webkit-box-shadow: 0 0 7px 3px #ECECEC;
+    //         box-shadow: 0 0 7px 3px #ECECEC;
   }
 
   .notebook-select-item-container {

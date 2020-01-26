@@ -219,7 +219,7 @@ class NoteShow extends React.Component {
               onClick={ this.handleAddNotebook }>
               <div
                 className="select-add-notebook-header"></div>
-              Create new notebook
+              Click to create new notebook!
             </li>
             { notebookSelectItems }
           </ul>

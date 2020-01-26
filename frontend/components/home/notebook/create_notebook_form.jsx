@@ -15,7 +15,9 @@ class NotebookForm extends React.Component {
     e.preventDefault();
     this.props.formAction(this.state);
     this.props.closeModal();
-    this.props.history.goBack();
+    // if (this.props.location === "/api/notebooks") this.props.history.push('/api/notebooks');
+    if (this.props.location.pathname === "/api/create-notebook") this.props.history.goBack();
+    // this.props.history.goBack();
     //still not working
   }
 
