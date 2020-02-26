@@ -11,7 +11,7 @@ Everquote has many of the same capabilities of the original web app, including u
 </p>
 
 <p align="center">
-    <img width="700px" height="300px" src="https://github.com/imshentastic/Everquote/blob/master/docs/splash.png" alt="Everquote splash">
+    <img width="900px" height="500px" src="https://github.com/imshentastic/Everquote/blob/master/docs/splash.png" alt="Everquote splash">
 </p>
 
 ## Usage example
